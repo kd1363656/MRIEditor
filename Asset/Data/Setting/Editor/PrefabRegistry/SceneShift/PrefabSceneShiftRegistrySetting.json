@@ -1,0 +1,8 @@
+{
+    "AllSceneShiftMap": [
+        {
+            "FilePath": "Asset\\Data\\Scene\\Title\\TitleScene.json",
+            "TagName": "API::Tag::SceneShiftEventTitleTag"
+        }
+    ]
+}

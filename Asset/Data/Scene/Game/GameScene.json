@@ -1,0 +1,41 @@
+{
+    "GameObjectList": [
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "FieldOfView": 45.0,
+                    "TypeName": "MRI::Component::CameraComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                }
+            },
+            "PrefabName": "FreeCamera",
+            "UUID": "5e66fc00-3451-49c7-bdc6-fb7052bd389e"
+        }
+    ],
+    "PrefabMap": [
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
+            "PrefabName": "FreeCamera"
+        }
+    ],
+    "SceneShiftMap": [],
+    "SubscribedEventTypeDataMap": []
+}

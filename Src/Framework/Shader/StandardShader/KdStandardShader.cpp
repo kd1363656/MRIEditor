@@ -486,7 +486,7 @@ bool KdStandardShader::Init()
 	m_depthMapFromLightRTPack.CreateRenderTarget(1024, 1024, true, DXGI_FORMAT_R32_FLOAT);
 	m_depthMapFromLightRTPack.ClearTexture(kRedColor);
 
-	SetDissolveTexture(*KdAssets::Instance().m_textures.GetData("Asset/Textures/System/WhiteNoise.png"));
+	SetDissolveTexture(*KdAssets::Instance().m_textures.GetData("Asset/Texture/Shader/Dissolve/WhiteNoise.png"));
 
 
 	return true;
