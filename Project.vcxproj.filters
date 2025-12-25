@@ -61,30 +61,6 @@
     <Filter Include="Src\Framework\Utility\Debug">
       <UniqueIdentifier>{8998a2f9-9d4a-46aa-95ef-1d0c2545ca0d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Application\GameObject">
-      <UniqueIdentifier>{9858b20c-c4cb-4133-9eda-b28c74235aa7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\GameObject\Camera">
-      <UniqueIdentifier>{837cb603-8bef-438b-9814-1f88afc4f616}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\GameObject\Camera\TPSCamera">
-      <UniqueIdentifier>{5245e095-1870-4dc4-955f-3b7ccbd2ddaa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\GameObject\Camera\FPSCamera">
-      <UniqueIdentifier>{d0d23d7d-5e27-4301-b41e-72bedc1202bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\Scene">
-      <UniqueIdentifier>{4d2ab234-f9f8-4d65-8770-a559283a7cb6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\Scene\BaseScene">
-      <UniqueIdentifier>{00ac5e5d-1015-406e-a8db-649e83a3f93d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\Scene\GameScene">
-      <UniqueIdentifier>{ec8d74aa-71c1-43a1-80fb-e5fb0be65922}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\Application\Scene\TitleScene">
-      <UniqueIdentifier>{79ee70a1-187a-4dd1-8140-bdd9d69d2a00}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -246,27 +222,6 @@
     <ClInclude Include="Src\Framework\Utility\Debug\KdDebugGUI.h">
       <Filter>Src\Framework\Utility\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Application\GameObject\Camera\CameraBase.h">
-      <Filter>Src\Application\GameObject\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Application\GameObject\Camera\TPSCamera\TPSCamera.h">
-      <Filter>Src\Application\GameObject\Camera\TPSCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Application\GameObject\Camera\FPSCamera\FPSCamera.h">
-      <Filter>Src\Application\GameObject\Camera\FPSCamera</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Application\Scene\SceneManager.h">
-      <Filter>Src\Application\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Application\Scene\TitleScene\TitleScene.h">
-      <Filter>Src\Application\Scene\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Application\Scene\GameScene\GameScene.h">
-      <Filter>Src\Application\Scene\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Application\Scene\BaseScene\BaseScene.h">
-      <Filter>Src\Application\Scene\BaseScene</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -397,27 +352,6 @@
     </ClCompile>
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugGUI.cpp">
       <Filter>Src\Framework\Utility\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\GameObject\Camera\CameraBase.cpp">
-      <Filter>Src\Application\GameObject\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\GameObject\Camera\TPSCamera\TPSCamera.cpp">
-      <Filter>Src\Application\GameObject\Camera\TPSCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\GameObject\Camera\FPSCamera\FPSCamera.cpp">
-      <Filter>Src\Application\GameObject\Camera\FPSCamera</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\Scene\SceneManager.cpp">
-      <Filter>Src\Application\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\Scene\TitleScene\TitleScene.cpp">
-      <Filter>Src\Application\Scene\TitleScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\Scene\GameScene\GameScene.cpp">
-      <Filter>Src\Application\Scene\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Application\Scene\BaseScene\BaseScene.cpp">
-      <Filter>Src\Application\Scene\BaseScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
