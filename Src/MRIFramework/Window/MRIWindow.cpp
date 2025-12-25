@@ -145,6 +145,8 @@ LRESULT CALLBACK MRI::Window::CallWindowProcedure(const HWND   a_hWND    ,
 			// ウィンドウプロパティにこのクラスのインスタンスアドレスを埋め込んでおく
 			// 次回から、"l_this->WindowProcedure"の方へ処理が流れていく
 			SetProp(a_hWND , L"GameWindowInstance" , l_window);
+
+			return k_messageHandled;
 		}
 		else
 		{

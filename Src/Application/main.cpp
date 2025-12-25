@@ -74,6 +74,7 @@ void Application::Execute()
 		l_renderManager.BeginDraw ();
 		l_renderManager.PreDraw   ();
 		l_renderManager.Draw      ();
+		l_renderManager.PostDraw  ();
 		l_renderManager.DrawDebug ();
 		l_renderManager.DrawSprite();
 		l_renderManager.EndDraw   ();

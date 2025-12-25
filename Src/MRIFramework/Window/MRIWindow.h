@@ -27,6 +27,8 @@ namespace MRI
 
 		void SetClientSize(const MRI::CommonStruct::Size& a_size);
 
+		static constexpr LRESULT k_messageHandled = 0;
+
 		static constexpr UINT k_timerResolutionMS = 1U;
 
 		static constexpr UINT k_messageFilterNone = 0u;
