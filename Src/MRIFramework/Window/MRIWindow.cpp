@@ -12,12 +12,11 @@ MRI::Window::~Window()
 
 }
 
-bool MRI::Window::Create(const int          a_clientWidth    , 
-						 const int          a_clientHeight   , 
-						 const std::string& a_titleName      , 
-						 const std::string& a_windowClassName)
+bool MRI::Window::Create(const MRI::CommonStruct::Size& a_size      , 
+						 const std::string&				a_titleName , 
+						 const std::string&				a_windowClassName)
 {
-	// 現在の実行ファイルのハンドルを返す
+		// 現在の実行ファイルのハンドルを返す
 	HINSTANCE l_hInst = GetInstanceHandle();
 
 	// マルチバイト文字列に文字列を変換
@@ -51,8 +50,8 @@ bool MRI::Window::Create(const int          a_clientWidth    ,
 						  WS_OVERLAPPEDWINDOW - WS_THICKFRAME      , // 標準ウィンドウからサイズ変更用の太い枠を除いたスタイル
 						  k_defaultWindowPosX					   , // ウィンドウ座標"X"
 						  k_defaultWindowPosY					   , // ウィンドウ座標"Y"
-						  a_clientWidth							   , // クライアント領域の幅
-						  a_clientHeight                           , // クライアント領域の高さ
+						  a_size.width							   , // クライアント領域の幅
+						  a_size.height							   , // クライアント領域の高さ
 						  nullptr								   , // 親ウィンドウがない
 					      nullptr								   , // メニューなし
 						  l_hInst								   , // アプリケーションのインスタンスハンドル
@@ -65,7 +64,7 @@ bool MRI::Window::Create(const int          a_clientWidth    ,
 	}
 	
 	// クライアントのサイズを設定
-	SetClientSize(a_clientWidth , a_clientHeight);
+	SetClientSize(a_size);
 
 	// ウィンドウの表示
 	ShowWindow(m_hWND , SW_SHOW);
@@ -76,6 +75,25 @@ bool MRI::Window::Create(const int          a_clientWidth    ,
 	timeBeginPeriod(k_timerResolutionMS);
 
 	return true;
+}
+
+void MRI::Window::SetClientSize(const MRI::CommonStruct::Size& a_size)
+{
+	if (!m_hWND) { return; }
+
+	RECT l_rcWND    = {};
+	RECT l_rcClient = {};
+
+	// ウィンドウ全体のサイズ、クライアント領域のサイズを取得
+	GetWindowRect(m_hWND , &l_rcWND);
+	GetClientRect(m_hWND , &l_rcClient);
+
+	MoveWindow(m_hWND																			       , // 対象のウィンドウ 
+			   l_rcWND.left																		       , // 左上の"X"座標
+			   l_rcWND.top																		       , // 左上の"Y"座標
+			   a_size.width  + (l_rcWND.right  - l_rcWND.left) - (l_rcClient.right  - l_rcClient.left) , // ウィンドウ全体の幅(枠含む)
+			   a_size.height + (l_rcWND.bottom - l_rcWND.top)  - (l_rcClient.bottom - l_rcClient.top)  , // ウィンドウ全体の高さ(枠含む)
+			   TRUE);	
 }
 
 LRESULT CALLBACK MRI::Window::CallWindowProcedure(const HWND   a_hWND    , 

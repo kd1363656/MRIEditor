@@ -9,15 +9,15 @@ namespace MRI
 		Window ();
 		~Window();
 
-		bool Create(const int          a_clientWidth    ,
-					const int          a_clientHeight   ,
-					const std::string& a_titleName      ,
+		bool Create(const MRI::CommonStruct::Size& a_size ,
+					const std::string& a_titleName        ,
 					const std::string& a_windowClassName);
 
 		HINSTANCE GetInstanceHandle() const { return GetModuleHandle(nullptr); }
 
 	private:
 
+		void SetClientSize(const MRI::CommonStruct::Size& a_size);
 
 		static constexpr UINT k_timerResolutionMS = 1U;
 

@@ -82,6 +82,9 @@
     <Filter Include="Src\MRIFramework\Window">
       <UniqueIdentifier>{fbac2e63-b752-4b69-af19-c8c728d9fdcc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\Input">
+      <UniqueIdentifier>{397ada25-8106-4e10-9471-43f9deafacf5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -255,6 +258,9 @@
     <ClInclude Include="Src\MRIFramework\Window\MRIWindow.h">
       <Filter>Src\MRIFramework\Window</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Input\MRIInputManager.h">
+      <Filter>Src\MRIFramework\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -382,6 +388,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\Window\MRIWindow.cpp">
       <Filter>Src\MRIFramework\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Input\MRIInputManager.cpp">
+      <Filter>Src\MRIFramework\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

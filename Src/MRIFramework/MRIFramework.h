@@ -8,6 +8,9 @@
 // ウィンドウクラス
 #include "Window/MRIWindow.h"
 
+// "InputManager"
+#include "Input/MRIInputManager.h"
+
 // "FPS"管理クラス
 #include "FPS/MRIFPSController.h"
 

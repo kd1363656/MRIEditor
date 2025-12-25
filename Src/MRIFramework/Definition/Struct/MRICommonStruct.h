@@ -13,6 +13,12 @@ namespace MRI::CommonStruct
 		std::size_t operator()(const char*        a_key) const { return std::hash<std::string_view>{}(a_key); }
 	};
 
+	struct Mouse final
+	{
+		Math::Vector2 pos        = Math::Vector2::Zero;
+		int           wheelDelta = 0;
+	};
+
 	struct Size final
 	{
 		int height = 0;
