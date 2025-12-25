@@ -10,7 +10,7 @@ bool MRI::Window::Create(const MRI::CommonStruct::Size& a_size           ,
 						 const std::string&				a_titleName      , 
 						 const std::string&				a_windowClassName)
 {
-		// 現在の実行ファイルのハンドルを返す
+	// 現在の実行ファイルのハンドルを返す
 	HINSTANCE l_hInst = GetInstanceHandle();
 
 	// マルチバイト文字列に文字列を変換
@@ -221,5 +221,5 @@ LRESULT MRI::Window::WindowProcedure(const HWND   a_hWND    ,
 								 a_lParam);
 	}
 
-	return false;
+	return 0;
 }

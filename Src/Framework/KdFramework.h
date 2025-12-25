@@ -6,13 +6,9 @@
 //
 //====================================================
 
-// ウィンドウ
-#include "Window/KdWindow.h"
-
 // 便利機能
 #include "Utility/KdUtility.h"
 #include "Utility/KdCSVData.h"
-#include "Utility/KdFPSController.h"
 #include "Utility/KdRandom.h"
 
 // 音関連
@@ -68,7 +64,6 @@
 
 // デバッグ機能
 #include "Utility/Debug/KdDebugWireFrame.h"
-#include "Utility/Debug/KdDebugGUI.h"
 
 // ゲームオブジェクト関連
 #include "GameObject/KdGameObject.h"

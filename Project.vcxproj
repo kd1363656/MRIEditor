@@ -307,6 +307,7 @@
     <ClInclude Include="Src\MRIFramework\FPS\MRIFPSController.h" />
     <ClInclude Include="Src\MRIFramework\Input\MRIInputManager.h" />
     <ClInclude Include="Src\MRIFramework\MRIFramework.h" />
+    <ClInclude Include="Src\MRIFramework\Render\MRIRenderManager.h" />
     <ClInclude Include="Src\MRIFramework\Singleton\MRISingletonBase.h" />
     <ClInclude Include="Src\MRIFramework\Utility\FileIO\MRIFileIOUtility.h" />
     <ClInclude Include="Src\MRIFramework\Window\MRIWindow.h" />
@@ -357,6 +358,7 @@
     <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp" />
     <ClCompile Include="Src\MRIFramework\FPS\MRIFPSController.cpp" />
     <ClCompile Include="Src\MRIFramework\Input\MRIInputManager.cpp" />
+    <ClCompile Include="Src\MRIFramework\Render\MRIRenderManager.cpp" />
     <ClCompile Include="Src\MRIFramework\Window\MRIWindow.cpp" />
     <ClCompile Include="src\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

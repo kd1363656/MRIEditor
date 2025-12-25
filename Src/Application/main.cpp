@@ -42,8 +42,6 @@ void Application::Execute()
 
 	while (true)
 	{
-		if (m_isEndGameLoop) { break; }
-
 		// "FPS"の計測
 		m_fpsController.UpdateStartTime();
 
@@ -61,6 +59,8 @@ void Application::Execute()
 			EndGameLoop();
 		}
 
+		if (m_isEndGameLoop) { break; }
+
 		// アプリケーション更新
 		BeginUpdate();
 		EarlyUpdate();
@@ -69,6 +69,14 @@ void Application::Execute()
 		EndUpdate  ();
 
 		// アプリケーション描画更新
+		const auto& l_renderManager = MRI::RenderManager::GetInstance();
+
+		l_renderManager.BeginDraw ();
+		l_renderManager.PreDraw   ();
+		l_renderManager.Draw      ();
+		l_renderManager.DrawDebug ();
+		l_renderManager.DrawSprite();
+		l_renderManager.EndDraw   ();
 
 		// フレームレート制御
 		m_fpsController.Update();
@@ -125,14 +133,14 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 
 	// "Direct3D"初期化
 	if (std::string l_errorMsg = k_direct3DErrorMessage.data();
-	!KdDirect3D::Instance().Init(m_gameWindow.GetHWND() ,
-								 a_size.width           , 
-								 a_size.height          , 
-								 l_deviceDebugMode      , 
-								 l_errorMsg))
+		!KdDirect3D::Instance().Init(GetHWND()         ,
+								     a_size.width      , 
+								     a_size.height     , 
+								     l_deviceDebugMode , 
+								     l_errorMsg))
 	{
-		MessageBoxA(m_gameWindow.GetHWND() , 
-					l_errorMsg.c_str    () , 
+		MessageBoxA(GetHWND()			   , 
+					l_errorMsg.c_str()     , 
 					"Direct3D初期化失敗"   , 
 					MB_OK				   |
 					MB_ICONSTOP);
@@ -148,7 +156,7 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 		l_hr = KdDirect3D::Instance().SetFullscreenState(TRUE , nullptr);
 		if (FAILED(l_hr))
 		{
-			MessageBoxA(m_gameWindow.GetHWND()	 , 
+			MessageBoxA(GetHWND()                ,
 						"フルスクリーン設定失敗" , 
 						"Direct3D初期化失敗"     , 
 						MB_OK					 | 
@@ -171,7 +179,7 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 
 	m_isEndGameLoop = false;
 	
-	return false;
+	return true;
 }
 
 void Application::LoadWindowSize()

@@ -91,6 +91,9 @@
     <Filter Include="Src\MRIFramework\Utility\FileIO">
       <UniqueIdentifier>{c853271d-1599-42b6-85d8-276640b358f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\Render">
+      <UniqueIdentifier>{b56df2e5-89a0-451d-967b-5d48b0766a10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -270,6 +273,9 @@
     <ClInclude Include="Src\MRIFramework\Utility\FileIO\MRIFileIOUtility.h">
       <Filter>Src\MRIFramework\Utility\FileIO</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Render\MRIRenderManager.h">
+      <Filter>Src\MRIFramework\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -400,6 +406,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\Input\MRIInputManager.cpp">
       <Filter>Src\MRIFramework\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Render\MRIRenderManager.cpp">
+      <Filter>Src\MRIFramework\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

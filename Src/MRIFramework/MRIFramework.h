@@ -14,6 +14,9 @@
 // ウィンドウクラス
 #include "Window/MRIWindow.h"
 
+// "RenderManager"
+#include "Render/MRIRenderManager.h"
+
 // "InputManager"
 #include "Input/MRIInputManager.h"
 
