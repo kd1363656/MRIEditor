@@ -6,14 +6,8 @@ LRESULT ImGui_ImplWin32_WndProcHandler(HWND   a_hWND    ,
 									   WPARAM a_wParam  , 
 									   LPARAM a_lParam);
 
-MRI::Window::Window () = default;
-MRI::Window::~Window()
-{
-
-}
-
-bool MRI::Window::Create(const MRI::CommonStruct::Size& a_size      , 
-						 const std::string&				a_titleName , 
+bool MRI::Window::Create(const MRI::CommonStruct::Size& a_size           , 
+						 const std::string&				a_titleName      , 
 						 const std::string&				a_windowClassName)
 {
 		// 現在の実行ファイルのハンドルを返す
@@ -77,6 +71,42 @@ bool MRI::Window::Create(const MRI::CommonStruct::Size& a_size      ,
 	return true;
 }
 
+bool MRI::Window::ProcessMessage() const
+{
+	// メッセージ受け取り用構造体
+	MSG l_msg = {};
+
+	// メッセージキューからメッセージを取得
+	while (PeekMessage(&l_msg               ,  // メッセージを格納する構造体へのポインタ
+						nullptr             ,  // 対象のウィンドウハンドル("nullptr"なら全ウィンドウ)
+						k_messageFilterNone ,  // 最小メッセージ"ID"(フィルターの下限)
+						k_messageFilterNone ,  // 最大メッセージ"ID"(フィルターの上限)
+						PM_REMOVE))			   // 取得後にメッセージキューから削除するかどうか
+	{
+		// 終了メッセージが来たかどうか
+		if (l_msg.message == WM_QUIT)
+		{
+			return false;
+		}
+
+		// メッセージ処理
+		TranslateMessage(&l_msg);
+		DispatchMessage (&l_msg);
+	}
+
+	return false;
+}
+
+void MRI::Window::Release()
+{
+	// もしウィンドウハンドルがインスタンス化されていたら解放
+	if (!m_hWND) { return; }
+
+	// 指定したウィンドウを破棄
+	DestroyWindow(m_hWND);
+	m_hWND = nullptr;
+}
+
 void MRI::Window::SetClientSize(const MRI::CommonStruct::Size& a_size)
 {
 	if (!m_hWND) { return; }
@@ -137,5 +167,59 @@ LRESULT MRI::Window::WindowProcedure(const HWND   a_hWND    ,
 									 const WPARAM a_wParam  , 
 									 const LPARAM a_lParam)
 {
+	// "ImGui"にイベント通知
+	if (ImGui_ImplWin32_WndProcHandler(a_hWND    ,
+									   a_message ,
+									   a_wParam  ,
+									   a_lParam))
+	{ 
+		return true;
+	}
 
+	auto& l_inputManager = MRI::InputManager::GetInstance();
+	
+	// メッセージによって処理を選択
+	switch(a_message)
+	{
+		case WM_SETFOCUS:
+		case WM_ACTIVATE:
+		{
+			// ゲーム実行中にキーを押したまま別アプリにフォーカスが移ると、
+			// キーを離した情報が取得できず、押しっぱなしと誤認される。
+			// この関数は、ウィンドウにフォーカスが戻った際に全キー状態をリセットし、
+			// 誤った入力状態を防ぐための対策。
+			l_inputManager.ResetInputStates();
+		}
+		break;
+
+		case WM_INPUT:
+		{
+			l_inputManager.ProcessInput(a_lParam);
+		}
+		break;
+
+		// "X"ボタンが押された
+		case WM_CLOSE:
+		{
+			Release();
+		}
+		break;
+
+		// ウィンドウ破棄直前
+		case WM_DESTROY:
+		{
+			RemoveProp(a_hWND , L"GameWindowInstance");
+			PostQuitMessage(0);
+		}
+		break;
+
+		default:
+			// メッセージのデフォルト処理
+			return DefWindowProc(a_hWND    ,
+								 a_message ,
+								 a_wParam  ,
+								 a_lParam);
+	}
+
+	return false;
 }

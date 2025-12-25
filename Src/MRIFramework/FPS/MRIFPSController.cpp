@@ -21,9 +21,10 @@ void MRI::FPSController::Init()
 
 void MRI::FPSController::UpdateStartTime()
 {
+	// 現在のフレームでの時間
 	m_frameBeginTime = std::chrono::steady_clock::now();
 
-	// デルタタイム(ゲームループでさっき取得した一フレーム前の時間と今の時間を引く)
+	// デルタタイム(一フレーム前の時間と現フレームでの時間を引く)
 	std::chrono::duration<float> l_elapsed = m_frameBeginTime - m_previousTime;
 
 	// 秒単位で取得(ミリ秒で取得する必要がある)

@@ -6,12 +6,20 @@ namespace MRI
 	{
 	public:
 
-		Window ();
-		~Window();
+		Window () = default;
+		~Window() = default;
 
-		bool Create(const MRI::CommonStruct::Size& a_size ,
-					const std::string& a_titleName        ,
-					const std::string& a_windowClassName);
+		bool Create(const MRI::CommonStruct::Size& a_size			  ,
+					const std::string&			   a_titleName        ,
+					const std::string&			   a_windowClassName);
+
+		bool ProcessMessage() const;
+
+		void Release();
+
+		bool IsCreated() const { return m_hWND ? true : false; }
+
+		HWND GetHWND() const { return m_hWND; }
 
 		HINSTANCE GetInstanceHandle() const { return GetModuleHandle(nullptr); }
 
@@ -20,6 +28,8 @@ namespace MRI
 		void SetClientSize(const MRI::CommonStruct::Size& a_size);
 
 		static constexpr UINT k_timerResolutionMS = 1U;
+
+		static constexpr UINT k_messageFilterNone = 0u;
 
 		static constexpr UINT k_windowStyleDefault = 0U;
 

@@ -1,7 +1,5 @@
 ﻿#include "MRIInputManager.h"
 
-#include "../Src/Application/main.h"
-
 void MRI::InputManager::Init()
 {
 	m_nowInputStateList.fill(false);
