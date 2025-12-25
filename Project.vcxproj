@@ -297,12 +297,17 @@
     <ClInclude Include="Src\Framework\Shader\KdAmbientController.h" />
     <ClInclude Include="Src\Framework\Shader\KdRenderTargetChange.h" />
     <ClInclude Include="Src\Framework\Shader\StandardShader\KdStandardShader.h" />
-    <ClInclude Include="Src\Framework\Utility\Debug\KdDebugGUI.h" />
     <ClInclude Include="Src\Framework\Utility\Debug\KdDebugWireFrame.h" />
     <ClInclude Include="Src\Framework\Utility\KdDataStorage.h" />
     <ClInclude Include="Src\Framework\Utility\KdCSVData.h" />
-    <ClInclude Include="Src\Framework\Utility\KdFPSController.h" />
     <ClInclude Include="Src\Framework\Utility\KdRandom.h" />
+    <ClInclude Include="Src\MRIFramework\Definition\Constant\Editor\MRIEditorCommonConstant.h" />
+    <ClInclude Include="Src\MRIFramework\Definition\Constant\MRICommonConstant.h" />
+    <ClInclude Include="Src\MRIFramework\Definition\Struct\MRICommonStruct.h" />
+    <ClInclude Include="Src\MRIFramework\FPS\MRIFPSController.h" />
+    <ClInclude Include="Src\MRIFramework\MRIFramework.h" />
+    <ClInclude Include="Src\MRIFramework\Singleton\MRISingletonBase.h" />
+    <ClInclude Include="Src\MRIFramework\Window\MRIWindow.h" />
     <ClInclude Include="src\Pch.h" />
     <ClInclude Include="Src\Framework\Math\KdAnimation.h" />
     <ClInclude Include="Src\Framework\Math\KdCollision.h" />
@@ -310,7 +315,6 @@
     <ClInclude Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader.h" />
     <ClInclude Include="Src\Framework\Shader\SpriteShader\KdSpriteShader.h" />
     <ClInclude Include="src\Framework\Utility\KdUtility.h" />
-    <ClInclude Include="src\Framework\Window\KdWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Library\imgui\imgui.cpp" />
@@ -347,10 +351,10 @@
     <ClCompile Include="Src\Framework\Shader\KdAmbientController.cpp" />
     <ClCompile Include="Src\Framework\Shader\KdRenderTargetChange.cpp" />
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp" />
-    <ClCompile Include="Src\Framework\Utility\Debug\KdDebugGUI.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp" />
     <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp" />
-    <ClCompile Include="Src\Framework\Utility\KdFPSController.cpp" />
+    <ClCompile Include="Src\MRIFramework\FPS\MRIFPSController.cpp" />
+    <ClCompile Include="Src\MRIFramework\Window\MRIWindow.cpp" />
     <ClCompile Include="src\Pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -363,7 +367,6 @@
     <ClCompile Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader.cpp" />
     <ClCompile Include="Src\Framework\Shader\SpriteShader\KdSpriteShader.cpp" />
     <ClCompile Include="Src\Framework\Utility\KdUtility.cpp" />
-    <ClCompile Include="src\Framework\Window\KdWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\Framework\Shader\inc_KdCommon.hlsli" />

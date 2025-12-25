@@ -16,9 +16,6 @@
     <Filter Include="Src\Framework\Utility">
       <UniqueIdentifier>{f5d733b1-5031-4659-a9d4-0dd3add1e5fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Framework\Window">
-      <UniqueIdentifier>{cb022f2a-c5a2-449b-9b70-5110aff8550f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Library\tinygltf">
       <UniqueIdentifier>{307bfbcd-124f-4ad7-85f5-3fd94f814b1f}</UniqueIdentifier>
     </Filter>
@@ -60,6 +57,30 @@
     </Filter>
     <Filter Include="Src\Framework\Utility\Debug">
       <UniqueIdentifier>{8998a2f9-9d4a-46aa-95ef-1d0c2545ca0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework">
+      <UniqueIdentifier>{40f3efdc-4f55-4dec-87b3-dad84fde74c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition">
+      <UniqueIdentifier>{97e78654-35a0-44ac-a443-efb6fd7180e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition\Constant">
+      <UniqueIdentifier>{5f6fe958-5699-4e9c-90d2-485bad769b16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition\Struct">
+      <UniqueIdentifier>{02ac0a7b-eece-49cb-8ac4-7da32fece811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition\Constant\Editor">
+      <UniqueIdentifier>{78483def-7449-4f08-a41a-7d15c626347f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Singleton">
+      <UniqueIdentifier>{0536d2ff-168e-4dce-b031-20d4ac7eb5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\FPS">
+      <UniqueIdentifier>{7e4b0c02-16a6-4499-b87a-f97c92e0fb16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Window">
+      <UniqueIdentifier>{fbac2e63-b752-4b69-af19-c8c728d9fdcc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -107,9 +128,6 @@
     </ClInclude>
     <ClInclude Include="..\Library\strconv.h">
       <Filter>Library</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Framework\Window\KdWindow.h">
-      <Filter>Src\Framework\Window</Filter>
     </ClInclude>
     <ClInclude Include="src\Framework\Direct3D\KdMesh.h">
       <Filter>Src\Framework\Direct3D</Filter>
@@ -174,9 +192,6 @@
     <ClInclude Include="Src\Framework\Shader\KdRenderTargetChange.h">
       <Filter>Src\Framework\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Framework\Utility\KdFPSController.h">
-      <Filter>Src\Framework\Utility</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Framework\Shader\StandardShader\KdStandardShader.h">
       <Filter>Src\Framework\Shader\StandardShader</Filter>
     </ClInclude>
@@ -219,8 +234,26 @@
     <ClInclude Include="Src\Framework\Utility\Debug\KdDebugWireFrame.h">
       <Filter>Src\Framework\Utility\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Framework\Utility\Debug\KdDebugGUI.h">
-      <Filter>Src\Framework\Utility\Debug</Filter>
+    <ClInclude Include="Src\MRIFramework\MRIFramework.h">
+      <Filter>Src\MRIFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Definition\Constant\MRICommonConstant.h">
+      <Filter>Src\MRIFramework\Definition\Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Definition\Constant\Editor\MRIEditorCommonConstant.h">
+      <Filter>Src\MRIFramework\Definition\Constant\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Definition\Struct\MRICommonStruct.h">
+      <Filter>Src\MRIFramework\Definition\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Singleton\MRISingletonBase.h">
+      <Filter>Src\MRIFramework\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\FPS\MRIFPSController.h">
+      <Filter>Src\MRIFramework\FPS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Window\MRIWindow.h">
+      <Filter>Src\MRIFramework\Window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -247,9 +280,6 @@
     </ClCompile>
     <ClCompile Include="Src\Framework\Shader\SpriteShader\KdSpriteShader.cpp">
       <Filter>Src\Framework\Shader\SpriteShader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Framework\Window\KdWindow.cpp">
-      <Filter>Src\Framework\Window</Filter>
     </ClCompile>
     <ClCompile Include="Src\Framework\Utility\KdUtility.cpp">
       <Filter>Src\Framework\Utility</Filter>
@@ -314,9 +344,6 @@
     <ClCompile Include="Src\Framework\Shader\KdRenderTargetChange.cpp">
       <Filter>Src\Framework\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Framework\Utility\KdFPSController.cpp">
-      <Filter>Src\Framework\Utility</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp">
       <Filter>Src\Framework\Shader\StandardShader</Filter>
     </ClCompile>
@@ -350,8 +377,11 @@
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp">
       <Filter>Src\Framework\Utility\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Framework\Utility\Debug\KdDebugGUI.cpp">
-      <Filter>Src\Framework\Utility\Debug</Filter>
+    <ClCompile Include="Src\MRIFramework\FPS\MRIFPSController.cpp">
+      <Filter>Src\MRIFramework\FPS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Window\MRIWindow.cpp">
+      <Filter>Src\MRIFramework\Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

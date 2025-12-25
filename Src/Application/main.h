@@ -4,7 +4,7 @@
 // アプリケーションクラス
 //	APP.～ でどこからでもアクセス可能
 //============================================================
-class Application
+class Application final : public MRI::SingletonBase<Application>
 {
 // メンバ
 public:
@@ -12,55 +12,23 @@ public:
 	// アプリケーション実行
 	void Execute();
 
-	// アプリケーション終了
-	void End()							{ m_endFlag = true; }
-
-	HWND GetWindowHandle()		const	{ return m_window.GetWndHandle(); }
-	int GetMouseWheelValue()	const	{ return m_window.GetMouseWheelVal(); }
-
-	int GetNowFPS()				const	{ return m_fpsController.m_nowfps; }
-	int GetMaxFPS()				const	{ return m_fpsController.m_maxFps; }
+	int GetNowFPS() const { return m_fpsController.GetNowFPS(); }
 
 private:
 
-	void KdBeginUpdate();
-	void PreUpdate();
-	void Update();
-	void PostUpdate();
-	void KdPostUpdate();
+	bool Init(const int a_w , const int a_h);
 
-	void KdBeginDraw(bool usePostProcess = true);
-	void PreDraw();
-	void Draw();
-	void PostDraw();
-	void DrawSprite();
-	void KdPostDraw();
+	std::string GetTitleBarWithFPS() const;
 
-	// アプリケーション初期化
-	bool Init(int w, int h);
+	static constexpr std::string_view k_titleName = "MRI_Editor";
 
-	// アプリケーション解放
-	void Release();
+	MRI::FPSController m_fpsController = {};
 
-	// ゲームウィンドウクラス
-	KdWindow		m_window;
+	//===============================
+	// シングルトン
+	//===============================
+	friend class MRI::SingletonBase<Application>;
 
-	// FPSコントローラー
-	KdFPSController	m_fpsController;
-
-	// ゲーム終了フラグ trueで終了する
-	bool		m_endFlag = false;
-
-//=====================================================
-// シングルトンパターン
-//=====================================================
-private:
-	// 
-	Application() {}
-
-public:
-	static Application &Instance(){
-		static Application Instance;
-		return Instance;
-	}
+	Application ()          = default;
+	~Application() override = default;
 };
