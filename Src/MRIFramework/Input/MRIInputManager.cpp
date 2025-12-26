@@ -67,8 +67,7 @@ bool MRI::InputManager::IsInputOnce(const int a_vkCode) const
 	const bool l_isPressNow = m_nowInputStateList[a_vkCode];
 	const bool l_isPressOld = m_oldInputStateList[a_vkCode];
 
-	return  l_isPressNow && 
-		   !l_isPressOld;
+	return l_isPressNow && !l_isPressOld;
 }
 
 void MRI::InputManager::ProcessInput(const LPARAM a_lParam)

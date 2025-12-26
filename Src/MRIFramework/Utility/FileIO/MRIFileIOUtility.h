@@ -14,6 +14,7 @@ namespace MRI::FileIOUtility
 			return nlohmann::json();
 		}
 
+		// ファイル読み込み
 		std::ifstream l_ifs(l_path);
 		if (l_ifs.fail())
 		{

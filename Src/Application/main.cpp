@@ -6,8 +6,7 @@ int WINAPI WinMain(_In_     HINSTANCE ,
 				   _In_     int)
 {
 	// メモリリークを知らせる
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | 
-				   _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	// COM初期化
 	if (FAILED(CoInitializeEx(nullptr , COINIT_MULTITHREADED)))
@@ -52,8 +51,7 @@ void Application::Execute()
 		m_gameWindow.ProcessMessage();
 
 		// ウィンドウが破棄されているか"Escape"キーが押されていたらゲームループ終了
-		if (!m_gameWindow.IsCreated() || 
-			GetAsyncKeyState(VK_ESCAPE))
+		if (!m_gameWindow.IsCreated() || GetAsyncKeyState(VK_ESCAPE))
 		{
 			EndGameLoop();
 		}
@@ -137,8 +135,7 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 		MessageBoxA(GetHWND()		   , 
 					l_errorMsg.c_str() , 
 					l_errorMsg.c_str() ,
-					MB_OK			   |
-					MB_ICONSTOP);
+					MB_OK | MB_ICONSTOP);
 
 		return false;
 	}
@@ -154,8 +151,7 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 			MessageBoxA(GetHWND()                       ,
 						k_fullScreenErrorMessage.data() ,
 						k_direct3DErrorMessage.data  () ,
-						MB_OK					        | 
-						MB_ICONSTOP);
+						MB_OK | MB_ICONSTOP);
 
 			return false;
 		}
