@@ -52,16 +52,13 @@ void Application::Execute()
 		m_gameWindow.ProcessMessage();
 
 		// ウィンドウが破棄されているか"Escape"キーが押されていたらゲームループ終了
-		if (!m_gameWindow.IsCreated()) 
+		if (!m_gameWindow.IsCreated() || 
+			GetAsyncKeyState(VK_ESCAPE))
 		{
 			EndGameLoop();
 		}
 
-		if (GetAsyncKeyState(VK_ESCAPE))
-		{
-			EndGameLoop();
-		}
-
+		// もしゲームループ終了フラグが立っていたら"break"
 		if (m_isEndGameLoop) { break; }
 
 		// アプリケーション更新
@@ -86,9 +83,7 @@ void Application::Execute()
 		// 一フレーム前の入力の確認
 		MRI::InputManager::GetInstance().BackUpInputState();
 
-		// タイトル名 + "FPS"の表示
-		const std::string l_titleBar = GetTitleBarWithFPS();
-		SetWindowTextA                                   (GetHWND() , l_titleBar.c_str());
+		DrawWindowTitleBar();
 	}
 
 	// ウィンドウの解像度を保存(ウィンドウサイズの設定は保存しておくべきだから)
@@ -106,12 +101,10 @@ void Application::EndGameLoop()
 bool Application::Init(const MRI::CommonStruct::Size& a_size)
 {
 	// タイトル名 + "FPS"の表示
-	const std::string l_titleBar = GetTitleBarWithFPS();
-	SetWindowTextA									 (GetHWND() , l_titleBar.c_str());
+	const std::string& l_titleBar = GetTitleBarWithFPS();
+	SetWindowTextA									  (GetHWND() , l_titleBar.c_str());
 
-	if (!m_gameWindow.Create(a_size     ,
-						     l_titleBar , 
-						     "Window")) 
+	if (!m_gameWindow.Create(a_size , l_titleBar , "Window")) 
 	{
 		MessageBoxA(nullptr                , 
 					"ウィンドウ作成に失敗" , 
@@ -141,10 +134,10 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 								     l_deviceDebugMode , 
 								     l_errorMsg))
 	{
-		MessageBoxA(GetHWND()			   , 
-					l_errorMsg.c_str()     , 
-					"Direct3D初期化失敗"   , 
-					MB_OK				   |
+		MessageBoxA(GetHWND()		   , 
+					l_errorMsg.c_str() , 
+					l_errorMsg.c_str() ,
+					MB_OK			   |
 					MB_ICONSTOP);
 
 		return false;
@@ -158,10 +151,10 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 		l_hr = KdDirect3D::Instance().SetFullscreenState(TRUE , nullptr);
 		if (FAILED(l_hr))
 		{
-			MessageBoxA(GetHWND()                ,
-						"フルスクリーン設定失敗" , 
-						"Direct3D初期化失敗"     , 
-						MB_OK					 | 
+			MessageBoxA(GetHWND()                       ,
+						k_fullScreenErrorMessage.data() ,
+						k_direct3DErrorMessage.data  () ,
+						MB_OK					        | 
 						MB_ICONSTOP);
 
 			return false;
@@ -170,8 +163,8 @@ bool Application::Init(const MRI::CommonStruct::Size& a_size)
 
 	// "InputManager"の初期化
 	auto& l_inputManager = MRI::InputManager::GetInstance();
-	l_inputManager.SetHWND(GetHWND());
-	l_inputManager.Init   ();
+	l_inputManager.SetHWND                               (GetHWND());
+	l_inputManager.Init                                  ();
 
 	// シェーダー初期化
 	KdShaderManager::Instance().Init();
@@ -224,13 +217,21 @@ void Application::EndUpdate() const
 
 void Application::Release()
 {
-	KdInputManager::Instance().Release ();
+	KdInputManager::Instance ().Release();
 	KdShaderManager::Instance().Release();
-	KdAudioManager::Instance().Release ();
-	KdDirect3D::Instance().Release	   ();
+	KdAudioManager::Instance ().Release();
+	KdDirect3D::Instance     ().Release();
 
 	// ウィンドウ削除
 	m_gameWindow.Release();
+}
+
+void Application::DrawWindowTitleBar()
+{
+	// タイトル名 + "FPS"の表示
+	// 一時オブジェクトは"const"参照で有効期限を延ばせる
+	const std::string& l_titleBar = GetTitleBarWithFPS();
+	SetWindowTextA                                    (GetHWND() , l_titleBar.c_str());
 }
 
 std::string Application::GetTitleBarWithFPS() const

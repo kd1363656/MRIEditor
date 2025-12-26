@@ -13,9 +13,9 @@ public:
 	void Execute    ();
 	void EndGameLoop();
 
-	int GetNowFPS() const { return m_fpsController.GetNowFPS(); }
-
 	HWND GetHWND() const { return m_gameWindow.GetHWND(); }
+
+	int GetNowFPS() const { return m_fpsController.GetNowFPS(); }
 
 private:
 
@@ -32,15 +32,19 @@ private:
 
 	void Release();
 
+	void DrawWindowTitleBar();
+
 	std::string GetTitleBarWithFPS() const;
 
+	static constexpr std::string_view k_direct3DErrorMessage   = "Direct3D初期化失敗";
+	static constexpr std::string_view k_fullScreenErrorMessage = "フルスクリーン設定失敗";
+
 	static constexpr std::string_view k_titleName            = "MRI_Editor";
-	static constexpr std::string_view k_direct3DErrorMessage = "Direct3D初期化失敗";
 	static constexpr std::string_view k_windowSizeFileIOPath = "Asset/Data/Setting/Window/WindowConfig.json";
 
-	MRI::Window m_gameWindow = {};
-
 	MRI::FPSController m_fpsController = {};
+
+	MRI::Window m_gameWindow = {};
 
 	MRI::CommonStruct::Size m_windowSize = {};
 
