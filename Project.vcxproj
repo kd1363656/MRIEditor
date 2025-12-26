@@ -264,6 +264,8 @@
     <ClInclude Include="..\Library\imgui\imgui_impl_win32.h" />
     <ClInclude Include="..\Library\imgui\imgui_internal.h" />
     <ClInclude Include="..\Library\imgui\imgui_stdlib.h" />
+    <ClInclude Include="..\Library\imgui\imnodes.h" />
+    <ClInclude Include="..\Library\imgui\imnodes_internal.h" />
     <ClInclude Include="..\Library\imgui\imstb_rectpack.h" />
     <ClInclude Include="..\Library\imgui\imstb_textedit.h" />
     <ClInclude Include="..\Library\imgui\imstb_truetype.h" />
@@ -304,6 +306,7 @@
     <ClInclude Include="Src\MRIFramework\Definition\Constant\Editor\MRIEditorCommonConstant.h" />
     <ClInclude Include="Src\MRIFramework\Definition\Constant\MRICommonConstant.h" />
     <ClInclude Include="Src\MRIFramework\Definition\Struct\MRICommonStruct.h" />
+    <ClInclude Include="Src\MRIFramework\Editor\MRIEditorManager.h" />
     <ClInclude Include="Src\MRIFramework\FPS\MRIFPSController.h" />
     <ClInclude Include="Src\MRIFramework\Input\MRIInputManager.h" />
     <ClInclude Include="Src\MRIFramework\MRIFramework.h" />
@@ -328,6 +331,7 @@
     <ClCompile Include="..\Library\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="..\Library\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\Library\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\Library\imgui\imnodes.cpp" />
     <ClCompile Include="Src\Application\main.cpp" />
     <ClCompile Include="Src\Framework\Direct3D\KdMaterial.cpp">
       <SubType>
@@ -356,6 +360,7 @@
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp" />
     <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp" />
+    <ClCompile Include="Src\MRIFramework\Editor\MRIEditorManager.cpp" />
     <ClCompile Include="Src\MRIFramework\FPS\MRIFPSController.cpp" />
     <ClCompile Include="Src\MRIFramework\Input\MRIInputManager.cpp" />
     <ClCompile Include="Src\MRIFramework\Render\MRIRenderManager.cpp" />

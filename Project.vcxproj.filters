@@ -94,6 +94,9 @@
     <Filter Include="Src\MRIFramework\Render">
       <UniqueIdentifier>{b56df2e5-89a0-451d-967b-5d48b0766a10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\Editor">
+      <UniqueIdentifier>{a91ff95c-6fc5-4651-8963-71cb1c98550c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -276,6 +279,15 @@
     <ClInclude Include="Src\MRIFramework\Render\MRIRenderManager.h">
       <Filter>Src\MRIFramework\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\MRIEditorManager.h">
+      <Filter>Src\MRIFramework\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imnodes.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imnodes_internal.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -409,6 +421,12 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\Render\MRIRenderManager.cpp">
       <Filter>Src\MRIFramework\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\MRIEditorManager.cpp">
+      <Filter>Src\MRIFramework\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imnodes.cpp">
+      <Filter>Library\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -17,9 +17,11 @@
 // "RenderManager"
 #include "Render/MRIRenderManager.h"
 
+// エディター管理クラス
+#include "Editor/MRIEditorManager.h"
+
 // "InputManager"
 #include "Input/MRIInputManager.h"
 
 // "FPS"管理クラス
 #include "FPS/MRIFPSController.h"
-

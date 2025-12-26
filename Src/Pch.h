@@ -122,8 +122,11 @@
 #include "Framework/KdFramework.h"
 
 //===============================================
-//守内喬哉
+// 守内喬哉
 //===============================================
+
+// 外部ライブラリ
 #include "json.hpp"
+#include "imnodes.h"
 
 #include "MRIFramework/MRIFramework.h"
