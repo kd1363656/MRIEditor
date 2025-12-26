@@ -11,7 +11,9 @@ namespace MRI::Editor
 
 		virtual std::uint32_t GetTypeID() const = 0;
 
-		// "EditorManager"内で関数を通してリストに生成していいかどうか
+		// "EditorManager"内に存在するリストに生成していいかどうか
+		// "Log"などがこのクラスを継承するが"std::unique_ptr"で存在してほしい、リストに生成したくない
+		// クラスが存在するから
 		virtual bool IsAllowCreateInList() const { return true; }
 
 		virtual void Init      () { /*必要に応じてオーバーライドしてください*/ };

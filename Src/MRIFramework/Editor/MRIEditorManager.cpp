@@ -78,7 +78,7 @@ void MRI::Editor::EditorManager::AddLog(const char* a_format , ...)
 	// ログウィンドウがインスタンス化されていなければ実行しない
 	if (!m_editorLogView) { return; }
 
-	char l_logBuffer[MRI::EditorCommonConstant::k_logBufferSize];
+	char l_logBuffer[k_logBufferSize];
 
 	va_list l_args;
 	va_start(l_args , a_format);

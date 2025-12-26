@@ -20,7 +20,7 @@ namespace MRI::Editor
 
 	private:
 
-		std::string m_popupText = MRI::CommonConstant::k_stringEmpty.data();
+		std::string m_popupText = std::string();
 
 		bool m_isAppear = false;
 	};

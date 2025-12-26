@@ -9,6 +9,8 @@ namespace MRI::Editor
 		EditorMenuBase         () = default;
 		virtual ~EditorMenuBase() = default;
 
+		virtual std::uint32_t GetTypeID() const = 0;
+
 		virtual void Init      () { /*必要に応じてオーバーライドしてください*/ };
 		virtual void DrawEditor() = 0;
 	};

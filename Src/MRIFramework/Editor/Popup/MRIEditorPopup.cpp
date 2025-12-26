@@ -2,7 +2,7 @@
 
 void MRI::Editor::EditorPopup::Init()
 {
-	m_popupText = MRI::CommonConstant::k_stringEmpty.data();
+	m_popupText = std::string();
 	m_isAppear  = false;
 }
 
@@ -31,8 +31,7 @@ void MRI::Editor::EditorPopup::DrawPopup()
 		ImGui::SetItemDefaultFocus();
 
 		// "OK"ボタンを描画し、押されたらポップアップを閉じる
-		if (ImGui::Button("============= \"OK\" =============") || 
-			ImGui::IsKeyPressed(ImGuiKey_Enter))
+		if (ImGui::Button("============= \"OK\" =============") || ImGui::IsKeyPressed(ImGuiKey_Enter))
 		{
 			ImGui::CloseCurrentPopup();
 		}

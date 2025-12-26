@@ -12,13 +12,13 @@ void MRI::InputManager::RegisterDevice()
 	// m_hWNDがしっかりセットされていれば実行
 	assert(m_hWND != nullptr);
 
-	const int l_indexMax = static_cast<int>(MRI::InputManager::DeviceIndex::DeviceCount);
+	const auto l_indexMax = static_cast<std::size_t>(MRI::InputManager::DeviceIndex::DeviceCount);
 	RAWINPUTDEVICE l_rid[l_indexMax];
 	
 	// デバイスの登録を行っていく
 	// キーボード
 	{
-		const auto l_index = static_cast<int>(MRI::InputManager::DeviceIndex::KeyBoard);
+		const auto l_index = static_cast<std::size_t>(MRI::InputManager::DeviceIndex::KeyBoard);
 		Register(l_rid[l_index]     , 
 				 k_usagePageGeneric , 
 				 k_usageKeyBoard    , 
@@ -27,7 +27,7 @@ void MRI::InputManager::RegisterDevice()
 
 	// マウス
 	{
-		const auto l_index = static_cast<int>(MRI::InputManager::DeviceIndex::Mouse);
+		const auto l_index = static_cast<std::size_t>(MRI::InputManager::DeviceIndex::Mouse);
 		Register(l_rid[l_index]     , 
 				 k_usagePageGeneric ,
 				 k_usageMouse       , 
@@ -160,7 +160,7 @@ void MRI::InputManager::ProcessInput(const LPARAM a_lParam)
 void MRI::InputManager::BackUpInputState()
 {
 	// 現在のフレームでのキー情報を格納する
-	for(int l_ki = 0; l_ki < MRI::CommonConstant::k_vkCodeMaxNum; l_ki++)
+	for(std::size_t l_ki = 0ULL; l_ki < MRI::CommonConstant::k_vkCodeMaxNum; l_ki++)
 	{
 		m_oldInputStateList[l_ki] = m_nowInputStateList[l_ki];
 	}

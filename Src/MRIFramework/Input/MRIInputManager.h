@@ -6,7 +6,7 @@ namespace MRI
 	{
 	private:
 
-		enum class DeviceIndex : int
+		enum class DeviceIndex : std::size_t
 		{
 			KeyBoard    ,
 			Mouse       ,
@@ -46,7 +46,7 @@ namespace MRI
 									const WORD a_upFlag   , 
 									const int  a_vkCode);
 
-		static constexpr int k_rawInputBufferSize = 1024;
+		static constexpr std::size_t k_rawInputBufferSize = 1024ULL;
 
 		static constexpr DWORD k_inputFlags = RIDEV_INPUTSINK;
 

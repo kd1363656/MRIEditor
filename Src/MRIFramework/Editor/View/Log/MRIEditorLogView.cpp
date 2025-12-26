@@ -49,7 +49,7 @@ void MRI::Editor::EditorLogView::DrawEditorOptions()
 		return;
 	}
 
-	if(ImGui::BeginPopup("Options"))
+	if (ImGui::BeginPopup("Options"))
 	{
 		// 自動スクロールするかどうかを決めるチェックボタン
 		if (ImGui::Checkbox("AutoScroll" , &m_canAutoScroll))

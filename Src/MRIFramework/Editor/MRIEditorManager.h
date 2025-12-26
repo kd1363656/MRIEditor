@@ -68,7 +68,9 @@ namespace MRI::Editor
 			m_editorViewCacheMap.try_emplace(l_typeID , l_view);
 		}
 
-		static constexpr float k_fontSize = 13.0f;
+		static constexpr size_t k_logBufferSize = 1024ULL;
+
+		static constexpr float k_fontSize = 13.0F;
 
 		static const int k_numView = 1;
 

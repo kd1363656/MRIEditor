@@ -9,6 +9,8 @@ namespace MRI::Editor
 		FileMenuEditor ()          = default;
 		~FileMenuEditor() override = default;
 
+		std::uint32_t GetTypeID() const override { return StaticID::GetTypeID<MRI::Editor::FileMenuEditor>(); }
+
 		void Init      () override;
 		void DrawEditor() override;
 
