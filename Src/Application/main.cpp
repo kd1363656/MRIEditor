@@ -40,6 +40,9 @@ void Application::Execute()
 	// ゲームループ
 	m_fpsController.Init();
 
+	// 描画管理クラス
+	const auto& l_renderManager = MRI::RenderManager::GetInstance();
+
 	while (true)
 	{
 		// "FPS"の計測
@@ -69,8 +72,6 @@ void Application::Execute()
 		EndUpdate  ();
 
 		// アプリケーション描画更新
-		const auto& l_renderManager = MRI::RenderManager::GetInstance();
-
 		l_renderManager.BeginDraw ();
 		l_renderManager.PreDraw   ();
 		l_renderManager.Draw      ();
@@ -87,7 +88,7 @@ void Application::Execute()
 
 		// タイトル名 + "FPS"の表示
 		const std::string l_titleBar = GetTitleBarWithFPS();
-		SetWindowTextA                                   (GetHWND(), l_titleBar.c_str());
+		SetWindowTextA                                   (GetHWND() , l_titleBar.c_str());
 	}
 
 	// ウィンドウの解像度を保存(ウィンドウサイズの設定は保存しておくべきだから)
