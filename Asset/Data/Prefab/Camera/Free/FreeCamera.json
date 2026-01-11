@@ -1,0 +1,59 @@
+{
+    "ChildList": [],
+    "ComponentList": [
+        {
+            "TagName": "MRI::Tag::CameraMainTag",
+            "TypeName": "MRI::Component::CameraComponent"
+        },
+        {
+            "InterpolatorModifierName": "MRI::Modifier::HermiteInterpolatorModifier",
+            "KeyFrameList": [
+                {
+                    "Tangent": 0.0,
+                    "Time": 0.0,
+                    "Value": 3.0999999046325684
+                },
+                {
+                    "Tangent": 0.0,
+                    "Time": 1.0,
+                    "Value": 3.0999999046325684
+                }
+            ],
+            "MaxMeasurementTime": 1.0,
+            "MaxValue": 3.0999999046325684,
+            "TypeName": "MRI::Component::MoveSmoothFacingDirectionComponent"
+        },
+        {
+            "TypeName": "MRI::Component::InputComponent"
+        },
+        {
+            "MaxRotatableDegreeX": 90.0,
+            "MaxRotationSpeed": 5.0,
+            "MinRotatableDegreeX": -90.0,
+            "TypeName": "MRI::Component::RotationInstantByMouseComponent"
+        }
+    ],
+    "ComponentObserver": {
+        "SubscribedEventTypeDataMap": []
+    },
+    "MRI::Component::TransformComponent": {
+        "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
+        "Pos": {
+            "X": 0.003638480557128787,
+            "Y": 1.3032264709472656,
+            "Z": -0.9862070679664612
+        },
+        "Rotation": {
+            "W": 0.9999561309814453,
+            "X": 0.008648484013974667,
+            "Y": -0.003603460732847452,
+            "Z": 3.1165836844593287e-05
+        },
+        "Scale": {
+            "X": 1.0,
+            "Y": 1.0,
+            "Z": 1.0
+        }
+    },
+    "PrefabName": "FreeCamera"
+}

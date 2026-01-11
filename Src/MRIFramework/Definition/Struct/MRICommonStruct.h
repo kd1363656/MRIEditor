@@ -1,0 +1,50 @@
+﻿#pragma once
+
+namespace MRI
+{
+	namespace Component
+	{
+		class ComponentBase;
+	}
+
+	class GameObject;
+}
+
+namespace MRI::CommonStruct
+{
+	struct StringHash final
+	{
+		// "C++14"以降で追加された"TransparentLookUp"を生かした設計手法
+		using is_transparent = void;
+
+		// "std::hash<std::string>{}"は一時インスタンスを作製してその"()"に"Key"を格納しているという構文
+		std::size_t operator()(const std::string& a_key) const { return std::hash<std::string>     {}(a_key); }
+		std::size_t operator()(std::string_view   a_key) const { return std::hash<std::string_view>{}(a_key); }
+		std::size_t operator()(const char*        a_key) const { return std::hash<std::string_view>{}(a_key); }
+	};
+
+	struct Mouse final
+	{
+		Math::Vector2 pos        = Math::Vector2::Zero;
+		int           wheelDelta = 0;
+	};
+
+	struct Dimension2D
+	{
+		int width  = 0;
+		int height = 0;
+	};
+
+	struct EventTypeData final
+	{
+		std::uint32_t moment = MRI::CommonConstant::k_invalidStaticID;
+		std::uint32_t keep   = MRI::CommonConstant::k_invalidStaticID;
+	};
+
+	struct ChildLoad final
+	{
+		std::vector<std::shared_ptr<MRI::Component::ComponentBase>> componentLoadList;
+		std::vector<MRI::CommonStruct::ChildLoad>			        childLoadList;
+		std::shared_ptr<MRI::GameObject>							self              = nullptr;
+	};
+}

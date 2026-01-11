@@ -1,0 +1,1180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Library">
+      <UniqueIdentifier>{d5173dcf-2786-4f98-bd55-d03549637dfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{80d0a5a9-6779-4863-bede-cc22a4986dc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework">
+      <UniqueIdentifier>{f5928314-3ee2-4e39-abfa-d93aa9ee5891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Direct3D">
+      <UniqueIdentifier>{f193abd5-e51c-466e-a937-722bc9175e9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Utility">
+      <UniqueIdentifier>{f5d733b1-5031-4659-a9d4-0dd3add1e5fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\tinygltf">
+      <UniqueIdentifier>{307bfbcd-124f-4ad7-85f5-3fd94f814b1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Shader">
+      <UniqueIdentifier>{93543c0c-58fe-4a94-8279-7be3021b65b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Shader\SpriteShader">
+      <UniqueIdentifier>{2da4d471-f4e8-4b2d-bdef-b93f91523b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application">
+      <UniqueIdentifier>{d0d0f9cf-dabd-4346-bc9a-d9c04cf42372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Math">
+      <UniqueIdentifier>{04f33e76-24f0-4a58-9355-5770b3f6f9c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Audio">
+      <UniqueIdentifier>{2a0de30f-d7e8-4517-a9a1-20de6e434592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Shader\PostProcessShader">
+      <UniqueIdentifier>{bfef98c3-f0b2-41b1-b813-6f298072287b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\GameObject">
+      <UniqueIdentifier>{d45ba257-913b-44e3-a012-888d7b6f2b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Input">
+      <UniqueIdentifier>{9bd33b87-53db-4bc0-b98d-80db98f4ba9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Direct3D\Polygon">
+      <UniqueIdentifier>{b91bce2d-4487-485a-a855-b2bb6ce0d30b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Shader\StandardShader">
+      <UniqueIdentifier>{857913be-4481-4606-9719-87518d4a6aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Effekseer">
+      <UniqueIdentifier>{c81b93e4-2f33-496a-985e-98658f1cec51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\imgui">
+      <UniqueIdentifier>{9e2b992a-9c34-450b-a4cf-c4749feebcc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Framework\Utility\Debug">
+      <UniqueIdentifier>{8998a2f9-9d4a-46aa-95ef-1d0c2545ca0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework">
+      <UniqueIdentifier>{40f3efdc-4f55-4dec-87b3-dad84fde74c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition">
+      <UniqueIdentifier>{97e78654-35a0-44ac-a443-efb6fd7180e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition\Constant">
+      <UniqueIdentifier>{5f6fe958-5699-4e9c-90d2-485bad769b16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition\Struct">
+      <UniqueIdentifier>{02ac0a7b-eece-49cb-8ac4-7da32fece811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Definition\Constant\Editor">
+      <UniqueIdentifier>{78483def-7449-4f08-a41a-7d15c626347f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Singleton">
+      <UniqueIdentifier>{0536d2ff-168e-4dce-b031-20d4ac7eb5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\FPS">
+      <UniqueIdentifier>{7e4b0c02-16a6-4499-b87a-f97c92e0fb16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Window">
+      <UniqueIdentifier>{fbac2e63-b752-4b69-af19-c8c728d9fdcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Input">
+      <UniqueIdentifier>{397ada25-8106-4e10-9471-43f9deafacf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility">
+      <UniqueIdentifier>{123c8616-591f-4196-863e-8bfbbd1b1759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\FileIO">
+      <UniqueIdentifier>{c853271d-1599-42b6-85d8-276640b358f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Render">
+      <UniqueIdentifier>{b56df2e5-89a0-451d-967b-5d48b0766a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor">
+      <UniqueIdentifier>{a91ff95c-6fc5-4651-8963-71cb1c98550c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View">
+      <UniqueIdentifier>{cf71ab2b-4671-41c3-8538-d9a1c06d5224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Log">
+      <UniqueIdentifier>{2c7f5a04-3f8c-49a7-836c-8704b8f9d484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\StaticID">
+      <UniqueIdentifier>{1bc4063b-baf1-48d0-9391-8916bc921047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\Menu">
+      <UniqueIdentifier>{e1e83b5f-acb1-4b1e-b766-6023d20153a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\Menu\File">
+      <UniqueIdentifier>{988b038e-6845-4179-9901-b549683b6dc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\Popup">
+      <UniqueIdentifier>{f29daefb-778c-4ab3-840b-cad280131173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Game">
+      <UniqueIdentifier>{4c064cd1-9548-42b1-a3fe-a34ca948ecea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Scene">
+      <UniqueIdentifier>{f0dd2661-7d54-4a74-8f67-5cb0f3ad57f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\GameObject">
+      <UniqueIdentifier>{7bc8e18b-f722-4708-a54d-b6a77c41cf41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component">
+      <UniqueIdentifier>{6a0762e9-4b78-49c0-9985-793fbd8e5608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\TypeInfo">
+      <UniqueIdentifier>{264beeb3-efa2-4bc2-81a9-0dc87da853c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\TypeInfo\Registry">
+      <UniqueIdentifier>{e4fbae36-013e-4426-9d40-d0725ed60d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Transform">
+      <UniqueIdentifier>{ec760f4e-b7ca-48f8-9b65-f713d53478e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Camera">
+      <UniqueIdentifier>{2e3baba5-ffe4-4aaf-a958-4ffba2546a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Strategy">
+      <UniqueIdentifier>{d3bf65bc-c49b-4c24-afae-2c36f108090b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Transform\MatrixStrategy">
+      <UniqueIdentifier>{0d073db1-3412-4561-a9a5-4b1ab48b3d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT">
+      <UniqueIdentifier>{3bc64279-1fe6-4a6f-81ea-709ab0c2da5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Factory">
+      <UniqueIdentifier>{8a1b9c02-e636-4e5f-a143-58404c36c7c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Concept">
+      <UniqueIdentifier>{b58d2554-b3f4-4ac8-b6fd-04765dadd689}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Concept\IsSmartPTR">
+      <UniqueIdentifier>{168aa41c-d39a-4ce2-92e9-6717672f7d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\TypeTrait">
+      <UniqueIdentifier>{a7aa20c2-a0b9-4c10-b15d-0137d892b20a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\TypeTrait\PTR">
+      <UniqueIdentifier>{1b7229c7-f6ab-440e-a60e-e9c1ea013952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Concept\IsDerived">
+      <UniqueIdentifier>{34760553-69a3-4c72-88af-4ed2c5624b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Factory\Shared">
+      <UniqueIdentifier>{8a96cf7f-8dab-4b05-bcfc-94c39b850158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Factory\Unique">
+      <UniqueIdentifier>{a181d963-16da-49d2-a6b7-51f38f3686b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Observer">
+      <UniqueIdentifier>{26682bb7-c4a4-43a6-8389-f0d6d4108031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag">
+      <UniqueIdentifier>{73073cd0-9bb0-4bf9-a417-51822b521d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Bool">
+      <UniqueIdentifier>{2a00b11b-1062-4599-8593-888a3400e287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Event">
+      <UniqueIdentifier>{d14eef69-77af-4040-bba0-a78dd9cf9d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Converter">
+      <UniqueIdentifier>{bc6440d7-5032-42a4-8873-c36794ad47e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Converter\GameObject">
+      <UniqueIdentifier>{f213892f-cfdb-4c24-b31e-2e5bb13cbd62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\FileIO">
+      <UniqueIdentifier>{6266faa1-0937-4084-bb94-509841ee209a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\FileIO\SceneManager">
+      <UniqueIdentifier>{19ccca6d-d61d-4200-82fd-25b9650b289a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\PlayerKeyConfig">
+      <UniqueIdentifier>{c3061882-7640-457d-ad34-6a661a4cc95a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Event\Input">
+      <UniqueIdentifier>{91aef25a-0c80-4ebf-9e3b-06d10c89c3e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Event\SceneShift">
+      <UniqueIdentifier>{aa1ae520-4fa1-458e-8e92-dbf0727e3ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Event\Component">
+      <UniqueIdentifier>{2a446e0c-55ab-45e6-8239-4ba138fc78e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Converter\Scene">
+      <UniqueIdentifier>{9ac0bc01-43f7-4456-a933-78fa6242efd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Json">
+      <UniqueIdentifier>{ae744036-86a5-469a-9c3c-c66830388f38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\UUID">
+      <UniqueIdentifier>{2ce417d3-c500-4a0b-88c5-da8c7c45ce25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Resource">
+      <UniqueIdentifier>{232d24be-ffe2-49ba-a29d-300e132c0834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Resource\Prefab">
+      <UniqueIdentifier>{47fffa50-eca8-4858-99d0-27b943d126d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Converter\PrefabController">
+      <UniqueIdentifier>{48fc0130-d45c-49d0-a00d-6fd18d4abc3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\FileIO\PrefabController">
+      <UniqueIdentifier>{6a3a0db2-3b53-45f3-9f63-8932c1cc375a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Editor">
+      <UniqueIdentifier>{dd6b3c25-00ce-4cdc-a267-a836edc1e36a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Editor\SceneSave">
+      <UniqueIdentifier>{bd5b10d9-505d-4dd6-b87c-e70d46836613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\TypeInfo">
+      <UniqueIdentifier>{d1004198-e505-4141-9720-4175f379cbe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Camera">
+      <UniqueIdentifier>{85b984b2-d56b-4e27-96d9-f99c3ab06352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Observer\Notifier">
+      <UniqueIdentifier>{cf715009-5a54-4fd3-a7ce-ccca130d6d56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Observer\Notifier\Keep">
+      <UniqueIdentifier>{4ac0121c-3fb7-4ed3-918f-25443749d1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Observer\Notifier\Moment">
+      <UniqueIdentifier>{21d8315e-bec4-41c2-ba37-0310c0ec393e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Tag">
+      <UniqueIdentifier>{454ce486-7181-448b-a8c2-75323f81743e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Math">
+      <UniqueIdentifier>{aebb3709-47ea-4f77-98d9-4a807335b453}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\GameObject">
+      <UniqueIdentifier>{22b1f517-6bb2-428c-8de9-ecf5fc965774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Factory">
+      <UniqueIdentifier>{047f4290-8c4b-4210-af6c-c15d3da3268d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Utility\VKCode">
+      <UniqueIdentifier>{d948bce1-a783-48fe-b8dd-727398e7a397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Hierarchy">
+      <UniqueIdentifier>{d1ee73a4-b0d0-47be-a74a-a543809712fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector">
+      <UniqueIdentifier>{15ceb4e5-5121-4114-b2bf-bfbde3c9e34b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\PlayerKeyConfig">
+      <UniqueIdentifier>{3cf46a91-2779-4381-b2c9-3a821e4e8c86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Prefab">
+      <UniqueIdentifier>{ef81f106-ad76-4515-a9da-30c9f8155be5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Prefab\GameObject">
+      <UniqueIdentifier>{1af7d5d9-a464-485a-ac3e-121b64a14a26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry">
+      <UniqueIdentifier>{12daf1f0-61f7-4eeb-a388-83951abe22cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\GameObject">
+      <UniqueIdentifier>{7060d2a8-7eb2-44ec-8cec-0c80d0fd56ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\SceneShift">
+      <UniqueIdentifier>{0d0760df-0372-4d86-baba-369de0ef0fd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Spawn">
+      <UniqueIdentifier>{8a5e10e7-1284-48ae-ae5a-dbfa550578b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Spawn\GameObject">
+      <UniqueIdentifier>{ce5a5d8a-7e9b-4adf-b57c-49c9e42b9d97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad">
+      <UniqueIdentifier>{dbc7f781-0ee5-46c5-9251-25054e91e0f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\Prefab">
+      <UniqueIdentifier>{c5858010-3153-4364-b154-bec7970a3e84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\SceneShift">
+      <UniqueIdentifier>{4c17c4c0-1416-477c-9e55-84f0e4511896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Render">
+      <UniqueIdentifier>{f7c4efc8-0de1-4fed-9b02-fc3368786b10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Render\Model">
+      <UniqueIdentifier>{a2462ee0-ae82-461a-91b2-ab0ac46d8cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Render\Model\Animation">
+      <UniqueIdentifier>{9f84472f-9309-44b1-811b-e6b9f041e14a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Shader">
+      <UniqueIdentifier>{eaa95251-42c3-4910-83f8-2b814c5de3ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Bone">
+      <UniqueIdentifier>{304bfc0f-5338-4186-abb8-0f2d698e95eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Helper">
+      <UniqueIdentifier>{0870775f-a59c-4b9f-b0b1-ca47922365a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Helper\AssetFilePath">
+      <UniqueIdentifier>{2a11b3ba-3a44-4249-bf69-93ff4ffbdd86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Render\Model\Static">
+      <UniqueIdentifier>{5175c3e3-9caa-409c-ac0c-12e130728943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Rotation">
+      <UniqueIdentifier>{17444050-5198-4ac1-be96-02e3b74937dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Modifier">
+      <UniqueIdentifier>{304a59c9-48b5-47c1-9f72-cab6296b7fb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Modifier\Interpolator">
+      <UniqueIdentifier>{2999368c-7bf6-4fa5-a6a3-1915b766c9b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Modifier\Interpolator\Hermite">
+      <UniqueIdentifier>{02c92cc1-2675-4982-921d-8785c886cf1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Move">
+      <UniqueIdentifier>{f5b70da9-362f-46b3-8ca8-369311c41ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Input">
+      <UniqueIdentifier>{d7b790ad-4821-497c-a5c6-ab9414f00ffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Tag\Axis">
+      <UniqueIdentifier>{681a7b3d-5291-42d6-ad7d-68310fe278b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode">
+      <UniqueIdentifier>{160d477c-54a3-46af-a4ce-2263351291f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation">
+      <UniqueIdentifier>{bcc4a342-6555-48b7-8cfb-925ec1303659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move">
+      <UniqueIdentifier>{ceef5fb1-efc4-42f3-b687-548c7f7a41e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp">
+      <UniqueIdentifier>{3ada296b-bb1d-4152-9f04-531cae81f4a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse">
+      <UniqueIdentifier>{9fdffbd8-7d75-4882-8d75-bf4389fd5c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant">
+      <UniqueIdentifier>{cd54af29-994a-4072-9ca5-e857bef31a2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Pch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\tinygltf\json.hpp">
+      <Filter>Library\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\tinygltf\stb_image.h">
+      <Filter>Library\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\tinygltf\stb_image_write.h">
+      <Filter>Library\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\tinygltf\tiny_gltf.h">
+      <Filter>Library\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\main.h">
+      <Filter>Src\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Direct3D\KdDirect3D.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Direct3D\KdTexture.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Direct3D\KdBuffer.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\KdGLTFLoader.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\KdShaderManager.h">
+      <Filter>Src\Framework\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\SpriteShader\KdSpriteShader.h">
+      <Filter>Src\Framework\Shader\SpriteShader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Utility\KdUtility.h">
+      <Filter>Src\Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\KdFramework.h">
+      <Filter>Src\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\strconv.h">
+      <Filter>Library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Framework\Direct3D\KdMesh.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\KdModel.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Math\KdCollision.h">
+      <Filter>Src\Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Math\KdAnimation.h">
+      <Filter>Src\Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Audio\KdAudio.h">
+      <Filter>Src\Framework\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\KdCamera.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader.h">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Math\KdCollider.h">
+      <Filter>Src\Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Math\KdEasing.h">
+      <Filter>Src\Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\GameObject\KdGameObject.h">
+      <Filter>Src\Framework\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\GameObject\KdGameObjectFactory.h">
+      <Filter>Src\Framework\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Input\KdInput.h">
+      <Filter>Src\Framework\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Utility\KdCSVData.h">
+      <Filter>Src\Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\Polygon\KdPolygon.h">
+      <Filter>Src\Framework\Direct3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\Polygon\KdSquarePolygon.h">
+      <Filter>Src\Framework\Direct3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\Polygon\KdTrailPolygon.h">
+      <Filter>Src\Framework\Direct3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Direct3D\KdMaterial.h">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Utility\KdDataStorage.h">
+      <Filter>Src\Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\KdAmbientController.h">
+      <Filter>Src\Framework\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Math\KdUVAnimation.h">
+      <Filter>Src\Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\KdRenderTargetChange.h">
+      <Filter>Src\Framework\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\StandardShader\KdStandardShader.h">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Effekseer\KdEffekseerManager.h">
+      <Filter>Src\Framework\Effekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Utility\KdRandom.h">
+      <Filter>Src\Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imconfig.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imgui.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imgui_impl_dx11.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imgui_impl_win32.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imgui_internal.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imgui_stdlib.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imstb_rectpack.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imstb_textedit.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imstb_truetype.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\ja_glyph_ranges.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Framework\Utility\Debug\KdDebugWireFrame.h">
+      <Filter>Src\Framework\Utility\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\MRIFramework.h">
+      <Filter>Src\MRIFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Definition\Constant\MRICommonConstant.h">
+      <Filter>Src\MRIFramework\Definition\Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Definition\Constant\Editor\MRIEditorCommonConstant.h">
+      <Filter>Src\MRIFramework\Definition\Constant\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Definition\Struct\MRICommonStruct.h">
+      <Filter>Src\MRIFramework\Definition\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Singleton\MRISingletonBase.h">
+      <Filter>Src\MRIFramework\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\FPS\MRIFPSController.h">
+      <Filter>Src\MRIFramework\FPS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Window\MRIWindow.h">
+      <Filter>Src\MRIFramework\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Input\MRIInputManager.h">
+      <Filter>Src\MRIFramework\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\FileIO\MRIFileIOUtility.h">
+      <Filter>Src\MRIFramework\Utility\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Render\MRIRenderManager.h">
+      <Filter>Src\MRIFramework\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\MRIEditorManager.h">
+      <Filter>Src\MRIFramework\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imnodes.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Library\imgui\imnodes_internal.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\MRIEditorViewBase.h">
+      <Filter>Src\MRIFramework\Editor\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Log\MRIEditorLogView.h">
+      <Filter>Src\MRIFramework\Editor\View\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\StaticID\MRIStaticID.h">
+      <Filter>Src\MRIFramework\StaticID</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\Menu\MRIEditorMenuBase.h">
+      <Filter>Src\MRIFramework\Editor\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\Menu\File\MRIFileMenuEditor.h">
+      <Filter>Src\MRIFramework\Editor\Menu\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\Popup\MRIEditorPopup.h">
+      <Filter>Src\MRIFramework\Editor\Popup</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Game\MRIEditorGameView.h">
+      <Filter>Src\MRIFramework\Editor\View\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Scene\MRISceneManager.h">
+      <Filter>Src\MRIFramework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Scene\MRIScene.h">
+      <Filter>Src\MRIFramework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\GameObject\MRIGameObject.h">
+      <Filter>Src\MRIFramework\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\MRIComponentBase.h">
+      <Filter>Src\MRIFramework\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\TypeInfo\Registry\MRITypeInfoRegistry.h">
+      <Filter>Src\MRIFramework\TypeInfo\Registry</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\TypeInfo\MRITypeInfo.h">
+      <Filter>Src\MRIFramework\TypeInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Transform\MRITransformComponent.h">
+      <Filter>Src\MRIFramework\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Strategy\MRIStrategyBase.h">
+      <Filter>Src\MRIFramework\Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\MRIMatrixStrategyBase.h">
+      <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT\MRIMatrixStrategyCreateSRT.h">
+      <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Camera\MRICameraComponent.h">
+      <Filter>Src\MRIFramework\Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Factory\MRIGenericFactory.h">
+      <Filter>Src\MRIFramework\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsSmartPTR\MRIIsSmartPTRConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsSmartPTR</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\TypeTrait\PTR\MRITypeTraitPTR.h">
+      <Filter>Src\MRIFramework\TypeTrait\PTR</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedBaseConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedComponentBaseConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Observer\MRIObserver.h">
+      <Filter>Src\MRIFramework\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\MRITagBase.h">
+      <Filter>Src\MRIFramework\Tag</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedTagBaseConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Bool\MRIBoolTag.h">
+      <Filter>Src\MRIFramework\Tag\Bool</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Event\MRIEventLaneTag.h">
+      <Filter>Src\MRIFramework\Tag\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Converter\MRIIConverter.h">
+      <Filter>Src\MRIFramework\Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Converter\GameObject\MRIGameObjectConverter.h">
+      <Filter>Src\MRIFramework\Converter\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\FileIO\MRIFileIOBase.h">
+      <Filter>Src\MRIFramework\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\FileIO\SceneManager\MRISceneManagerFileIO.h">
+      <Filter>Src\MRIFramework\FileIO\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\PlayerKeyConfig\MRIPlayerKeyConfig.h">
+      <Filter>Src\MRIFramework\PlayerKeyConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Event\Input\MRIInputEventTag.h">
+      <Filter>Src\MRIFramework\Tag\Event\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Event\SceneShift\MRISceneShiftEventTag.h">
+      <Filter>Src\MRIFramework\Tag\Event\SceneShift</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Event\Component\MRIComponentEventTag.h">
+      <Filter>Src\MRIFramework\Tag\Event\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Converter\Scene\MRISceneConverter.h">
+      <Filter>Src\MRIFramework\Converter\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Converter\Scene\MRISceneManagerConverter.h">
+      <Filter>Src\MRIFramework\Converter\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Json\MRIJsonUtility.h">
+      <Filter>Src\MRIFramework\Utility\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\UUID\MRIUUIDUtility.h">
+      <Filter>Src\MRIFramework\Utility\UUID</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Resource\MRIResourceController.h">
+      <Filter>Src\MRIFramework\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Resource\Prefab\MRIPrefab.h">
+      <Filter>Src\MRIFramework\Resource\Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Resource\Prefab\MRIPrefabController.h">
+      <Filter>Src\MRIFramework\Resource\Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Converter\PrefabController\MRIPrefabControllerConverter.h">
+      <Filter>Src\MRIFramework\Converter\PrefabController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\FileIO\PrefabController\MRIPrefabControllerFileIO.h">
+      <Filter>Src\MRIFramework\FileIO\PrefabController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\Menu\MRIEditorMenuBar.h">
+      <Filter>Src\MRIFramework\Editor\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Editor\MRIEditorUtility.h">
+      <Filter>Src\MRIFramework\Utility\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Editor\SceneSave\MRIEditorSceneSaveUtility.h">
+      <Filter>Src\MRIFramework\Utility\Editor\SceneSave</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\TypeInfo\MRITypeInfoUtility.h">
+      <Filter>Src\MRIFramework\Utility\TypeInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Camera\MRICameraTag.h">
+      <Filter>Src\MRIFramework\Tag\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Observer\Notifier\MRIObserverNotifierBase.h">
+      <Filter>Src\MRIFramework\Observer\Notifier</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Observer\Notifier\Keep\MRIObserverNotifierKeep.h">
+      <Filter>Src\MRIFramework\Observer\Notifier\Keep</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Tag\MRITagUtility.h">
+      <Filter>Src\MRIFramework\Utility\Tag</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Observer\Notifier\Moment\MRIObserverNotifierMoment.h">
+      <Filter>Src\MRIFramework\Observer\Notifier\Moment</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Math\MRIMathUtility.h">
+      <Filter>Src\MRIFramework\Utility\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\GameObject\MRIGameObjectUtility.h">
+      <Filter>Src\MRIFramework\Utility\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Factory\MRIFactoryUtility.h">
+      <Filter>Src\MRIFramework\Utility\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\VKCode\MRIVKCodeUtility.h">
+      <Filter>Src\MRIFramework\Utility\VKCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Hierarchy\MRIEditorHierarchyView.h">
+      <Filter>Src\MRIFramework\Editor\View\Hierarchy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\PlayerKeyConfig\MRIEditorPlayerKeyConfigInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\PlayerKeyConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\Prefab\GameObject\MRIEditorPrefabGameObjectInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Prefab\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\SceneShift\MRIEditorPrefabSceneShiftRegistryInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\SceneShift</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\GameObject\MRIEditorPrefabGameObjectRegistryInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\Spawn\GameObject\MRIEditorSpawnGameObjectInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Spawn\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\SceneShift\MRIEditorSpawnSceneLoadSceneShiftInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\SceneShift</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\Prefab\MRIEditorSpawnSceneLoadPrefabInspectorView.h">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Render\Model\MRIRenderModelComponentBase.h">
+      <Filter>Src\MRIFramework\Component\Render\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Shader\MRIShaderTag.h">
+      <Filter>Src\MRIFramework\Tag\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Bone\MRIBoneTypeTag.h">
+      <Filter>Src\MRIFramework\Tag\Bone</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Render\Model\Animation\MRIRenderModelAnimationComponent.h">
+      <Filter>Src\MRIFramework\Component\Render\Model\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Helper\AssetFilePath\MRIAssetFilePathHelper.h">
+      <Filter>Src\MRIFramework\Helper\AssetFilePath</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Render\Model\Static\MRIRenderModelStaticComponent.h">
+      <Filter>Src\MRIFramework\Component\Render\Model\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Modifier\Interpolator\MRIInterpolatorModifierBase.h">
+      <Filter>Src\MRIFramework\Modifier\Interpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Modifier\Interpolator\Hermite\MRIHermiteInterpolatorModifier.h">
+      <Filter>Src\MRIFramework\Modifier\Interpolator\Hermite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedInterpolatorModifierBaseConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Input\MRIInputComponent.h">
+      <Filter>Src\MRIFramework\Component\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Rotation\MRIRotationComponent.h">
+      <Filter>Src\MRIFramework\Component\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Tag\Axis\MRIAxisTag.h">
+      <Filter>Src\MRIFramework\Tag\Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Move\MRIMoveComponent.h">
+      <Filter>Src\MRIFramework\Component\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Factory\Shared\MRISharedFactory.h">
+      <Filter>Src\MRIFramework\Factory\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Factory\Unique\MRIUniqueFactory.h">
+      <Filter>Src\MRIFramework\Factory\Unique</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentByMouseInstantMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\main.cpp">
+      <Filter>Src\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Direct3D\KdDirect3D.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Direct3D\KdTexture.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Direct3D\KdBuffer.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\KdGLTFLoader.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\KdShaderManager.cpp">
+      <Filter>Src\Framework\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\SpriteShader\KdSpriteShader.cpp">
+      <Filter>Src\Framework\Shader\SpriteShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Utility\KdUtility.cpp">
+      <Filter>Src\Framework\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Framework\Direct3D\KdMesh.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\KdModel.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Math\KdCollision.cpp">
+      <Filter>Src\Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Math\KdAnimation.cpp">
+      <Filter>Src\Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Audio\KdAudio.cpp">
+      <Filter>Src\Framework\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\KdCamera.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader.cpp">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Math\KdCollider.cpp">
+      <Filter>Src\Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Math\KdEasing.cpp">
+      <Filter>Src\Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\GameObject\KdGameObject.cpp">
+      <Filter>Src\Framework\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\GameObject\KdGameObjectFactory.cpp">
+      <Filter>Src\Framework\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Input\KdInput.cpp">
+      <Filter>Src\Framework\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp">
+      <Filter>Src\Framework\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\Polygon\KdSquarePolygon.cpp">
+      <Filter>Src\Framework\Direct3D\Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\Polygon\KdTrailPolygon.cpp">
+      <Filter>Src\Framework\Direct3D\Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\KdMaterial.cpp">
+      <Filter>Src\Framework\Direct3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Direct3D\Polygon\KdPolygon.cpp">
+      <Filter>Src\Framework\Direct3D\Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\KdAmbientController.cpp">
+      <Filter>Src\Framework\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Math\KdUVAnimation.cpp">
+      <Filter>Src\Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\KdRenderTargetChange.cpp">
+      <Filter>Src\Framework\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Effekseer\KdEffekseerManager.cpp">
+      <Filter>Src\Framework\Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_demo.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_draw.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_impl_dx11.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_impl_win32.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_stdlib.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_tables.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imgui_widgets.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp">
+      <Filter>Src\Framework\Utility\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\FPS\MRIFPSController.cpp">
+      <Filter>Src\MRIFramework\FPS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Window\MRIWindow.cpp">
+      <Filter>Src\MRIFramework\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Input\MRIInputManager.cpp">
+      <Filter>Src\MRIFramework\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Render\MRIRenderManager.cpp">
+      <Filter>Src\MRIFramework\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\MRIEditorManager.cpp">
+      <Filter>Src\MRIFramework\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Library\imgui\imnodes.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Log\MRIEditorLogView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\Menu\File\MRIFileMenuEditor.cpp">
+      <Filter>Src\MRIFramework\Editor\Menu\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\Popup\MRIEditorPopup.cpp">
+      <Filter>Src\MRIFramework\Editor\Popup</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Game\MRIEditorGameView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Scene\MRISceneManager.cpp">
+      <Filter>Src\MRIFramework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Scene\MRIScene.cpp">
+      <Filter>Src\MRIFramework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\GameObject\MRIGameObject.cpp">
+      <Filter>Src\MRIFramework\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\MRIComponentBase.cpp">
+      <Filter>Src\MRIFramework\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\TypeInfo\Registry\MRITypeInfoRegistry.cpp">
+      <Filter>Src\MRIFramework\TypeInfo\Registry</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Transform\MRITransformComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\MRIMatrixStrategyBase.cpp">
+      <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT\MRIMatrixStrategyCreateSRT.cpp">
+      <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Camera\MRICameraComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Observer\MRIObserver.cpp">
+      <Filter>Src\MRIFramework\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Converter\GameObject\MRIGameObjectConverter.cpp">
+      <Filter>Src\MRIFramework\Converter\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\FileIO\SceneManager\MRISceneManagerFileIO.cpp">
+      <Filter>Src\MRIFramework\FileIO\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\PlayerKeyConfig\MRIPlayerKeyConfig.cpp">
+      <Filter>Src\MRIFramework\PlayerKeyConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Converter\Scene\MRISceneConverter.cpp">
+      <Filter>Src\MRIFramework\Converter\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Converter\Scene\MRISceneManagerConverter.cpp">
+      <Filter>Src\MRIFramework\Converter\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Resource\MRIResourceController.cpp">
+      <Filter>Src\MRIFramework\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Resource\Prefab\MRIPrefab.cpp">
+      <Filter>Src\MRIFramework\Resource\Prefab</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Resource\Prefab\MRIPrefabController.cpp">
+      <Filter>Src\MRIFramework\Resource\Prefab</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Converter\PrefabController\MRIPrefabControllerConverter.cpp">
+      <Filter>Src\MRIFramework\Converter\PrefabController</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\FileIO\PrefabController\MRIPrefabControllerFileIO.cpp">
+      <Filter>Src\MRIFramework\FileIO\PrefabController</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\Menu\MRIEditorMenuBar.cpp">
+      <Filter>Src\MRIFramework\Editor\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Utility\Editor\MRIEditorUtility.cpp">
+      <Filter>Src\MRIFramework\Utility\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Utility\TypeInfo\MRITypeInfoUtility.cpp">
+      <Filter>Src\MRIFramework\Utility\TypeInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Observer\Notifier\MRIObserverNotifierBase.cpp">
+      <Filter>Src\MRIFramework\Observer\Notifier</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Observer\Notifier\Keep\MRIObserverNotifierKeep.cpp">
+      <Filter>Src\MRIFramework\Observer\Notifier\Keep</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Observer\Notifier\Moment\MRIObserverNotifierMoment.cpp">
+      <Filter>Src\MRIFramework\Observer\Notifier\Moment</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Utility\GameObject\MRIGameObjectUtility.cpp">
+      <Filter>Src\MRIFramework\Utility\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Utility\Factory\MRIFactoryUtility.cpp">
+      <Filter>Src\MRIFramework\Utility\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Hierarchy\MRIEditorHierarchyView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Hierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\PlayerKeyConfig\MRIEditorPlayerKeyConfigInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\PlayerKeyConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\Prefab\GameObject\MRIEditorPrefabGameObjectInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Prefab\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\SceneShift\MRIEditorPrefabSceneShiftRegistryInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\SceneShift</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\GameObject\MRIEditorPrefabGameObjectRegistryInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Prefab\Registry\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\Spawn\GameObject\MRIEditorSpawnGameObjectInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Spawn\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\SceneShift\MRIEditorSpawnSceneLoadSceneShiftInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\SceneShift</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\Prefab\MRIEditorSpawnSceneLoadPrefabInspectorView.cpp">
+      <Filter>Src\MRIFramework\Editor\View\Inspector\Spawn\SceneLoad\Prefab</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Render\Model\MRIRenderModelComponentBase.cpp">
+      <Filter>Src\MRIFramework\Component\Render\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Render\Model\Animation\MRIRenderModelAnimationComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Render\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Helper\AssetFilePath\MRIAssetFilePathHelper.cpp">
+      <Filter>Src\MRIFramework\Helper\AssetFilePath</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Render\Model\Static\MRIRenderModelStaticComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Render\Model\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Modifier\Interpolator\MRIInterpolatorModifierBase.cpp">
+      <Filter>Src\MRIFramework\Modifier\Interpolator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Modifier\Interpolator\Hermite\MRIHermiteInterpolatorModifier.cpp">
+      <Filter>Src\MRIFramework\Modifier\Interpolator\Hermite</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Input\MRIInputComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Rotation\MRIRotationComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Move\MRIMoveComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentByMouseInstantMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Framework\Shader\inc_KdCommon.hlsli">
+      <Filter>Src\Framework\Shader</Filter>
+    </None>
+    <None Include="Src\Framework\Shader\SpriteShader\inc_KdSpriteShader.hlsli">
+      <Filter>Src\Framework\Shader\SpriteShader</Filter>
+    </None>
+    <None Include="Src\Framework\Shader\PostProcessShader\inc_KdPostProcessShader.hlsli">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </None>
+    <None Include="Src\Framework\Shader\StandardShader\inc_KdStandardShader.hlsli">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Src\Framework\Shader\SpriteShader\KdSpriteShader_PS.hlsl">
+      <Filter>Src\Framework\Shader\SpriteShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\SpriteShader\KdSpriteShader_VS.hlsl">
+      <Filter>Src\Framework\Shader\SpriteShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader_PS_Blur.hlsl">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader_VS.hlsl">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader_PS_DoF.hlsl">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\PostProcessShader\KdPostProcessShader_PS_Bright.hlsl">
+      <Filter>Src\Framework\Shader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader_PS_GenDepthMapFromLight.hlsl">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader_PS_Lit.hlsl">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader_PS_UnLit.hlsl">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader_VS_GenDepthMapFromLight.hlsl">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader_VS_Lit.hlsl">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader_VS_UnLit.hlsl">
+      <Filter>Src\Framework\Shader\StandardShader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,82 @@
+{
+    "GameObjectList": [
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "FieldOfView": 45.0,
+                    "TypeName": "MRI::Component::CameraComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::MoveSmoothFacingDirectionComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::InputComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::RotationInstantByMouseComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.003638480557128787,
+                    "Y": 1.3032264709472656,
+                    "Z": -0.9862070679664612
+                },
+                "Rotation": {
+                    "W": 0.9999561309814453,
+                    "X": 0.008648484013974667,
+                    "Y": -0.003603460732847452,
+                    "Z": 3.1165836844593287e-05
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "FreeCamera",
+            "UUID": "b1c96011-2c6c-4f63-812f-b325a25d9498"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelAnimationComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "Antike",
+            "UUID": "a2ed82de-d4d5-40a7-bf76-fa698f1f81b3"
+        }
+    ],
+    "PrefabMap": [
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
+            "PrefabName": "FreeCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
+        }
+    ],
+    "SceneShiftMap": [],
+    "SubscribedEventTypeDataMap": []
+}

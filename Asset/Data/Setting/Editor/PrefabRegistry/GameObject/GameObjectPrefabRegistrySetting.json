@@ -1,0 +1,12 @@
+{
+    "AllPrefabMap": [
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
+            "PrefabName": "FreeCamera"
+        },
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
+        }
+    ]
+}
