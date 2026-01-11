@@ -91,7 +91,7 @@ namespace MRI::EditorUtility
 
 			ImGui::PushID(&l_value);
 
-			if (!ImGui::RadioButton(l_key.c_str() , &l_isSelected))
+			if (!ImGui::RadioButton(l_key.c_str() , l_isSelected))
 			{
 				ImGui::PopID();
 				continue;

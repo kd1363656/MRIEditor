@@ -15,16 +15,16 @@
                 {
                     "Tangent": 0.0,
                     "Time": 0.0,
-                    "Value": 1.0
+                    "Value": 2.0999999046325684
                 },
                 {
                     "Tangent": 0.0,
                     "Time": 1.0,
-                    "Value": 1.0
+                    "Value": 2.0999999046325684
                 }
             ],
             "MaxMeasurementTime": 1.0,
-            "MaxValue": 1.0,
+            "MaxValue": 2.0999999046325684,
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentByMouseInstantMode",
             "TypeName": "MRI::Component::RotationComponent"
         }
@@ -40,10 +40,10 @@
             "Z": -0.9862070679664612
         },
         "Rotation": {
-            "W": 0.9999561309814453,
-            "X": 0.008648484013974667,
-            "Y": -0.003603460732847452,
-            "Z": 3.1165836844593287e-05
+            "W": 0.9992461800575256,
+            "X": -0.003316351445391774,
+            "Y": -0.038679253309965134,
+            "Z": -0.00012837076792493463
         },
         "Scale": {
             "X": 1.0,

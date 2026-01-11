@@ -33,8 +33,7 @@ namespace MRI::ComponentMode
 		float m_maxRotatableDegreeX =  MRI::CommonConstant::k_quarterDegree;
 		
 		bool m_disableMouseLock = false;
-		bool m_isMouseMove      = false;
-
+		
 	protected:
 
 		void MouseLock();
@@ -44,7 +43,6 @@ namespace MRI::ComponentMode
 		const Math::Vector3& GetTargetRotation() const { return m_targetRotation; }
 
 		bool GetDisableMouseLock() const { return m_disableMouseLock; }
-		bool GetIsMouseMove     () const { return m_isMouseMove;      }
 	};
 }
 

@@ -12,7 +12,6 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Init()
 	MRI::ComponentMode::RotationComponentModeBase::Init();
 
 	m_disableMouseLock = false;
-	m_isMouseMove      = false;
 }
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
@@ -45,24 +44,19 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 								 static_cast<float>(l_nowMousePos.y - l_windowHalfSize.height) };
 
 	// クライアント座標の中心をスクリーン座標に変換
-	const POINT& l_centerScreenPos = { l_windowHalfSize.width , l_windowHalfSize.height };
+	POINT l_centerScreenPos = { l_windowHalfSize.width , l_windowHalfSize.height };
 
 	// クライアント座標の中心をスクリーン座標に変換
-	ClientToScreen(l_hWND , &l_nowMousePos);
+	ClientToScreen(l_hWND , &l_centerScreenPos);
 
 	// マウスをクライアント画面中心に戻す
 	SetCursorPos(l_centerScreenPos.x , l_centerScreenPos.y);
 
-	// マウスの移動量がほとんどないなら"return"
+	// マウスの移動量がほとんどないなら補完の進捗をリセットして"return"
 	if (l_movement.LengthSquared() < CommonConstant::k_epsilon) 
 	{
-		m_isMouseMove = false;
 		m_interpolatorModifier->ResetInterpolate();
 		return; 
-	}
-	else
-	{
-		m_isMouseMove = true;
 	}
 	
 	const float l_rotationSpeed = m_interpolatorModifier->GetCurrentValue() * l_deltaTime;
@@ -85,12 +79,15 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::EditPrefabInspector()
 {
 	MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector();
 
-	// 補完クラスセレクター
-	MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::InterpolatorModifier>("InterpolatorModifierSelector", m_interpolatorModifier);
-
-	if (m_interpolatorModifier)
+	if (ImGui::CollapsingHeader("InterplatorModifier"))
 	{
-		m_interpolatorModifier->EditPrefabInspector();
+		// 補完クラスセレクター
+		MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::InterpolatorModifier>("InterpolatorModifierSelector" , m_interpolatorModifier);
+
+		if (m_interpolatorModifier)
+		{
+			m_interpolatorModifier->EditPrefabInspector();
+		}
 	}
 }
 
@@ -108,6 +105,7 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::DeserializePrefab(con
 
 	if (m_interpolatorModifier)
 	{
+		m_interpolatorModifier->Init             ();
 		m_interpolatorModifier->DeserializePrefab(a_json);
 	}
 

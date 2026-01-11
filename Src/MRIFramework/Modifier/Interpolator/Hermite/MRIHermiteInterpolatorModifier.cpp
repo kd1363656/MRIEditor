@@ -151,7 +151,8 @@ void MRI::Modifier::HermiteInterpolatorModifier::EditDrawGraph()
 
 	// 対角線ガイド
 	l_drawList->AddLine(l_canvasPos , l_canvasPos + m_graphSize , k_graphGuidLineColor);
-	
+
+	// サイズ変更
 	EditGraphSize(l_drawList , l_canvasPos);
 }
 void MRI::Modifier::HermiteInterpolatorModifier::EditHermiteCurve(ImDrawList* const a_drawList , const ImVec2& a_canvasPos)

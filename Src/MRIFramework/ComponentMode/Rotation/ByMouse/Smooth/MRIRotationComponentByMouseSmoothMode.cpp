@@ -15,9 +15,6 @@ void MRI::ComponentMode::RotationComponentByMouseSmoothMode::Update()
 
 	MRI::ComponentMode::RotationComponentByMouseModeBase::Update();
 
-	// マウスが動いてなければ処理しない
-	if (!MRI::ComponentMode::RotationComponentByMouseModeBase::GetIsMouseMove()) { return; }
-
 	// マウスロック中なら"return"
 	if (MRI::ComponentMode::RotationComponentByMouseModeBase::GetDisableMouseLock()) { return; }
 

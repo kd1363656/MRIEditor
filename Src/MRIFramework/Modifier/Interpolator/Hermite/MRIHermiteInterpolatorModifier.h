@@ -53,6 +53,7 @@ namespace MRI::Modifier
 		static constexpr ImU32 k_selectedKeyFrameColor = IM_COL32(255.0F , 255.0F , 0.0F   , 255.0F);
 		static constexpr ImU32 k_graphDragBoxColor     = IM_COL32(180.0F , 180.0F , 180.0F , 255.0F);
 		static constexpr ImU32 k_defaultKeyFrameColor  = IM_COL32(255.0F , 200.0F , 0.0F   , 255.0F);
+		static constexpr ImU32 k_progressColor         = IM_COL32(0.0F   , 255.0F , 0.0F   , 255.0F);
 
 		static constexpr std::size_t k_minSizeToNextListAccess = 2ULL;
 		

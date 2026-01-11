@@ -30,12 +30,10 @@ void MRI::ComponentMode::RotationComponentModeBase::PreUpdate()
 
 void MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector()
 {
-	EditAddAdaptRotationDirectionTag();
-
 	auto l_itr = m_adaptRotationDirectionTagList.begin();
 	if (ImGui::CollapsingHeader("RotationDirectionAdaptList"))
 	{
-		auto  l_itr = m_adaptRotationDirectionTagList.begin();
+		EditAddAdaptRotationDirectionTag();
 
 		while (l_itr != m_adaptRotationDirectionTagList.end())
 		{
@@ -65,8 +63,8 @@ void MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector()
 				continue;
 			}
 
-			ImGui::PopID();
 			l_itr++;
+			ImGui::PopID();
 		}
 	}
 }
