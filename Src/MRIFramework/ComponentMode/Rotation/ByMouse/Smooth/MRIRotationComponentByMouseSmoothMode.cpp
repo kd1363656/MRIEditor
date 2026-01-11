@@ -10,9 +10,6 @@ void MRI::ComponentMode::RotationComponentByMouseSmoothMode::Update()
 	auto l_selfTransformComponentCache = MRI::ComponentMode::RotationComponentByMouseModeBase::GetWorkSelfTransformComponentCache().lock();
 	if (!l_selfTransformComponentCache) { return; }
 
-	auto l_interpolatorModifierCache = MRI::ComponentMode::RotationComponentByMouseModeBase::GetInterpolatorModifierCache().lock();
-	if (!l_interpolatorModifierCache) { return; }
-
 	MRI::ComponentMode::RotationComponentByMouseModeBase::Update();
 
 	// マウスロック中なら"return"
@@ -29,9 +26,6 @@ void MRI::ComponentMode::RotationComponentByMouseSmoothMode::Update()
 	}
 
 	// カメラの回転方向を格納
-	Math::Quaternion l_resultRotation = Math::Quaternion::Slerp(l_currentRotation , l_targetRotation , l_interpolatorModifierCache->GetCurrentValue());
-	l_selfTransformComponentCache->SetRotation(l_resultRotation);
-
-	// 補完処理の更新
-	l_interpolatorModifierCache->Update();
+	Math::Quaternion l_resultRotation = Math::Quaternion::Slerp(l_currentRotation , l_targetRotation , MRI::ComponentMode::RotationComponentByMouseModeBase::GetRotationSpeed());
+	l_selfTransformComponentCache->SetRotation				   (l_resultRotation);
 }

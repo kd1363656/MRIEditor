@@ -8,7 +8,7 @@ namespace MRI::CommonConstant
 	
 	static constexpr Math::Color k_colorLess = { 0.0F , 0.0F , 0.0F , 1.0F };
 
-	static constexpr float k_epsilon = 0.00001F;
+	static constexpr float k_epsilon = 0.0001F;
 
 	static constexpr float k_interpolatorProgressMax = 1.0F;
 	static constexpr float k_quarterDegree           = 90.0F;

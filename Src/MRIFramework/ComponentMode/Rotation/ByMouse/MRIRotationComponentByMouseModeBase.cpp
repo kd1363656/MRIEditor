@@ -11,6 +11,12 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Init()
 {
 	MRI::ComponentMode::RotationComponentModeBase::Init();
 
+	m_targetRotation = Math::Vector3::Zero;
+
+	m_rotationSpeed       =  k_defaultRotationSpeed;
+	m_minRotatableDegreeX = -MRI::CommonConstant::k_quarterDegree;
+	m_maxRotatableDegreeX =  MRI::CommonConstant::k_quarterDegree;
+		
 	m_disableMouseLock = false;
 }
 
@@ -20,8 +26,7 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	MouseLock();
 
 	if (m_disableMouseLock)      { return; }
-	if (!m_interpolatorModifier) { return; }
-
+	
 	const auto& l_application = Application::GetInstance        ();
 	const float l_deltaTime   = l_application.GetScaledDeltaTime();
 
@@ -53,13 +58,9 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	SetCursorPos(l_centerScreenPos.x , l_centerScreenPos.y);
 
 	// マウスの移動量がほとんどないなら補完の進捗をリセットして"return"
-	if (l_movement.LengthSquared() < CommonConstant::k_epsilon) 
-	{
-		m_interpolatorModifier->ResetInterpolate();
-		return; 
-	}
+	if (l_movement.LengthSquared() < CommonConstant::k_epsilon) { return; }
 	
-	const float l_rotationSpeed = m_interpolatorModifier->GetCurrentValue() * l_deltaTime;
+	const float l_rotationSpeed = m_rotationSpeed * l_deltaTime;
 
 	// ターゲット回転からオイラー角を取得
 	Math::Vector3 l_rotation = m_targetRotation;
@@ -79,16 +80,7 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::EditPrefabInspector()
 {
 	MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector();
 
-	if (ImGui::CollapsingHeader("InterplatorModifier"))
-	{
-		// 補完クラスセレクター
-		MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::InterpolatorModifier>("InterpolatorModifierSelector" , m_interpolatorModifier);
-
-		if (m_interpolatorModifier)
-		{
-			m_interpolatorModifier->EditPrefabInspector();
-		}
-	}
+	ImGui::DragFloat("RotationSpeed" , &m_rotationSpeed , MRI::EditorCommonConstant::k_defaultDragValue);
 }
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::DeserializePrefab(const nlohmann::json& a_json)
@@ -97,18 +89,7 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::DeserializePrefab(con
 
 	MRI::ComponentMode::RotationComponentModeBase::DeserializePrefab(a_json);
 
-	const auto& l_factory = MRI::SharedFactory::InterpolatorModifier::GetInstance();
-
-	const std::string& l_interpolatorModifierName = a_json.value("InterpolatorModifierName", std::string());
-
-	m_interpolatorModifier = l_factory.Create(l_interpolatorModifierName);
-
-	if (m_interpolatorModifier)
-	{
-		m_interpolatorModifier->Init             ();
-		m_interpolatorModifier->DeserializePrefab(a_json);
-	}
-
+	m_rotationSpeed       = a_json.value("RotationSpeed"       ,  k_defaultRotationSpeed);
 	m_minRotatableDegreeX = a_json.value("MinRotatableDegreeX" , -MRI::CommonConstant::k_quarterDegree);
 	m_maxRotatableDegreeX = a_json.value("MaxRotatableDegreeX" ,  MRI::CommonConstant::k_quarterDegree);
 }
@@ -119,19 +100,17 @@ nlohmann::json MRI::ComponentMode::RotationComponentByMouseModeBase::SerializePr
 
 	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::ComponentMode::RotationComponentModeBase::SerializePrefab());
 
-	if (m_interpolatorModifier)
-	{
-		l_rootJson["InterpolatorModifierName"] = m_interpolatorModifier->GetTypeInfo().k_name.data();
-		MRI::JsonUtility::UpdateJson												(l_rootJson , m_interpolatorModifier->SerializePrefab());
-	}
-
+	l_rootJson["RotationSpeed"]       = m_rotationSpeed;
+	l_rootJson["MinRotatableDegreeX"] = m_minRotatableDegreeX;
+	l_rootJson["MaxRotatableDegreeX"] = m_maxRotatableDegreeX;
+	
 	return l_rootJson;
 }
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::MouseLock()
 {
 	// 一回だけキー入力に反応してトグル操作を行う
-	if (auto& l_input = MRI::InputManager::GetInstance();
+	if (const auto& l_input = MRI::InputManager::GetInstance();
 		l_input.IsInputOnce(VK_TAB))
 	{
 		m_disableMouseLock = m_disableMouseLock ? false : true;

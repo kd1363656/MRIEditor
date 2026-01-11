@@ -64,6 +64,7 @@ namespace MRI::Modifier
 		static constexpr float k_debugHermiteTangentMinSlider       = -10.0F;
 		static constexpr float k_debugHermiteTangentMaxSlider       =  10.0F;
 		static constexpr float k_lineThickness                      =  2.0F;
+		static constexpr float k_defaultTangent						= 1.0F;
 
 		static constexpr int k_maxDebugGridNum   = 10;
 		static constexpr int k_maxDebugStepNum   = 32;

@@ -27,7 +27,7 @@ void MRI::Modifier::InterpolatorModifierBase::EditPrefabInspector()
 
 	// 各種パラメータの最大値が"0"を下回らないようにする
 	m_maxMeasurementTime = std::max(m_maxMeasurementTime , k_maxMeasurementTime);
-	m_elapsedTime        = std::max(m_maxMeasurementTime , k_maxClampValue);
+	m_elapsedTime        = std::max(m_maxValue           , k_maxClampValue);
 }
 
 void MRI::Modifier::InterpolatorModifierBase::DeserializePrefab(const nlohmann::json& a_json)

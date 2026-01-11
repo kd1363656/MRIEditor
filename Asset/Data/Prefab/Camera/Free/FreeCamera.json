@@ -10,22 +10,10 @@
         },
         {
             "AdaptRotationDirectionTagList": [],
-            "InterpolatorModifierName": "MRI::Modifier::HermiteInterpolatorModifier",
-            "KeyFrameList": [
-                {
-                    "Tangent": 0.0,
-                    "Time": 0.0,
-                    "Value": 2.0999999046325684
-                },
-                {
-                    "Tangent": 0.0,
-                    "Time": 1.0,
-                    "Value": 2.0999999046325684
-                }
-            ],
-            "MaxMeasurementTime": 1.0,
-            "MaxValue": 2.0999999046325684,
+            "MaxRotatableDegreeX": 90.0,
+            "MinRotatableDegreeX": -90.0,
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentByMouseInstantMode",
+            "RotationSpeed": 3.0,
             "TypeName": "MRI::Component::RotationComponent"
         }
     ],
@@ -40,10 +28,10 @@
             "Z": -0.9862070679664612
         },
         "Rotation": {
-            "W": 0.9992461800575256,
-            "X": -0.003316351445391774,
-            "Y": -0.038679253309965134,
-            "Z": -0.00012837076792493463
+            "W": 0.9970363974571228,
+            "X": 0.03870837017893791,
+            "Y": -0.06643307954072952,
+            "Z": 0.002579159801825881
         },
         "Scale": {
             "X": 1.0,

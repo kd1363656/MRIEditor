@@ -23,12 +23,11 @@ namespace MRI::ComponentMode
 
 	private:
 
-		static constexpr float k_defaultMaxRotationSpeed = 1.0F;
-
-		std::shared_ptr<MRI::Modifier::InterpolatorModifierBase> m_interpolatorModifier = nullptr;
+		static constexpr float k_defaultRotationSpeed = 1.0F;
 
 		Math::Vector3 m_targetRotation = Math::Vector3::Zero;
 
+		float m_rotationSpeed       =  k_defaultRotationSpeed;
 		float m_minRotatableDegreeX = -MRI::CommonConstant::k_quarterDegree;
 		float m_maxRotatableDegreeX =  MRI::CommonConstant::k_quarterDegree;
 		
@@ -38,9 +37,9 @@ namespace MRI::ComponentMode
 
 		void MouseLock();
 
-		std::weak_ptr<MRI::Modifier::InterpolatorModifierBase> GetInterpolatorModifierCache() const { return m_interpolatorModifier; }
-
 		const Math::Vector3& GetTargetRotation() const { return m_targetRotation; }
+
+		float GetRotationSpeed() const { return m_rotationSpeed; }
 
 		bool GetDisableMouseLock() const { return m_disableMouseLock; }
 	};
