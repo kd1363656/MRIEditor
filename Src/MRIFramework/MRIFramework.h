@@ -124,6 +124,7 @@
 #include "ComponentMode/Rotation/MRIRotationComponentModeBase.h"
 #include "ComponentMode/Rotation/ByMouse/MRIRotationComponentByMouseModeBase.h"
 #include "ComponentMode/Rotation/ByMouse/Instant/MRIRotationComponentByMouseInstantMode.h"
+#include "ComponentMode/Rotation/ByMouse/Smooth/MRIRotationComponentByMouseSmoothMode.h"
 #include "ComponentMode/Move/MRIMoveComponentModeBase.h"
 #include "ComponentMode/Move/Lerp/MRIMoveComponentLerpMode.h"
 

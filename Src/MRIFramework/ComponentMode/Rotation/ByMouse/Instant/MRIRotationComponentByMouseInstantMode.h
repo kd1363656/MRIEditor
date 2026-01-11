@@ -11,8 +11,7 @@ namespace MRI::ComponentMode
 
 		const MRI::TypeInfo& GetTypeInfo() const override;
 
-	private:
-
+		void Update() override;
 	};
 }
 

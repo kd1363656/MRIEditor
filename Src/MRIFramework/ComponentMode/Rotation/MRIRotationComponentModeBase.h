@@ -44,6 +44,8 @@ namespace MRI::ComponentMode
 	protected:
 
 		bool CanAdaptRotationDirection(const std::uint32_t a_tag) const;
+
+		auto& GetWorkSelfTransformComponentCache() const { return m_selfTransformComponentCache; }
 	};
 }
 

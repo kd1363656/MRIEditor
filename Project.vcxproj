@@ -308,6 +308,7 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentByMouseInstantMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentByMouseSmoothMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\Component\Camera\MRICameraComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Input\MRIInputComponent.h" />
@@ -452,6 +453,7 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentByMouseInstantMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentByMouseSmoothMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Camera\MRICameraComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Input\MRIInputComponent.cpp" />

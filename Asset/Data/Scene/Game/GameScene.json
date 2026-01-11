@@ -8,13 +8,10 @@
                     "TypeName": "MRI::Component::CameraComponent"
                 },
                 {
-                    "TypeName": "MRI::Component::MoveSmoothFacingDirectionComponent"
-                },
-                {
                     "TypeName": "MRI::Component::InputComponent"
                 },
                 {
-                    "TypeName": "MRI::Component::RotationInstantByMouseComponent"
+                    "TypeName": "MRI::Component::RotationComponent"
                 }
             ],
             "MRI::Component::TransformComponent": {

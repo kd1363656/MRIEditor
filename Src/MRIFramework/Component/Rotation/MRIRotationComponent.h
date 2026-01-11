@@ -11,8 +11,20 @@ namespace MRI::Component
 
 		const MRI::TypeInfo& GetTypeInfo() const override;
 
+		void PostLoadInit() override;
+
+		void PreUpdate() override;
+		void Update   () override;
+
+		void EditPrefabInspector() override;
+
+		void DeserializePrefab(const nlohmann::json& a_json) override;
+
+		nlohmann::json SerializePrefab() override;
+
 	private:
 
+		std::unique_ptr<MRI::ComponentMode::RotationComponentModeBase> m_rotationComponentMode = nullptr;
 	};
 }
 

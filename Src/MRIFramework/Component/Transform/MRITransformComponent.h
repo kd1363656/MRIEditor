@@ -49,7 +49,8 @@ namespace MRI::Component
 
 		const Math::Matrix& GetMatrix() const { return m_transform.matrix; }
 
-		const Math::Vector3& GetPos() const { return m_transform.pos; }
+		const Math::Quaternion& GetRotation() const { return m_transform.rotation; }
+		const Math::Vector3&    GetPos     () const { return m_transform.pos;      }
 
 		void SetParentTransformComponentCache(const std::weak_ptr<MRI::Component::TransformComponent> a_set) { m_parentTransformComponentCache = a_set; }
 	

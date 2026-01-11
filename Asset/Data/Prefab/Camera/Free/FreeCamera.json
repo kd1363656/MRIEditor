@@ -6,31 +6,27 @@
             "TypeName": "MRI::Component::CameraComponent"
         },
         {
+            "TypeName": "MRI::Component::InputComponent"
+        },
+        {
+            "AdaptRotationDirectionTagList": [],
             "InterpolatorModifierName": "MRI::Modifier::HermiteInterpolatorModifier",
             "KeyFrameList": [
                 {
                     "Tangent": 0.0,
                     "Time": 0.0,
-                    "Value": 3.0999999046325684
+                    "Value": 1.0
                 },
                 {
                     "Tangent": 0.0,
                     "Time": 1.0,
-                    "Value": 3.0999999046325684
+                    "Value": 1.0
                 }
             ],
             "MaxMeasurementTime": 1.0,
-            "MaxValue": 3.0999999046325684,
-            "TypeName": "MRI::Component::MoveSmoothFacingDirectionComponent"
-        },
-        {
-            "TypeName": "MRI::Component::InputComponent"
-        },
-        {
-            "MaxRotatableDegreeX": 90.0,
-            "MaxRotationSpeed": 5.0,
-            "MinRotatableDegreeX": -90.0,
-            "TypeName": "MRI::Component::RotationInstantByMouseComponent"
+            "MaxValue": 1.0,
+            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentByMouseInstantMode",
+            "TypeName": "MRI::Component::RotationComponent"
         }
     ],
     "ComponentObserver": {
