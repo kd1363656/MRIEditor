@@ -370,6 +370,9 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth">
       <UniqueIdentifier>{083f5bf1-c747-4453-8ae9-007ba53d0a33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection">
+      <UniqueIdentifier>{da51d36d-474f-471a-96bc-7f1e34f9cdf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -804,7 +807,7 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Move</Filter>
     </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpMode.h">
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\Component\Move\MRIMoveComponent.h">
@@ -824,6 +827,9 @@
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentByMouseSmoothMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1118,7 +1124,7 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Move</Filter>
     </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpMode.cpp">
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\Component\Move\MRIMoveComponent.cpp">
@@ -1132,6 +1138,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentByMouseSmoothMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

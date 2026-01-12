@@ -24,10 +24,6 @@ void MRI::Modifier::InterpolatorModifierBase::EditPrefabInspector()
 
 	ImGui::DragFloat("MaxMeasurementTime" , &m_maxMeasurementTime , MRI::EditorCommonConstant::k_defaultDragValue);
 	ImGui::DragFloat("MaxValue"           , &m_maxValue           , MRI::EditorCommonConstant::k_defaultDragValue);
-
-	// 各種パラメータの最大値が"0"を下回らないようにする
-	m_maxMeasurementTime = std::max(m_maxMeasurementTime , k_maxMeasurementTime);
-	m_elapsedTime        = std::max(m_maxValue           , k_maxClampValue);
 }
 
 void MRI::Modifier::InterpolatorModifierBase::DeserializePrefab(const nlohmann::json& a_json)

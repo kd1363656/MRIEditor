@@ -15,6 +15,7 @@ void MRI::FactoryUtility::RegisterComponentFactory()
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::Component , MRI::Component::RenderModelAnimationComponent);
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::Component , MRI::Component::RenderModelStaticComponent);
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::Component , MRI::Component::RotationComponent);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::Component , MRI::Component::MoveComponent);
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::Component , MRI::Component::InputComponent);
 }
 void MRI::FactoryUtility::RegisterStrategyFactory()
@@ -32,7 +33,7 @@ void MRI::FactoryUtility::RegisterObserverNotifierFactory()
 }
 void MRI::FactoryUtility::RegisterComponentModeFactory()
 {
-	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::MoveComponentMode     , MRI::ComponentMode::MoveComponentLerpMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::MoveComponentMode     , MRI::ComponentMode::MoveComponentLerpFacingDirectionMode);
 	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentByMouseInstantMode);
 	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentByMouseSmoothMode);
 }

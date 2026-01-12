@@ -15,6 +15,25 @@
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentByMouseInstantMode",
             "RotationSpeed": 3.0,
             "TypeName": "MRI::Component::RotationComponent"
+        },
+        {
+            "InterpolatorModifierBaseName": "MRI::Modifier::HermiteInterpolatorModifier",
+            "KeyFrameList": [
+                {
+                    "Tangent": 0.0,
+                    "Time": 0.0,
+                    "Value": 0.0
+                },
+                {
+                    "Tangent": 0.0,
+                    "Time": 1.0,
+                    "Value": 5.0
+                }
+            ],
+            "MaxMeasurementTime": 1.0,
+            "MaxValue": 5.0,
+            "MoveComponentModeName": "MRI::ComponentMode::MoveComponentLerpFacingDirectionMode",
+            "TypeName": "MRI::Component::MoveComponent"
         }
     ],
     "ComponentObserver": {
@@ -28,10 +47,10 @@
             "Z": -0.9862070679664612
         },
         "Rotation": {
-            "W": 0.9970363974571228,
-            "X": 0.03870837017893791,
-            "Y": -0.06643307954072952,
-            "Z": 0.002579159801825881
+            "W": 0.9932764172554016,
+            "X": -0.04143416881561279,
+            "Y": 0.10800368338823318,
+            "Z": 0.004505334421992302
         },
         "Scale": {
             "X": 1.0,

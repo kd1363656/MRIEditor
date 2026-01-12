@@ -25,7 +25,7 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	// マウスの移動を中心に固定するかどうか
 	MouseLock();
 
-	if (m_disableMouseLock)      { return; }
+	if (m_disableMouseLock) { return; }
 	
 	const auto& l_application = Application::GetInstance        ();
 	const float l_deltaTime   = l_application.GetScaledDeltaTime();
@@ -58,7 +58,7 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	SetCursorPos(l_centerScreenPos.x , l_centerScreenPos.y);
 
 	// マウスの移動量がほとんどないなら補完の進捗をリセットして"return"
-	if (l_movement.LengthSquared() < CommonConstant::k_epsilon) { return; }
+	if (l_movement.LengthSquared() <= CommonConstant::k_epsilon) { return; }
 	
 	const float l_rotationSpeed = m_rotationSpeed * l_deltaTime;
 

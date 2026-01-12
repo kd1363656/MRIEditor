@@ -303,7 +303,8 @@
     <ClInclude Include="Src\Framework\Utility\KdDataStorage.h" />
     <ClInclude Include="Src\Framework\Utility\KdCSVData.h" />
     <ClInclude Include="Src\Framework\Utility\KdRandom.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentByMouseInstantMode.h" />
@@ -448,7 +449,8 @@
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp" />
     <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentByMouseInstantMode.cpp" />

@@ -111,8 +111,9 @@ void MRI::TypeInfoUtility::RegisterComponentMode(MRI::TypeInfoRegistry& a_regist
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentByMouseInstantMode>());
 
 	// 移動
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpMode>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>               ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpModeBase>           ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpFacingDirectionMode>());
 }
 
 void MRI::TypeInfoUtility::RegisterStrategy(MRI::TypeInfoRegistry& a_registry)
