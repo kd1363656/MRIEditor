@@ -43,7 +43,13 @@ namespace MRI::ComponentMode
 
 	protected:
 
-		bool CanAdaptRotationDirection(const std::uint32_t a_tag) const;
+		template <MRI::Concept::IsDerivedAxisTagBaseConcept Type>
+		bool CanAdaptRotationDirection()
+		{
+			const MRI::TypeInfo& l_typeInfo = MRI::GetTypeInfo<Type>();
+
+			return m_adaptRotationDirectionTagList.contains(l_typeInfo.k_id);
+		}
 
 		auto& GetWorkSelfTransformComponentCache() const { return m_selfTransformComponentCache; }
 	};

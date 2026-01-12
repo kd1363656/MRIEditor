@@ -230,29 +230,38 @@ void MRI::Modifier::HermiteInterpolatorModifier::EditKeyFrame(ImDrawList* const 
 
 	for (std::size_t l_i = 0ULL; l_i < m_keyFrameList.size(); ++l_i)
 	{
-		auto& l_key = m_keyFrameList[l_i];
+		auto& l_keyFrame = m_keyFrameList[l_i];
 
 		// キーフレームのスクリーン座標を求める
 		ImVec2 l_keyPos = {};
 
 		// 左上の座標("ImGui::Text"などの描画がない座標)から最大計測時間に占める時間倍率を算出し"canvasSize"と乗算することで正確な位置を算出
-		l_keyPos.x = a_canvasPos.x + (l_key.time / l_maxMeasurementTime) * m_graphSize.x;
-		l_keyPos.y = a_canvasPos.y + ((l_maxValue - l_key.value) / (2.0F * l_maxValue)) * m_graphSize.y;
+		l_keyPos.x = a_canvasPos.x + (l_keyFrame.time / l_maxMeasurementTime) * m_graphSize.x;
+		l_keyPos.y = a_canvasPos.y + ((l_maxValue - l_keyFrame.value) / (2.0F * l_maxValue)) * m_graphSize.y;
 
 		// もしマウス位置がキーフレームに近ければフラグは"true"
-		bool l_isHovered = ImLengthSqr(l_mousePos - l_keyPos) <= ImLengthSqr(k_debugMouseHitRangeRadius);
-
-		// キーフレームのかつ左クリックをして入ればドラッグしているキーフレームの"Index"を格納
-		if (l_isHovered && ImGui::IsMouseClicked(ImGuiMouseButton_Left))
+		// キーフレームの上にマウスがあるか
+		if (ImLengthSqr(l_mousePos - l_keyPos) <= ImLengthSqr(k_debugMouseHitRangeRadius))
 		{
-			m_debugDraggingSelectedIndex = static_cast<int>(l_i);
-		}
+			// ツールチップで値を描画
+			ImGui::BeginTooltip();
+			ImGui::Text        ("Time    : %.2f" , l_keyFrame.time);
+			ImGui::Text        ("Value   : %.2f" , l_keyFrame.value);
+			ImGui::Text        ("Tangent : %.2f" , l_keyFrame.tangent);
+			ImGui::EndTooltip  ();
+		
+			// キーフレームのかつ左クリックをして入ればドラッグしているキーフレームの"Index"を格納
+			if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
+			{
+				m_debugDraggingSelectedIndex = static_cast<int>(l_i);
+			}
 
-		// キーフレームの上で右クリックされた場合、削除対象にする
-		if (l_isHovered && ImGui::IsMouseClicked(ImGuiMouseButton_Right))
-		{
-			m_debugDeleteSelectedIndex = static_cast<int>(l_i);
-			ImGui::OpenPopup("DeleteKeyFrameContextMenu");
+			// 右クリックされた場合、削除対象にする
+			if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
+			{
+				m_debugDeleteSelectedIndex = static_cast<int>(l_i);
+				ImGui::OpenPopup("DeleteKeyFrameContextMenu");
+			}
 		}
 
 		// ドラッグによる位置変更
@@ -261,15 +270,8 @@ void MRI::Modifier::HermiteInterpolatorModifier::EditKeyFrame(ImDrawList* const 
 			const float l_newTime = (l_mousePos.x - a_canvasPos.x) / m_graphSize.x * l_maxMeasurementTime;
 			const float l_newValue = (0.5F - ((l_mousePos.y - a_canvasPos.y) / m_graphSize.y)) * 2.0F * l_maxValue;
 
-			l_key.time  = std::clamp(l_newTime  , 0.0F        , l_maxMeasurementTime);
-			l_key.value = std::clamp(l_newValue , -l_maxValue , l_maxValue);
-
-			// ツールチップで値を描画
-			ImGui::BeginTooltip();
-			ImGui::Text("Time    : %.2f" , l_key.time);
-			ImGui::Text("Value   : %.2f" , l_key.value);
-			ImGui::Text("Tangent : %.2f" , l_key.tangent);
-			ImGui::EndTooltip();
+			l_keyFrame.time  = std::clamp(l_newTime  , 0.0F        , l_maxMeasurementTime);
+			l_keyFrame.value = std::clamp(l_newValue , -l_maxValue , l_maxValue);
 		}
 
 		// 色分け

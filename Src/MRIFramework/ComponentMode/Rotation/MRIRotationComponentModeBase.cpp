@@ -30,11 +30,11 @@ void MRI::ComponentMode::RotationComponentModeBase::PreUpdate()
 
 void MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector()
 {
-	auto l_itr = m_adaptRotationDirectionTagList.begin();
 	if (ImGui::CollapsingHeader("RotationDirectionAdaptList"))
 	{
 		EditAddAdaptRotationDirectionTag();
 
+		auto l_itr = m_adaptRotationDirectionTagList.begin();
 		while (l_itr != m_adaptRotationDirectionTagList.end())
 		{
 			// タグ"ID"から型情報を取得
@@ -103,7 +103,7 @@ nlohmann::json MRI::ComponentMode::RotationComponentModeBase::SerializePrefab()
 
 void MRI::ComponentMode::RotationComponentModeBase::RegisterAdaptRotationDirectionTag(const std::uint32_t a_addRotationDirectionAdaptTag)
 {
-	if (a_addRotationDirectionAdaptTag != MRI::CommonConstant::k_invalidStaticID) { return; }
+	if (a_addRotationDirectionAdaptTag == MRI::CommonConstant::k_invalidStaticID) { return; }
 	m_adaptRotationDirectionTagList.emplace(a_addRotationDirectionAdaptTag);
 }
 
@@ -112,13 +112,6 @@ void MRI::ComponentMode::RotationComponentModeBase::EditAddAdaptRotationDirectio
 	// ラジオボタンと追加のボタンの描画
 	MRI::EditorUtility::TagRadioButtonSelector<MRI::Tag::AxisTagBase>("AdaptRotationDirectionTagSelector", m_debugAddRotationDirectionAdaptTag);
 
-	if (m_debugAddRotationDirectionAdaptTag != MRI::CommonConstant::k_invalidStaticID) { return; }
-
 	if (!MRI::EditorUtility::SameLineButton("Add AdaptRotationDirectionTag")) { return; }
 	RegisterAdaptRotationDirectionTag(m_debugAddRotationDirectionAdaptTag);
-}
-
-bool MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection(const std::uint32_t a_tag) const
-{
-	return m_adaptRotationDirectionTagList.contains(a_tag);
 }

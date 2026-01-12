@@ -322,6 +322,7 @@
     <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT\MRIMatrixStrategyCreateSRT.h" />
     <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\MRIMatrixStrategyBase.h" />
     <ClInclude Include="Src\MRIFramework\Component\Transform\MRITransformComponent.h" />
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedAxisTagBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedComponentBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedInterpolatorModifierBaseConcept.h" />

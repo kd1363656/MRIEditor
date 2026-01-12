@@ -65,13 +65,33 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	// ターゲット回転からオイラー角を取得
 	Math::Vector3 l_rotation = m_targetRotation;
 
-	// マウス移動をオイラー角に加算("X = 上下" , "Y = "左右"")
-	l_rotation.x += l_movement.y * l_rotationSpeed;
-	l_rotation.y += l_movement.x * l_rotationSpeed;
+	// 回転適用が許されている軸にのみ回転を加算
+	if (MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection<MRI::Tag::AxisTagX>())
+	{
+		l_rotation.x += l_movement.y * l_rotationSpeed;
 
-	// "X"軸の回転にだけ制限を掛ける
-	l_rotation.x = std::clamp(l_rotation.x , m_minRotatableDegreeX , m_maxRotatableDegreeX);
+		// "X"軸の回転にだけ制限を掛ける
+		l_rotation.x = std::clamp(l_rotation.x, m_minRotatableDegreeX, m_maxRotatableDegreeX);
+	}
+	else
+	{
+		l_rotation.x = 0.0F;
+	}
+
+	if (MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection<MRI::Tag::AxisTagY>())
+	{
+		l_rotation.y += l_movement.x * l_rotationSpeed;
+	}
+	else
+	{
+		l_rotation.y = 0.0F;
+	}
 	
+	if (!MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection<MRI::Tag::AxisTagZ>())
+	{
+		l_rotation.z = 0.0F;
+	}
+
 	// 向くべき方向を格納
 	m_targetRotation = l_rotation;	
 }

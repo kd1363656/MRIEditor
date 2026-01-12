@@ -9,7 +9,14 @@
             "TypeName": "MRI::Component::InputComponent"
         },
         {
-            "AdaptRotationDirectionTagList": [],
+            "AdaptRotationDirectionTagList": [
+                {
+                    "TagName": "MRI::Tag::AxisTagX"
+                },
+                {
+                    "TagName": "MRI::Tag::AxisTagY"
+                }
+            ],
             "MaxRotatableDegreeX": 90.0,
             "MinRotatableDegreeX": -90.0,
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentByMouseInstantMode",
@@ -47,10 +54,10 @@
             "Z": -0.9862070679664612
         },
         "Rotation": {
-            "W": 0.9932764172554016,
-            "X": -0.04143416881561279,
-            "Y": 0.10800368338823318,
-            "Z": 0.004505334421992302
+            "W": 0.9986767172813416,
+            "X": 0.02693793922662735,
+            "Y": -0.043792255222797394,
+            "Z": 0.0011812362354248762
         },
         "Scale": {
             "X": 1.0,

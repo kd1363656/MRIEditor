@@ -45,6 +45,10 @@
 #include "Tag/Bone/MRIBoneTypeTag.h"
 #include "Tag/Axis/MRIAxisTag.h"
 
+// タグの基底構造体を継承しているかどうかを確認する"Concept"
+#include "Concept/IsDerived/MRIIsDerivedTagBaseConcept.h"
+#include "Concept/IsDerived/MRIIsDerivedAxisTagBaseConcept.h"
+
 // "UUID"用便利関数
 #include "Utility/UUID/MRIUUIDUtility.h"
 
@@ -59,9 +63,6 @@
 
 // タグ用便利関数
 #include "Utility/Tag/MRITagUtility.h"
-
-// タグの基底構造体を継承しているかどうかを確認する"Concept"
-#include "Concept/IsDerived/MRIIsDerivedTagBaseConcept.h"
 
 // "TypeTrait(Pointer)"
 #include "TypeTrait/PTR/MRITypeTraitPTR.h"

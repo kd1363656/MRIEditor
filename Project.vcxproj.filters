@@ -831,6 +831,9 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedAxisTagBaseConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
