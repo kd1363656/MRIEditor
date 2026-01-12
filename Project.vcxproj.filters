@@ -373,6 +373,9 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection">
       <UniqueIdentifier>{da51d36d-474f-471a-96bc-7f1e34f9cdf3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\Utility\Axis">
+      <UniqueIdentifier>{21a4f2ee-e3dd-47cb-82e6-a0f3973adab2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -833,6 +836,9 @@
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedAxisTagBaseConcept.h">
       <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Utility\Axis\MRIAxisUtility.h">
+      <Filter>Src\MRIFramework\Utility\Axis</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

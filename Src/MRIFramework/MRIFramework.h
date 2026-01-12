@@ -49,6 +49,9 @@
 #include "Concept/IsDerived/MRIIsDerivedTagBaseConcept.h"
 #include "Concept/IsDerived/MRIIsDerivedAxisTagBaseConcept.h"
 
+// "Axis"用便利関数
+#include "Utility/Axis/MRIAxisUtility.h"
+
 // "UUID"用便利関数
 #include "Utility/UUID/MRIUUIDUtility.h"
 

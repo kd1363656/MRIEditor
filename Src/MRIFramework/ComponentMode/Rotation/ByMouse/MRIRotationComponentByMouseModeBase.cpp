@@ -45,8 +45,10 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	ScreenToClient(l_hWND , &l_nowMousePos);
 
 	// マウスの移動量(現在のマウス位置から画面の中央座標を引いた差分)
-	Math::Vector2 l_movement = { static_cast<float>(l_nowMousePos.x - l_windowHalfSize.width) ,
-								 static_cast<float>(l_nowMousePos.y - l_windowHalfSize.height) };
+	// "Z"軸に移動していないので"Z"軸は含めない
+	Math::Vector3 l_movement = { static_cast<float>(l_nowMousePos.y - l_windowHalfSize.height) ,
+								 static_cast<float>(l_nowMousePos.x - l_windowHalfSize.width)  ,
+								 Math::Vector3::Zero.z											 };
 
 	// クライアント座標の中心をスクリーン座標に変換
 	POINT l_centerScreenPos = { l_windowHalfSize.width , l_windowHalfSize.height };
@@ -60,37 +62,14 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	// マウスの移動量がほとんどないなら補完の進捗をリセットして"return"
 	if (l_movement.LengthSquared() <= CommonConstant::k_epsilon) { return; }
 	
-	const float l_rotationSpeed = m_rotationSpeed * l_deltaTime;
+	// 移動量に回転速度を掛ける
+	l_movement *= m_rotationSpeed * l_deltaTime;
 
 	// ターゲット回転からオイラー角を取得
 	Math::Vector3 l_rotation = m_targetRotation;
 
 	// 回転適用が許されている軸にのみ回転を加算
-	if (MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection<MRI::Tag::AxisTagX>())
-	{
-		l_rotation.x += l_movement.y * l_rotationSpeed;
-
-		// "X"軸の回転にだけ制限を掛ける
-		l_rotation.x = std::clamp(l_rotation.x, m_minRotatableDegreeX, m_maxRotatableDegreeX);
-	}
-	else
-	{
-		l_rotation.x = 0.0F;
-	}
-
-	if (MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection<MRI::Tag::AxisTagY>())
-	{
-		l_rotation.y += l_movement.x * l_rotationSpeed;
-	}
-	else
-	{
-		l_rotation.y = 0.0F;
-	}
-	
-	if (!MRI::ComponentMode::RotationComponentModeBase::CanAdaptRotationDirection<MRI::Tag::AxisTagZ>())
-	{
-		l_rotation.z = 0.0F;
-	}
+	MRI::AxisUtility::AddAdaptDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkAdaptRotationDirectionTagList() , l_rotation , l_movement);
 
 	// 向くべき方向を格納
 	m_targetRotation = l_rotation;	

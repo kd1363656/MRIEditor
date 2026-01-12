@@ -392,6 +392,7 @@
     <ClInclude Include="Src\MRIFramework\TypeInfo\MRITypeInfo.h" />
     <ClInclude Include="Src\MRIFramework\TypeInfo\Registry\MRITypeInfoRegistry.h" />
     <ClInclude Include="Src\MRIFramework\TypeTrait\PTR\MRITypeTraitPTR.h" />
+    <ClInclude Include="Src\MRIFramework\Utility\Axis\MRIAxisUtility.h" />
     <ClInclude Include="Src\MRIFramework\Utility\Editor\MRIEditorUtility.h" />
     <ClInclude Include="Src\MRIFramework\Utility\Editor\SceneSave\MRIEditorSceneSaveUtility.h" />
     <ClInclude Include="Src\MRIFramework\Utility\Factory\MRIFactoryUtility.h" />
