@@ -132,6 +132,12 @@ void MRI::Modifier::HermiteInterpolatorModifier::EditSortList()
 	{
 		return a_compOne.time < a_compTwo.time;
 	});
+
+	for (auto& l_keyFrame : m_keyFrameList)
+	{
+		l_keyFrame.time  = std::min(l_keyFrame.time  , MRI::Modifier::InterpolatorModifierBase::GetMaxMeasurementTime());
+		l_keyFrame.value = std::min(l_keyFrame.value , MRI::Modifier::InterpolatorModifierBase::GetMaxValue          ());
+	}
 }
 void MRI::Modifier::HermiteInterpolatorModifier::EditDrawGraph()
 {
@@ -145,15 +151,29 @@ void MRI::Modifier::HermiteInterpolatorModifier::EditDrawGraph()
 	// 背景
 	l_drawList->AddRect(l_canvasPos , l_canvasPos + m_graphSize , k_graphBorderColor);
 
-	EditDrawGridLine(l_drawList , l_canvasPos);
-	EditHermiteCurve(l_drawList , l_canvasPos);
-	EditKeyFrame    (l_drawList , l_canvasPos);
-
 	// 対角線ガイド
-	l_drawList->AddLine(l_canvasPos , l_canvasPos + m_graphSize , k_graphGuidLineColor);
+	l_drawList->AddLine(l_canvasPos, l_canvasPos + m_graphSize, k_graphGuidLineColor);
+
+	EditDrawGridLine    (l_drawList , l_canvasPos);
+	EditHermiteCurve    (l_drawList , l_canvasPos);
+	EditDrawProgressLine(l_drawList , l_canvasPos);
+	EditKeyFrame        (l_drawList , l_canvasPos);
 
 	// サイズ変更
 	EditGraphSize(l_drawList , l_canvasPos);
+}
+void MRI::Modifier::HermiteInterpolatorModifier::EditDrawProgressLine(ImDrawList* const a_drawList , const ImVec2& a_canvasPos) const
+{
+	if (!a_drawList) { return; }
+
+	const float l_elapsedTime        = MRI::Modifier::InterpolatorModifierBase::GetElapsedTime       ();
+	const float l_maxMeasurementTime = MRI::Modifier::InterpolatorModifierBase::GetMaxMeasurementTime();
+
+	// 時間をグラフの上の"X"座標に変換
+	const float l_x = a_canvasPos.x + (l_elapsedTime / l_maxMeasurementTime) * m_graphSize.x;
+
+	// 線を上下に引く
+	a_drawList->AddLine(ImVec2(l_x , a_canvasPos.y) , ImVec2(l_x , a_canvasPos.y + m_graphSize.y) , k_progressColor , k_lineThickness);
 }
 void MRI::Modifier::HermiteInterpolatorModifier::EditHermiteCurve(ImDrawList* const a_drawList , const ImVec2& a_canvasPos)
 {
@@ -353,7 +373,8 @@ void MRI::Modifier::HermiteInterpolatorModifier::EditGraphSize(ImDrawList* const
 	if (!a_drawList) { return; }
 
 	// "InvisibleButton"のためにカーソル位置保存
-	ImVec2 l_handlePos = a_canvasPos + m_graphSize - k_resizeHandleSize;
+	// "グラフの右下外にハンドルを表示"
+	ImVec2 l_handlePos = a_canvasPos + m_graphSize + k_graphResizeHandleOffset;
 	ImGui::SetCursorScreenPos(l_handlePos);
 
 	// "InvisibleButton"でマウス操作を取得

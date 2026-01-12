@@ -32,19 +32,21 @@ namespace MRI::Modifier
 
 	private:
 
-		void EditSortList      ();
-		void EditDrawGraph     ();
-		void EditHermiteCurve  (ImDrawList* const a_drawList , const ImVec2& a_canvasPos);
-		void EditKeyFrame      (ImDrawList* const a_drawList , const ImVec2& a_canvasPos);
-		void EditAddKeyFrame   (const ImVec2&	  a_mousePos , const ImVec2& a_canvasPos);
-		void EditDeleteKeyFrame();
-		void EditDrawGridLine  (ImDrawList* const a_drawList , const ImVec2& a_canvasPos) const;
-		void EditGraphSize     (ImDrawList* const a_drawList , const ImVec2& a_canvasPos);
+		void EditSortList        ();
+		void EditDrawGraph       ();
+		void EditDrawProgressLine(ImDrawList* const a_drawList , const ImVec2& a_canvasPos) const;
+		void EditHermiteCurve    (ImDrawList* const a_drawList , const ImVec2& a_canvasPos);
+		void EditKeyFrame        (ImDrawList* const a_drawList , const ImVec2& a_canvasPos);
+		void EditAddKeyFrame     (const ImVec2&	    a_mousePos , const ImVec2& a_canvasPos);
+		void EditDeleteKeyFrame  ();
+		void EditDrawGridLine    (ImDrawList* const a_drawList , const ImVec2& a_canvasPos) const;
+		void EditGraphSize       (ImDrawList* const a_drawList , const ImVec2& a_canvasPos);
 
 		static constexpr ImVec2 k_debugMinGraphSize        = { 10.0F  , 10.0F  };
 		static constexpr ImVec2 k_debugMouseHitRangeRadius = { 5.0F   , 5.0F   };
 		static constexpr ImVec2 k_debugInitialGraphSize    = { 300.0F , 200.0F };
 		static constexpr ImVec2 k_resizeHandleSize		   = { 10.0F  , 10.0F  };
+		static constexpr ImVec2 k_graphResizeHandleOffset  = { 1.0F   , 1.0F   };
 		static constexpr ImVec2 k_graphSizeMin		       = { 100.0F , 100.0F };
 
 		static constexpr ImU32 k_graphBorderColor      = IM_COL32(100.0F , 100.0F , 100.0F , 255.0F);
@@ -64,7 +66,7 @@ namespace MRI::Modifier
 		static constexpr float k_debugHermiteTangentMinSlider       = -10.0F;
 		static constexpr float k_debugHermiteTangentMaxSlider       =  10.0F;
 		static constexpr float k_lineThickness                      =  2.0F;
-		static constexpr float k_defaultTangent						= 1.0F;
+		static constexpr float k_defaultTangent						=  1.0F;
 
 		static constexpr int k_maxDebugGridNum   = 10;
 		static constexpr int k_maxDebugStepNum   = 32;

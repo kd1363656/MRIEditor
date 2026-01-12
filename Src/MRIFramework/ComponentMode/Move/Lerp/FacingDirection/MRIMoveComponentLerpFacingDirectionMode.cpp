@@ -9,8 +9,6 @@ const MRI::TypeInfo& MRI::ComponentMode::MoveComponentLerpFacingDirectionMode::G
 
 void MRI::ComponentMode::MoveComponentLerpFacingDirectionMode::Update()
 {
-	const auto& l_inputManager = MRI::InputManager::GetInstance();
-
 	auto l_selfTransformComponentCache = MRI::ComponentMode::MoveComponentModeBase::GetSelfTransformComponentCache().lock();
 	if (!l_selfTransformComponentCache) { return; }
 
