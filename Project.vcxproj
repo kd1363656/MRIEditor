@@ -307,11 +307,8 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse\MRIRotationComponentInstantByMouseMode.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Instant\MRIRotationComponentInstantModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentModeByMouseBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse\MRIRotationComponentSmoothByMouseMode.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\MRIRotationComponentSmoothModeBase.h" />
     <ClInclude Include="Src\MRIFramework\Component\Camera\MRICameraComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Input\MRIInputComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Move\MRIMoveComponent.h" />
@@ -362,8 +359,6 @@
     <ClInclude Include="Src\MRIFramework\FPS\MRIFPSController.h" />
     <ClInclude Include="Src\MRIFramework\GameObject\MRIGameObject.h" />
     <ClInclude Include="Src\MRIFramework\Helper\AssetFilePath\MRIAssetFilePathHelper.h" />
-    <ClInclude Include="Src\MRIFramework\Helper\Component\MRIComponentHelperBase.h" />
-    <ClInclude Include="Src\MRIFramework\Helper\Component\Rotation\ByMouse\MRIRotationComponentByMouseHelper.h" />
     <ClInclude Include="Src\MRIFramework\Input\MRIInputManager.h" />
     <ClInclude Include="Src\MRIFramework\Modifier\Interpolator\Hermite\MRIHermiteInterpolatorModifier.h" />
     <ClInclude Include="Src\MRIFramework\Modifier\Interpolator\MRIInterpolatorModifierBase.h" />
@@ -458,11 +453,8 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse\MRIRotationComponentInstantByMouseMode.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Instant\MRIRotationComponentInstantModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentModeByMouseBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse\MRIRotationComponentSmoothByMouseMode.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\MRIRotationComponentSmoothModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Camera\MRICameraComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Input\MRIInputComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Move\MRIMoveComponent.cpp" />
@@ -497,7 +489,6 @@
     <ClCompile Include="Src\MRIFramework\FPS\MRIFPSController.cpp" />
     <ClCompile Include="Src\MRIFramework\GameObject\MRIGameObject.cpp" />
     <ClCompile Include="Src\MRIFramework\Helper\AssetFilePath\MRIAssetFilePathHelper.cpp" />
-    <ClCompile Include="Src\MRIFramework\Helper\Component\Rotation\ByMouse\MRIRotationComponentByMouseHelper.cpp" />
     <ClCompile Include="Src\MRIFramework\Input\MRIInputManager.cpp" />
     <ClCompile Include="Src\MRIFramework\Modifier\Interpolator\Hermite\MRIHermiteInterpolatorModifier.cpp" />
     <ClCompile Include="Src\MRIFramework\Modifier\Interpolator\MRIInterpolatorModifierBase.cpp" />
