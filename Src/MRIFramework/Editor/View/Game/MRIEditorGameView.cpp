@@ -25,16 +25,25 @@ void MRI::Editor::EditorGameView::DrawEditor()
 
 void MRI::Editor::EditorGameView::RenderTargetClearTex()
 {
+	// もし描画してはいけないなら処理を実行しない
+	if (MRI::Editor::EditorManager::GetInstance().GetIsDisableDrawEditor()) { return; }
+
 	// 前のバックバッファの情報をクリア
 	m_renderTargetPack.ClearTexture();
 }
 void MRI::Editor::EditorGameView::ChangeRenderTarget()
 {
+	// もし描画してはいけないなら処理を実行しない
+	if (MRI::Editor::EditorManager::GetInstance().GetIsDisableDrawEditor()) { return; }
+
 	// 描画先をバックバッファからレンダーターゲットに切り替えて保存
 	m_renderTargetChanger.ChangeRenderTarget(m_renderTargetPack);
 }
 void MRI::Editor::EditorGameView::UndoRenderTarget()
 {
+	// もし描画してはいけないなら処理を実行しない
+	if (MRI::Editor::EditorManager::GetInstance().GetIsDisableDrawEditor()) { return; }
+
 	// レンダーターゲットの切り替えを修理牛手
 	// 描画先をバックバッファに戻す
 	m_renderTargetChanger.UndoRenderTarget();

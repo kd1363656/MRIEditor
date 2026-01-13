@@ -20,24 +20,10 @@
                     "TagName": "MRI::Tag::AxisTagZ"
                 }
             ],
-            "InterpolatorModifierName": "MRI::Modifier::HermiteInterpolatorModifier",
-            "KeyFrameList": [
-                {
-                    "Tangent": 0.0,
-                    "Time": 0.0,
-                    "Value": 1.0
-                },
-                {
-                    "Tangent": 0.0,
-                    "Time": 1.0,
-                    "Value": 1.0
-                }
-            ],
-            "MaxMeasurementTime": 1.0,
             "MaxRotatableDegreeX": 90.0,
-            "MaxValue": 1.0,
             "MinRotatableDegreeX": -90.0,
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentSmoothByMouseMode",
+            "RotationSpeed": 5.0,
             "TypeName": "MRI::Component::RotationComponent"
         },
         {
@@ -71,10 +57,10 @@
             "Z": -0.9862070679664612
         },
         "Rotation": {
-            "W": 0.9882220029830933,
-            "X": -0.08035599440336227,
-            "Y": -0.12980319559574127,
-            "Z": -0.010554778389632702
+            "W": 0.9947234392166138,
+            "X": 0.10186611860990524,
+            "Y": -0.012123490683734417,
+            "Z": 0.0012415236560627818
         },
         "Scale": {
             "X": 1.0,

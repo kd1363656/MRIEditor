@@ -37,12 +37,20 @@ void MRI::Editor::EditorManager::Init()
 
 	m_editorMenuBar->Init();
 
+	m_isDisableDrawEditor = false;
+
 	LoadFile();
 }
 void MRI::Editor::EditorManager::DrawEditor()
 {
 	// ログウィンドウがインスタンス化されていなければ実行しない
 	if (!m_editorLogView) { return; }
+
+	// エディター描画切り替え
+	ToggleDrawEditor();
+
+	// エディターの描画が無効化されていたら"return"
+	if (m_isDisableDrawEditor) { return; }
 
 	// =============================================================================
 	// "ImGui"の開始
@@ -237,5 +245,15 @@ void MRI::Editor::EditorManager::PostDrawEditor() const
 
 		// レンダーターゲットを戻す
 		l_kdDirect3D.WorkDevContext()->OMSetRenderTargets(k_numView , l_kdDirect3D.GetBackBuffer()->WorkRTViewAddress() , l_kdDirect3D.GetZBuffer()->WorkDSView());
+	}
+}
+
+void MRI::Editor::EditorManager::ToggleDrawEditor()
+{
+	const auto& l_inputManger = MRI::InputManager::GetInstance();
+
+	if (l_inputManger.IsInputHeld(VK_CONTROL) && l_inputManger.IsInputOnce('E'))
+	{
+		m_isDisableDrawEditor = m_isDisableDrawEditor ? false : true;
 	}
 }

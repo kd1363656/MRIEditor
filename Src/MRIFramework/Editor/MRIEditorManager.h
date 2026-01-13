@@ -42,6 +42,8 @@ namespace MRI::Editor
 			return std::static_pointer_cast<Type>(l_view);
 		}
 
+		bool GetIsDisableDrawEditor() const { return m_isDisableDrawEditor; }
+
 	private:
 
 		void InitEditor   ();
@@ -50,6 +52,8 @@ namespace MRI::Editor
 		void DrawDockSpace   () const;
 		void DrawEditorWindow();
 		void PostDrawEditor  () const;
+
+		void ToggleDrawEditor();
 
 		template <MRI::Editor::IsDerivedEditorViewBaseConcept Type>
 		void CreateEditorView()
@@ -79,6 +83,8 @@ namespace MRI::Editor
 
 		std::unique_ptr<MRI::Editor::EditorMenuBar> m_editorMenuBar = nullptr;
 		std::unique_ptr<MRI::Editor::EditorLogView> m_editorLogView = nullptr;
+
+		bool m_isDisableDrawEditor = false;
 
 		//===============================
 		// シングルトン
