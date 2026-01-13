@@ -19,32 +19,40 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Init()
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 {
-	// マウスの移動を中心に固定するかどうか
+	// マウスによる回転を有効にするためにマウスを画面中央に固定するかどうか
 	ToggleMouseCenterLock();
 
-	if (MRI::ComponentMode::RotationComponentByMouseModeBase::GetIsDisableMouseCenterLock()) { return; }
-	
-	const auto& l_application  = Application::GetInstance        ();
-	const auto& l_inputManager = MRI::InputManager::GetInstance  ();
-	const float l_deltaTime    = l_application.GetScaledDeltaTime();
+	// もしマウスロックが解除されていたら実行しない
+	if (m_isDisableMouseCenterLock) { return; }
 
+	const auto& l_application  = Application::GetInstance      ();
+	const auto& l_inputManager = MRI::InputManager::GetInstance();
+
+	// マウスの移動量を取得
 	const Math::Vector3& l_mouseMovement = l_inputManager.FetchMouseDeltaAndResetCursorCenter();
-	Math::Vector3        l_movement      = { l_mouseMovement.y , l_mouseMovement.x , l_mouseMovement.z};
-
-	// マウスの移動量がほとんどないなら補完の進捗をリセットして"return"
-	if (l_movement.LengthSquared() <= CommonConstant::k_epsilon) { return; }
 	
-	// 移動量に回転速度を掛ける
-	l_movement *= m_rotationSpeed * l_deltaTime;
+	// マウスの移動量がほとんどないなら補完をリセットして"return"
+	if (l_mouseMovement.LengthSquared() <= CommonConstant::k_epsilon) { return; }
 
-	// ターゲット回転からオイラー角を取得
-	Math::Vector3 l_rotation = MRI::ComponentMode::RotationComponentByMouseModeBase::GetRotationDirection();
+	// "X"と"Y"の値を入れ替える("Y"方向の回転は"X","X"方向の回転は"Y"として扱うから)
+	Math::Vector3 l_movement = { l_mouseMovement.y , l_mouseMovement.x , l_mouseMovement.z };
+
+	const float l_deltaTime = l_application.GetScaledDeltaTime();
+
+	// 回転速度にデルタタイムを乗算
+	l_movement *= MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection() * l_deltaTime;
+
+	// 現在のオイラー角を取得
+	Math::Vector3 l_rotation = MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection();
 
 	// 回転適用が許されている軸にのみ回転を加算
 	MRI::AxisUtility::AddAdaptDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkAdaptRotationDirectionTagList() , l_rotation , l_movement);
 
-	// 向くべき方向を格納
-	MRI::ComponentMode::RotationComponentModeBase::SetRotationDirection(l_rotation);	
+	// "X"軸の回転にのみ制限を掛ける(必要なら"3"軸全てにかけれるようにする)
+	l_rotation.x = std::clamp(l_rotation.x , MRI::ComponentMode::RotationComponentByMouseModeBase::GetMinRotatableDegreeX() , MRI::ComponentMode::RotationComponentByMouseModeBase::GetMaxRotatableDegreeX());
+
+	// 回転方向を格納
+	MRI::ComponentMode::RotationComponentModeBase::SetRotationDirection(l_rotation);
 }
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::EditPrefabInspector()
