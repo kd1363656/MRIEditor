@@ -32,7 +32,7 @@ namespace MRI
 	
 		MRI::CommonStruct::Mouse GetNowMouse() const { return m_nowMouse; }
 
-		void SetHWND(const HWND a_set) { m_hWND = a_set; }
+		Math::Vector3 FetchMouseDeltaAndResetCursorCenter() const;
 
 	private:
 	
@@ -61,8 +61,6 @@ namespace MRI
 		// マウスの入力状態、座標を舞フレーム格納
 		MRI::CommonStruct::Mouse m_nowMouse = {};
 		MRI::CommonStruct::Mouse m_oldMouse = {};
-
-		HWND m_hWND = nullptr;
 
 		//===============================
 		// シングルトン

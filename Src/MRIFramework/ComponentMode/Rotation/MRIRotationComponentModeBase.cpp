@@ -11,8 +11,6 @@ void MRI::ComponentMode::RotationComponentModeBase::Init()
 
 	m_selfTransformComponentCache.reset();
 
-	m_rotationDirection = Math::Vector3::Zero;
-
 	m_debugAddRotationDirectionAdaptTag = MRI::CommonConstant::k_invalidStaticID;
 }
 void MRI::ComponentMode::RotationComponentModeBase::PostLoadInit(std::shared_ptr<MRI::GameObject>& a_owner)

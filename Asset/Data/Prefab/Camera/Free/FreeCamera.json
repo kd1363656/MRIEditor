@@ -15,12 +15,13 @@
                 },
                 {
                     "TagName": "MRI::Tag::AxisTagY"
+                },
+                {
+                    "TagName": "MRI::Tag::AxisTagZ"
                 }
             ],
-            "MaxRotatableDegreeX": 90.0,
-            "MinRotatableDegreeX": -90.0,
-            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentByMouseInstantMode",
-            "RotationSpeed": 3.0,
+            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentInstantByMouseMode",
+            "RotationSpeed": 1.0,
             "TypeName": "MRI::Component::RotationComponent"
         },
         {

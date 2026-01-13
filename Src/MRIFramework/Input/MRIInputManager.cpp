@@ -1,5 +1,7 @@
 ﻿#include "MRIInputManager.h"
 
+#include "Application/main.h"
+
 void MRI::InputManager::Init()
 {
 	m_nowInputStateList.fill(false);
@@ -9,8 +11,10 @@ void MRI::InputManager::Init()
 }
 void MRI::InputManager::RegisterDevice()
 {
+	const auto& l_application = Application::GetInstance();
+
 	// m_hWNDがしっかりセットされていれば実行
-	assert(m_hWND != nullptr);
+	assert(l_application.GetHWND() != nullptr);
 
 	const auto l_indexMax = static_cast<std::size_t>(MRI::InputManager::DeviceIndex::DeviceCount);
 	RAWINPUTDEVICE l_rid[l_indexMax];
@@ -112,16 +116,6 @@ void MRI::InputManager::ProcessInput(const LPARAM a_lParam)
 	// マウス
 	if(l_raw->header.dwType == RIM_TYPEMOUSE)
 	{
-		// マウスの座標(デスクトップ全体を対象)を取得
-		if (POINT l_mousePos = {};
-			GetCursorPos(&l_mousePos))
-		{
-			// ScreenToClientでマウス座標(デスクトップ全体を対象)を
-			// 今のゲームウィンドウ用に変換
-			// 左上のを基準に座標を取るので調整する
-			ScreenToClient(m_hWND , &l_mousePos);
-		}
-
 		WORD l_flags = l_raw->data.mouse.usButtonFlags;
 
 		// ボタンの状態を明示的に管理（押下/解放で変更）
@@ -170,15 +164,59 @@ void MRI::InputManager::BackUpInputState()
 	m_oldMouse.wheelDelta = m_nowMouse.wheelDelta;
 }
 
-void MRI::InputManager::Register(RAWINPUTDEVICE& a_rid       , 
+Math::Vector3 MRI::InputManager::FetchMouseDeltaAndResetCursorCenter() const
+{
+	const auto& l_application = Application::GetInstance();
+
+	// ウィンドウの半分の大きさ
+	const MRI::CommonStruct::Dimension2D& l_windowHalfSize = { l_application.GetWindowSize().width  / 2 ,
+															   l_application.GetWindowSize().height / 2 };
+
+	// 今のマウス座標をスクリーン座標で取得(デスクトップの左上を基準)
+	POINT l_nowMousePos = {};
+	GetCursorPos(&l_nowMousePos);
+
+	// ウィンドウハンドル(現在のウィンドウのハンドルを取得)
+	const auto& l_hWND = l_application.GetHWND();
+
+	// スクリーン座標からクライアント座標に変換(タイトルバーを含まない現在のウィンドウの左上を基準とした座標を取得)
+	ScreenToClient(l_hWND , &l_nowMousePos);
+
+	// マウスの移動量(現在のマウス位置から画面の中央座標を引いた差分)
+	// "Z"軸に移動していないので"Z"軸は含めない
+	Math::Vector3 l_movement = { static_cast<float>(l_nowMousePos.x - l_windowHalfSize.width)  ,
+								 static_cast<float>(l_nowMousePos.y - l_windowHalfSize.height) ,
+								 0.0F };
+
+	// 移動量がほぼなければ"Math::Vector3::Zero"の値を返す
+	if (l_movement.LengthSquared() <= MRI::CommonConstant::k_epsilon) 
+	{
+		return Math::Vector3();
+	}
+
+	// クライアント座標の中心をスクリーン座標に変換
+	POINT l_centerScreenPos = { l_windowHalfSize.width , l_windowHalfSize.height };
+
+	// クライアント座標の中心をスクリーン座標に変換
+	ClientToScreen(l_hWND , &l_centerScreenPos);
+
+	// マウスをクライアント画面中心に戻す
+	SetCursorPos(l_centerScreenPos.x , l_centerScreenPos.y);
+	
+	return l_movement;
+}
+
+void MRI::InputManager::Register(RAWINPUTDEVICE& a_rid       ,
 								 const USHORT    a_usagePage , 
 								 const USHORT	 a_usage     , 
 								 const DWORD		 a_dwFlags)
 {
+	const auto& l_application = Application::GetInstance();
+
 	a_rid.usUsagePage = a_usagePage; //標準デバイス
 	a_rid.usUsage	  = a_usage;    
 	a_rid.dwFlags	  = a_dwFlags;		
-	a_rid.hwndTarget  = m_hWND;		
+	a_rid.hwndTarget  = l_application.GetHWND();		
 }
 
 void MRI::InputManager::UpdateMouseButtonState(const WORD a_flags    , 

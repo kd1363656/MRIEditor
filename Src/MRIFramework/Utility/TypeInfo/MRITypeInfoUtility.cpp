@@ -107,8 +107,8 @@ void MRI::TypeInfoUtility::RegisterComponentMode(MRI::TypeInfoRegistry& a_regist
 
 	// 回転
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentModeBase>          ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentByMouseModeBase>   ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentByMouseInstantMode>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentInstantModeBase>   ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentInstantByMouseMode>());
 
 	// 移動
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>               ());

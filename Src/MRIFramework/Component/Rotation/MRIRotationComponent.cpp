@@ -28,8 +28,17 @@ void MRI::Component::RotationComponent::Update()
 
 void MRI::Component::RotationComponent::EditPrefabInspector()
 {
+	auto l_ownerCache = MRI::Component::ComponentBase::GetWorkOwnerCache().lock();
+	if (!l_ownerCache) { return; }
+
 	// 回転のモード切替を行う
-	MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::RotationComponentMode>("RotationComponentMode" , m_rotationComponentMode);
+	if (const bool l_isCreate = MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::RotationComponentMode>("RotationComponentMode", m_rotationComponentMode);
+		l_isCreate && m_rotationComponentMode)
+	{
+		// インスタンスが生成されたら初期化
+		m_rotationComponentMode->Init        ();
+		m_rotationComponentMode->PostLoadInit(l_ownerCache);
+	}
 
 	if (!m_rotationComponentMode) { return; }
 	m_rotationComponentMode->EditPrefabInspector();
@@ -46,6 +55,7 @@ void MRI::Component::RotationComponent::DeserializePrefab(const nlohmann::json& 
 
 	if (m_rotationComponentMode)
 	{
+		m_rotationComponentMode->Init             ();
 		m_rotationComponentMode->DeserializePrefab(a_json);
 	}
 }

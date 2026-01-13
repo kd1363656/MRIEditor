@@ -61,9 +61,14 @@ namespace MRI::EditorUtility
 	
 	// ファクトリーから生成するクラスを選べるセレクター
 	template <typename FactoryType , typename Type>
-	inline void FactoryRadioButtonSelector(const char* a_label , Type& a_wantChange , const float a_width = MRI::EditorCommonConstant::k_comboWidth)
+	inline bool FactoryRadioButtonSelector(const char* a_label , Type& a_wantChange , const float a_width = MRI::EditorCommonConstant::k_comboWidth)
 	{
-		if constexpr (!MRI::Concept::IsSmartPTRConcept<Type>) { return; }
+		bool l_isCreate = false;
+
+		if constexpr (!MRI::Concept::IsSmartPTRConcept<Type>) 
+		{
+			return false; 
+		}
 		
 		ImGui::SetNextItemWidth(a_width);
 		ImGui::BeginGroup      ();
@@ -79,7 +84,7 @@ namespace MRI::EditorUtility
 		if (!ImGui::BeginCombo(a_label , l_nowStrategyName.c_str()))
 		{
 			ImGui::EndGroup();
-			return;
+			return false;
 		}
 
 		auto& l_factory = FactoryType::GetInstance();
@@ -104,12 +109,15 @@ namespace MRI::EditorUtility
 			}
 
 			a_wantChange = l_value();
+			l_isCreate   = true;
 
 			ImGui::PopID();
 		}
 
 		ImGui::EndCombo();
 		ImGui::EndGroup();
+
+		return l_isCreate;
 	}
 
 	//==================================================================

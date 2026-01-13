@@ -163,7 +163,6 @@ bool Application::Init(const MRI::CommonStruct::Dimension2D& a_size)
 	// "InputManager"の初期化
 	// ===================================================================
 	auto& l_inputManager = MRI::InputManager::GetInstance();
-	l_inputManager.SetHWND                               (GetHWND());
 	l_inputManager.Init                                  ();
 
 	// ===================================================================

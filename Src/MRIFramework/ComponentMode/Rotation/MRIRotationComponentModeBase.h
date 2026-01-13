@@ -46,6 +46,10 @@ namespace MRI::ComponentMode
 		const auto& GetWorkAdaptRotationDirectionTagList() const { return m_adaptRotationDirectionTagList; }
 
 		auto& GetWorkSelfTransformComponentCache() const { return m_selfTransformComponentCache; }
+
+		const auto& GetRotationDirection() const { return m_rotationDirection; }
+
+		void SetRotationDirection(const Math::Vector3& a_set) { m_rotationDirection = a_set; }
 	};
 }
 
