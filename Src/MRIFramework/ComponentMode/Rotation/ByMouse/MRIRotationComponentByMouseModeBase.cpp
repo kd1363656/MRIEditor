@@ -9,6 +9,8 @@ const MRI::TypeInfo& MRI::ComponentMode::RotationComponentByMouseModeBase::GetTy
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::Init()
 {
+	MRI::ComponentMode::RotationComponentModeBase::Init();
+
 	m_rotationSpeed = k_defaultRotationSpeed;
 
 	m_minRotatableDegreeX = -MRI::CommonConstant::k_quarterDegree;
@@ -19,6 +21,9 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Init()
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 {
+	auto l_selfTransformComponentCache = MRI::ComponentMode::RotationComponentModeBase::GetWorkSelfTransformComponentCache().lock();
+	if (!l_selfTransformComponentCache) { return; }
+
 	// マウスによる回転を有効にするためにマウスを画面中央に固定するかどうか
 	ToggleMouseCenterLock();
 
@@ -31,16 +36,14 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 	// マウスの移動量を取得
 	const Math::Vector3& l_mouseMovement = l_inputManager.FetchMouseDeltaAndResetCursorCenter();
 	
-	// マウスの移動量がほとんどないなら補完をリセットして"return"
+	// マウスの移動量がほとんどないなら"return"
 	if (l_mouseMovement.LengthSquared() <= CommonConstant::k_epsilon) { return; }
 
 	// "X"と"Y"の値を入れ替える("Y"方向の回転は"X","X"方向の回転は"Y"として扱うから)
 	Math::Vector3 l_movement = { l_mouseMovement.y , l_mouseMovement.x , l_mouseMovement.z };
 
-	const float l_deltaTime = l_application.GetScaledDeltaTime();
-
 	// 回転速度にデルタタイムを乗算
-	l_movement *= MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection() * l_deltaTime;
+	l_movement *= MRI::ComponentMode::RotationComponentByMouseModeBase::GetRotationSpeed() * l_application.GetScaledDeltaTime();
 
 	// 現在のオイラー角を取得
 	Math::Vector3 l_rotation = MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection();
@@ -53,10 +56,16 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::Update()
 
 	// 回転方向を格納
 	MRI::ComponentMode::RotationComponentModeBase::SetRotationDirection(l_rotation);
+
+	// オイラー角からクオータニオンに変換して"TransformComponent"に格納
+	const auto& l_resultRotation = MRI::MathUtility::EulerToQuaternion(MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection());
+	l_selfTransformComponentCache->SetRotation						  (l_resultRotation);
 }
 
 void MRI::ComponentMode::RotationComponentByMouseModeBase::EditPrefabInspector()
 {
+	MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector();
+
 	ImGui::DragFloat("MinRotatableDegreeX"   , &m_minRotatableDegreeX , MRI::EditorCommonConstant::k_defaultDragValue);
 	ImGui::DragFloat("RotationSpeed"         , &m_rotationSpeed       , MRI::EditorCommonConstant::k_defaultDragValue);
 	ImGui::DragFloat("MaxRotatableDegreeX"   , &m_maxRotatableDegreeX , MRI::EditorCommonConstant::k_defaultDragValue);
@@ -70,6 +79,8 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::DeserializePrefab(con
 {
 	if (a_json.is_null()) { return; }
 
+	MRI::ComponentMode::RotationComponentModeBase::DeserializePrefab(a_json);
+
 	m_rotationSpeed       = a_json.value("RotationSpeed"       ,  k_defaultRotationSpeed);
 	m_minRotatableDegreeX = a_json.value("MinRotatableDegreeX" , -MRI::CommonConstant::k_quarterDegree);
 	m_maxRotatableDegreeX = a_json.value("MaxRotatableDegreeX" ,  MRI::CommonConstant::k_quarterDegree);
@@ -78,6 +89,8 @@ void MRI::ComponentMode::RotationComponentByMouseModeBase::DeserializePrefab(con
 nlohmann::json MRI::ComponentMode::RotationComponentByMouseModeBase::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
+
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::ComponentMode::RotationComponentModeBase::SerializePrefab());
 
 	l_rootJson["RotationSpeed"]       = m_rotationSpeed;
 	l_rootJson["MinRotatableDegreeX"] = m_minRotatableDegreeX;
