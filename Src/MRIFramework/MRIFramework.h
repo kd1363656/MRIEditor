@@ -121,17 +121,18 @@
 
 // ヘルパークラス
 #include "Helper/AssetFilePath/MRIAssetFilePathHelper.h"
+#include "Helper/Component/MRIComponentHelperBase.h"
+#include "Helper/Component/Rotation/ByMouse/MRIComponentRotationByMouseHelper.h"
 
 // コンポーネントモードクラス
 // コンポーネントの挙動を切り替えたり必要な変数を保持、必要な処理をまとめたクラス
 #include "ComponentMode/MRIComponentModeBase.h"
 #include "ComponentMode/Rotation/MRIRotationComponentModeBase.h"
-#include "ComponentMode/Rotation/ByMouse/MRIRotationComponentByMouseModeBase.h"
-#include "ComponentMode/Rotation/ByMouse/Instant/MRIRotationComponentInstantByMouseMode.h"
-#include "ComponentMode/Rotation/ByMouse/Smooth/MRIRotationComponentSmoothByMouseMode.h"
+#include "ComponentMode/Rotation/Linear/MRIRotationComponentLinearModeBase.h"
+#include "ComponentMode/Rotation/Linear/ByMouse/MRIRotationComponentLinearByMouseMode.h"
 #include "ComponentMode/Move/MRIMoveComponentModeBase.h"
-#include "ComponentMode/Move/Lerp/MRIMoveComponentLerpModeBase.h"
-#include "ComponentMode/Move/Lerp/FacingDirection/MRIMoveComponentLerpFacingDirectionMode.h"
+#include "ComponentMode/Move/Linear/MRIMoveComponentLinearModeBase.h"
+#include "ComponentMode/Move/Linear/FacingDirection/MRIMoveComponentLinearFacingDirectionMode.h"
 
 // "Component"
 #include "Component/MRIComponentBase.h"

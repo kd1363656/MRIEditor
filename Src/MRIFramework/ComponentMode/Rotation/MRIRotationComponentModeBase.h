@@ -27,23 +27,23 @@ namespace MRI::ComponentMode
 
 		void ResetRotationDirection();
 
-		void RegisterAdaptRotationDirectionTag(const std::uint32_t a_addRotationDirectionAdaptTag);
+		void RegisterAdaptRotationAxisTag(const std::uint32_t a_addRotationAxisAdaptTag);
 
 	private:
 
-		void EditAddAdaptRotationDirectionTag();
+		void EditAddAdaptRotationAxisTag();
 
-		std::unordered_set<std::uint32_t> m_adaptRotationDirectionTagList;
+		std::unordered_set<std::uint32_t> m_adaptRotationAxisTagSet;
 
 		std::weak_ptr<MRI::Component::TransformComponent> m_selfTransformComponentCache;
 
 		Math::Vector3 m_rotationDirection = Math::Vector3::Zero;
 
-		std::uint32_t m_debugAddRotationDirectionAdaptTag = MRI::CommonConstant::k_invalidStaticID;
+		std::uint32_t m_debugAddRotationAxisAdaptTag = MRI::CommonConstant::k_invalidStaticID;
 
 	protected:
 
-		const auto& GetWorkAdaptRotationDirectionTagList() const { return m_adaptRotationDirectionTagList; }
+		const auto& GetWorkAdaptRotationAxisTagSet() const { return m_adaptRotationAxisTagSet; }
 
 		auto& GetWorkSelfTransformComponentCache() const { return m_selfTransformComponentCache; }
 

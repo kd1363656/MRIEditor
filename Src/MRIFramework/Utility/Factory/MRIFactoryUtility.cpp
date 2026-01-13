@@ -33,7 +33,6 @@ void MRI::FactoryUtility::RegisterObserverNotifierFactory()
 }
 void MRI::FactoryUtility::RegisterComponentModeFactory()
 {
-	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::MoveComponentMode     , MRI::ComponentMode::MoveComponentLerpFacingDirectionMode);
-	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentInstantByMouseMode);
-	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentSmoothByMouseMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::MoveComponentMode     , MRI::ComponentMode::MoveComponentLinearFacingDirectionMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLinearByMouseMode);
 }

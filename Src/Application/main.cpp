@@ -203,7 +203,7 @@ bool Application::Init(const MRI::CommonStruct::Dimension2D& a_size)
 	}
 
 	m_isEndGameLoop = false;
-	
+
 	return true;
 }
 

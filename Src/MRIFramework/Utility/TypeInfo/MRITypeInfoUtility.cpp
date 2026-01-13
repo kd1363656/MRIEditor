@@ -106,14 +106,14 @@ void MRI::TypeInfoUtility::RegisterComponentMode(MRI::TypeInfoRegistry& a_regist
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::ComponentModeBase>());
 
 	// 回転
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentModeBase>          ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentSmoothByMouseMode> ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentInstantByMouseMode>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentModeBase>         ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentLinearModeBase>   ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentLinearByMouseMode>());
 
 	// 移動
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>               ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpModeBase>           ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpFacingDirectionMode>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>                 ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearModeBase>           ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearFacingDirectionMode>());
 }
 
 void MRI::TypeInfoUtility::RegisterStrategy(MRI::TypeInfoRegistry& a_registry)

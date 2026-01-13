@@ -9,7 +9,7 @@
             "TypeName": "MRI::Component::InputComponent"
         },
         {
-            "AdaptRotationDirectionTagList": [
+            "AdaptRotationAxisTagSet": [
                 {
                     "TagName": "MRI::Tag::AxisTagX"
                 },
@@ -22,27 +22,24 @@
             ],
             "MaxRotatableDegreeX": 90.0,
             "MinRotatableDegreeX": -90.0,
-            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentSmoothByMouseMode",
+            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentLinearByMouseMode",
             "RotationSpeed": 5.0,
             "TypeName": "MRI::Component::RotationComponent"
         },
         {
-            "InterpolatorModifierBaseName": "MRI::Modifier::HermiteInterpolatorModifier",
-            "KeyFrameList": [
+            "AdaptMoveAxisTagSet": [
                 {
-                    "Tangent": 0.0,
-                    "Time": 0.0,
-                    "Value": 0.0
+                    "TagName": "MRI::Tag::AxisTagX"
                 },
                 {
-                    "Tangent": 0.0,
-                    "Time": 1.0,
-                    "Value": 5.0
+                    "TagName": "MRI::Tag::AxisTagZ"
+                },
+                {
+                    "TagName": "MRI::Tag::AxisTagY"
                 }
             ],
-            "MaxMeasurementTime": 1.0,
-            "MaxValue": 5.0,
-            "MoveComponentModeName": "MRI::ComponentMode::MoveComponentLerpFacingDirectionMode",
+            "MoveComponentModeName": "MRI::ComponentMode::MoveComponentLinearFacingDirectionMode",
+            "MoveSpeed": 5.0,
             "TypeName": "MRI::Component::MoveComponent"
         }
     ],
@@ -52,15 +49,15 @@
     "MRI::Component::TransformComponent": {
         "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
         "Pos": {
-            "X": 0.003638480557128787,
-            "Y": 1.3032264709472656,
-            "Z": -0.9862070679664612
+            "X": 0.07055716216564178,
+            "Y": 1.1497479677200317,
+            "Z": -2.1597986221313477
         },
         "Rotation": {
-            "W": 0.9947234392166138,
-            "X": 0.10186611860990524,
-            "Y": -0.012123490683734417,
-            "Z": 0.0012415236560627818
+            "W": 0.9975290894508362,
+            "X": 0.06411217153072357,
+            "Y": -0.028669236227869987,
+            "Z": 0.0018425998277962208
         },
         "Scale": {
             "X": 1.0,
