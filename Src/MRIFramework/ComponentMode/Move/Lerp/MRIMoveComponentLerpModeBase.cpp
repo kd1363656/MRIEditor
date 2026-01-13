@@ -18,26 +18,19 @@ void MRI::ComponentMode::MoveComponentLerpModeBase::DeserializePrefab(const nloh
 {
 	if (a_json.is_null()) { return; }
 
-	const auto& l_factory = MRI::SharedFactory::InterpolatorModifier::GetInstance();
-
-	const std::string l_interpolatorModifierBaseName = a_json.value    ("InterpolatorModifierBaseName" , std::string());
-	m_interpolatorModifierBase						 = l_factory.Create(l_interpolatorModifierBaseName);
-
-	if (m_interpolatorModifierBase)
-	{
-		m_interpolatorModifierBase->DeserializePrefab(a_json);
-	}
+	MRI::JsonUtility::DeserializeInstancePrefab<MRI::SharedFactory::InterpolatorModifier>(a_json , "InterpolatorModifierBaseName" , m_interpolatorModifierBase);
 }
 
 nlohmann::json MRI::ComponentMode::MoveComponentLerpModeBase::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
 
-	if (m_interpolatorModifierBase) 
+	if (!m_interpolatorModifierBase) 
 	{
-		l_rootJson["InterpolatorModifierBaseName"] = m_interpolatorModifierBase->GetTypeInfo().k_name.data();
-		MRI::JsonUtility::UpdateJson                                                    (l_rootJson , m_interpolatorModifierBase->SerializePrefab());
+		return nlohmann::json();
 	}
+
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::JsonUtility::SerializeInstancePrefab("InterpolatorModifierBaseName" , m_interpolatorModifierBase));
 
 	return l_rootJson;
 }

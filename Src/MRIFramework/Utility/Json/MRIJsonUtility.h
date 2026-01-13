@@ -204,4 +204,44 @@ namespace MRI::JsonUtility
 			{"TagName" , l_typeInfo->k_name.data()}
 		};
 	}
+
+	// ファクトリーからインスタンスを生成しプレハブ情報を読み込む
+	template <typename FactoryType , typename Type>
+		requires MRI::Concept::IsSmartPTRConcept<Type>
+	inline void DeserializeInstancePrefab(const nlohmann::json& a_json , const char* a_key , Type& a_instance)
+	{
+		if (a_json.is_null()) { return; }
+
+		const auto& l_factory = FactoryType::GetInstance();
+
+		const std::string l_createName = a_json.value(a_key , std::string());
+		if (l_createName.empty()) { return; }
+
+		a_instance = l_factory.Create(l_createName.c_str());
+
+		if (a_instance)
+		{
+			a_instance->Init             ();
+			a_instance->DeserializePrefab(a_json);
+		}
+	}
+
+	// インスタンスから型情報を保存しプレハブ情報を保存
+	template <typename Type>
+		requires MRI::Concept::IsSmartPTRConcept<Type>
+	inline nlohmann::json SerializeInstancePrefab(const char* a_key , Type& a_instance)
+	{
+		if (!a_instance) 
+		{
+			return nlohmann::json(); 
+		}
+
+		auto l_rootJson = nlohmann::json();
+
+		l_rootJson[a_key] = a_instance->GetTypeInfo().k_name.data();
+
+		UpdateJson(l_rootJson , a_instance->SerializePrefab());
+
+		return l_rootJson;
+	}
 }

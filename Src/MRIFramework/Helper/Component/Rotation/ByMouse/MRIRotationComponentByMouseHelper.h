@@ -26,8 +26,6 @@ namespace MRI::Helper
 
 	private:
 
-		static constexpr float k_defaultRotationSpeed = 1.0F;
-
 		float m_minRotatableDegreeX = -MRI::CommonConstant::k_quarterDegree;
 		float m_maxRotatableDegreeX =  MRI::CommonConstant::k_quarterDegree;
 		

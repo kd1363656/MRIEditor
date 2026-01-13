@@ -385,6 +385,9 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse">
       <UniqueIdentifier>{3248b51e-de7e-43b8-8ca7-e6cdaf47925e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse">
+      <UniqueIdentifier>{429b467e-c640-43bc-87db-91075df46cd5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -855,6 +858,9 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse\MRIRotationComponentInstantByMouseMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse\MRIRotationComponentSmoothByMouseMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -1168,6 +1174,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse\MRIRotationComponentInstantByMouseMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Instant\ByMouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse\MRIRotationComponentSmoothByMouseMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Smooth\ByMouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

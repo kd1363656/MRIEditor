@@ -9,7 +9,10 @@ void MRI::ComponentMode::RotationComponentSmoothModeBase::EditPrefabInspector()
 {
 	MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector();
 
-	MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::InterpolatorModifier>("InterpolatorModifierSelector" , m_interpolatorModifier);
+	if (MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::InterpolatorModifier>("InterpolatorModifierSelector" , m_interpolatorModifier))
+	{
+		m_interpolatorModifier->Init();
+	}
 
 	if (!m_interpolatorModifier) { return; }
 	m_interpolatorModifier->EditPrefabInspector();
@@ -19,29 +22,21 @@ void MRI::ComponentMode::RotationComponentSmoothModeBase::DeserializePrefab(cons
 {
 	if (a_json.is_null()) { return; }
 
-	MRI::ComponentMode::RotationComponentModeBase::DeserializePrefab(a_json);
-
-	const auto& l_sharedFactory = MRI::SharedFactory::InterpolatorModifier::GetInstance();
-
-	const std::string& l_interpolatorModifierName = a_json.value          ("InterpolatorModifierName" , std::string());
-	m_interpolatorModifier						  = l_sharedFactory.Create(l_interpolatorModifierName);
-
-	if (!m_interpolatorModifier) { return; }
-	m_interpolatorModifier->Init             ();
-	m_interpolatorModifier->DeserializePrefab(a_json);
+	MRI::ComponentMode::RotationComponentModeBase::DeserializePrefab					 (a_json);
+	MRI::JsonUtility::DeserializeInstancePrefab<MRI::SharedFactory::InterpolatorModifier>(a_json , "InterpolatorModifierName" , m_interpolatorModifier);
 }
 
 nlohmann::json MRI::ComponentMode::RotationComponentSmoothModeBase::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
 
-	MRI::JsonUtility::UpdateJson(l_rootJson, MRI::ComponentMode::RotationComponentModeBase::SerializePrefab());
-
-	if (m_interpolatorModifier)
+	if (!m_interpolatorModifier)
 	{
-		l_rootJson["InterpolatorModifierName"] = m_interpolatorModifier->GetTypeInfo().k_name.data();
-		MRI::JsonUtility::UpdateJson                                                (l_rootJson , m_interpolatorModifier->SerializePrefab());
+		return nlohmann::json();
 	}
-	
+
+	MRI::JsonUtility::UpdateJson(l_rootJson, MRI::ComponentMode::RotationComponentModeBase::SerializePrefab());
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::JsonUtility::SerializeInstancePrefab					   ("InterpolatorModifierName" , m_interpolatorModifier));
+
 	return l_rootJson;
 }

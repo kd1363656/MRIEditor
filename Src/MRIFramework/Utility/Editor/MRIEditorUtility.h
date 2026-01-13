@@ -124,11 +124,11 @@ namespace MRI::EditorUtility
 	// ドラッグアンドドロップ
 	//==================================================================
 	template <typename Type>
+		requires MRI::Concept::IsSmartPTRConcept<Type>
 	inline bool DragDropSource(const char*  a_label , const Type& a_payload)
 	{
 		// ポインタの種類情報を取得
 		constexpr MRI::TypeTrait::PTRKind l_kind = MRI::TypeTrait::PTRType<Type>::k_kind;
-		static_assert(l_kind != MRI::TypeTrait::PTRKind::Unique , "std::unique_ptrはDrawDropに対応していません");
 
 		bool l_isDrag = false;
 		ImGui::PushID(&a_payload);
@@ -162,12 +162,12 @@ namespace MRI::EditorUtility
 		return l_isDrag;
 	}
 	template <typename Type>
+		requires MRI::Concept::IsSmartPTRConcept<Type>
 	inline bool DragDropTarget(const char* a_label , Type& a_outPayload)
 	{
 		// ポインタの種類情報を取得
 		constexpr MRI::TypeTrait::PTRKind l_kind = MRI::TypeTrait::PTRType<Type>::k_kind;
-		static_assert(l_kind != MRI::TypeTrait::PTRKind::Unique , "std::unique_ptrはDrawDropに対応していません");
-
+		
 		bool l_isDropped = false;
 		ImGui::PushID(&a_outPayload);
 

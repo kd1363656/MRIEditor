@@ -1,15 +1,15 @@
-﻿#include "MRIRotationComponentInstantByMouseMode.h"
+﻿#include "MRIRotationComponentSmoothByMouseMode.h"
 
 #include "Application/main.h"
 
-const MRI::TypeInfo& MRI::ComponentMode::RotationComponentInstantByMouseMode::GetTypeInfo() const
+const MRI::TypeInfo& MRI::ComponentMode::RotationComponentSmoothByMouseMode::GetTypeInfo() const
 {
-	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentInstantByMouseMode>();
+	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentSmoothByMouseMode>();
 }
 
-void MRI::ComponentMode::RotationComponentInstantByMouseMode::Init()
+void MRI::ComponentMode::RotationComponentSmoothByMouseMode::Init()
 {
-	MRI::ComponentMode::RotationComponentInstantModeBase::Init();
+	MRI::ComponentMode::RotationComponentSmoothModeBase::Init();
 
 	if (!m_rotationComponentByMouseHelper)
 	{
@@ -19,10 +19,13 @@ void MRI::ComponentMode::RotationComponentInstantByMouseMode::Init()
 	m_rotationComponentByMouseHelper->Init();
 }
 
-void MRI::ComponentMode::RotationComponentInstantByMouseMode::Update()
+void MRI::ComponentMode::RotationComponentSmoothByMouseMode::Update()
 {
 	auto l_selfTransformComponentCache = MRI::ComponentMode::RotationComponentModeBase::GetWorkSelfTransformComponentCache().lock();
 	if (!l_selfTransformComponentCache) { return; }
+
+	auto l_interpolatorModifierCache = MRI::ComponentMode::RotationComponentSmoothModeBase::GetInterpolatorModifierCache().lock();
+	if (!l_interpolatorModifierCache) { return; }
 
 	if (!m_rotationComponentByMouseHelper) { return; }
 
@@ -38,14 +41,20 @@ void MRI::ComponentMode::RotationComponentInstantByMouseMode::Update()
 	// マウスの移動量を取得
 	const Math::Vector3& l_mouseMovement = l_inputManager.FetchMouseDeltaAndResetCursorCenter();
 	
-	// マウスの移動量がほとんどないなら"return"
-	if (l_mouseMovement.LengthSquared() <= CommonConstant::k_epsilon) { return; }
+	// マウスの移動量がほとんどないなら補完をリセットして"return"
+	if (l_mouseMovement.LengthSquared() <= CommonConstant::k_epsilon) 
+	{ 
+		l_interpolatorModifierCache->ResetInterpolate();
+		return;
+	}
 
 	// "X"と"Y"の値を入れ替える("Y"方向の回転は"X","X"方向の回転は"Y"として扱うから)
 	Math::Vector3 l_movement = { l_mouseMovement.y , l_mouseMovement.x , l_mouseMovement.z };
 
+	const float l_deltaTime = l_application.GetScaledDeltaTime();
+
 	// 回転速度にデルタタイムを乗算
-	l_movement *= MRI::ComponentMode::RotationComponentInstantModeBase::GetRotationSpeed() * l_application.GetScaledDeltaTime();
+	l_movement *= l_interpolatorModifierCache->GetCurrentValue() * l_deltaTime;
 
 	// 現在のオイラー角を取得
 	Math::Vector3 l_rotation = MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection();
@@ -59,14 +68,26 @@ void MRI::ComponentMode::RotationComponentInstantByMouseMode::Update()
 	// 回転方向を格納
 	MRI::ComponentMode::RotationComponentModeBase::SetRotationDirection(l_rotation);
 
-	// オイラー角からクオータニオンに変換して"TransformComponent"に格納
-	const auto& l_resultRotation = MRI::MathUtility::EulerToQuaternion(MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection());
-	l_selfTransformComponentCache->SetRotation(l_resultRotation);
+	const Math::Quaternion& l_currentRotation = l_selfTransformComponentCache->GetRotation();
+	Math::Quaternion        l_targetRotation  = MRI::MathUtility::EulerToQuaternion       (MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection());
+
+	// クオータニオン補正(最短経路を決める)
+	if (l_currentRotation.Dot(l_targetRotation) <= MRI::CommonConstant::k_epsilon)
+	{
+		l_targetRotation = -l_targetRotation;
+	}
+
+	// カメラの回転方向を格納
+	Math::Quaternion l_resultRotation = Math::Quaternion::Slerp(l_currentRotation , l_targetRotation , l_interpolatorModifierCache->GetCurrentValue() * l_deltaTime);
+	l_selfTransformComponentCache->SetRotation				   (l_resultRotation);
+
+	// 最後に補完の進捗を進める
+	l_interpolatorModifierCache->Update();
 }
 
-void MRI::ComponentMode::RotationComponentInstantByMouseMode::EditPrefabInspector()
+void MRI::ComponentMode::RotationComponentSmoothByMouseMode::EditPrefabInspector()
 {
-	MRI::ComponentMode::RotationComponentInstantModeBase::EditPrefabInspector();
+	MRI::ComponentMode::RotationComponentSmoothModeBase::EditPrefabInspector();
 
 	if (m_rotationComponentByMouseHelper)
 	{
@@ -74,9 +95,11 @@ void MRI::ComponentMode::RotationComponentInstantByMouseMode::EditPrefabInspecto
 	}
 }
 
-void MRI::ComponentMode::RotationComponentInstantByMouseMode::DeserializePrefab(const nlohmann::json& a_json)
+void MRI::ComponentMode::RotationComponentSmoothByMouseMode::DeserializePrefab(const nlohmann::json& a_json)
 {
-	MRI::ComponentMode::RotationComponentInstantModeBase::DeserializePrefab(a_json);
+	if (a_json.is_null()) { return; }
+
+	MRI::ComponentMode::RotationComponentSmoothModeBase::DeserializePrefab(a_json);
 
 	if (m_rotationComponentByMouseHelper)
 	{
@@ -84,12 +107,12 @@ void MRI::ComponentMode::RotationComponentInstantByMouseMode::DeserializePrefab(
 	}
 }
 
-nlohmann::json MRI::ComponentMode::RotationComponentInstantByMouseMode::SerializePrefab()
+nlohmann::json MRI::ComponentMode::RotationComponentSmoothByMouseMode::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
 
-	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::ComponentMode::RotationComponentInstantModeBase::SerializePrefab());
-
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::ComponentMode::RotationComponentSmoothModeBase::SerializePrefab());
+	
 	if (m_rotationComponentByMouseHelper)
 	{
 		MRI::JsonUtility::UpdateJson(l_rootJson , m_rotationComponentByMouseHelper->SerializePrefab());

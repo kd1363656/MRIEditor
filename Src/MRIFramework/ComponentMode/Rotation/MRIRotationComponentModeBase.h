@@ -19,8 +19,6 @@ namespace MRI::ComponentMode
 		void Init        ()											 override;
 		void PostLoadInit(std::shared_ptr<MRI::GameObject>& a_owner) override;
 
-		void PreUpdate() override;
-
 		void EditPrefabInspector() override;
 	
 		void DeserializePrefab(const nlohmann::json& a_json) override;

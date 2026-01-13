@@ -25,7 +25,7 @@ void MRI::ComponentMode::RotationComponentInstantModeBase::DeserializePrefab(con
 
 	MRI::ComponentMode::RotationComponentModeBase::DeserializePrefab(a_json);
 
-	a_json.value("RotationSpeed" , m_rotationSpeed);
+	m_rotationSpeed = a_json.value("RotationSpeed" , k_defaultRotationSpeed);
 }
 
 nlohmann::json MRI::ComponentMode::RotationComponentInstantModeBase::SerializePrefab()

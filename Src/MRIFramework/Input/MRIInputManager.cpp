@@ -188,12 +188,6 @@ Math::Vector3 MRI::InputManager::FetchMouseDeltaAndResetCursorCenter() const
 								 static_cast<float>(l_nowMousePos.y - l_windowHalfSize.height) ,
 								 0.0F };
 
-	// 移動量がほぼなければ"Math::Vector3::Zero"の値を返す
-	if (l_movement.LengthSquared() <= MRI::CommonConstant::k_epsilon) 
-	{
-		return Math::Vector3();
-	}
-
 	// クライアント座標の中心をスクリーン座標に変換
 	POINT l_centerScreenPos = { l_windowHalfSize.width , l_windowHalfSize.height };
 

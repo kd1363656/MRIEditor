@@ -20,12 +20,6 @@ void MRI::ComponentMode::RotationComponentModeBase::PostLoadInit(std::shared_ptr
 	m_selfTransformComponentCache = a_owner->GetSelfTransformComponentCache();
 }
 
-void MRI::ComponentMode::RotationComponentModeBase::PreUpdate()
-{
-	// 外部から受け取った回転方向をクリア
-	m_rotationDirection = Math::Vector3::Zero;
-}
-
 void MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector()
 {
 	if (ImGui::CollapsingHeader("RotationDirectionAdaptList"))
