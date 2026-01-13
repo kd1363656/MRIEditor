@@ -2,14 +2,18 @@
 
 namespace MRI::ComponentMode
 {
-	class RotationComponentModeByMouseBase : public MRI::ComponentMode::RotationComponentModeBase
+	class RotationComponentByMouseModeBase : public MRI::ComponentMode::RotationComponentModeBase
 	{
 	public:
 
-		RotationComponentModeByMouseBase ()          = default;
-		~RotationComponentModeByMouseBase() override = default;
+		RotationComponentByMouseModeBase ()          = default;
+		~RotationComponentByMouseModeBase() override = default;
+
+		const MRI::TypeInfo& GetTypeInfo() const override;
 
 		void Init() override;
+
+		void Update() override;
 
 		void EditPrefabInspector() override;
 
@@ -32,9 +36,13 @@ namespace MRI::ComponentMode
 
 		void ToggleMouseCenterLock();
 
+		float GetRotationSpeed() const { return m_rotationSpeed; }
+
 		float GetMinRotatableDegreeX() const { return m_minRotatableDegreeX; }
 		float GetMaxRotatableDegreeX() const { return m_maxRotatableDegreeX; }
 
 		bool GetIsDisableMouseCenterLock() const { return m_isDisableMouseCenterLock; }
 	};
 }
+
+MRI_REGISTER_TYPE_INFO(MRI::ComponentMode::RotationComponentByMouseModeBase , MRI::ComponentMode::RotationComponentModeBase);

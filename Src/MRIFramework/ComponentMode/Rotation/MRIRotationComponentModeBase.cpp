@@ -93,6 +93,11 @@ nlohmann::json MRI::ComponentMode::RotationComponentModeBase::SerializePrefab()
 	return l_rootJson;
 }
 
+void MRI::ComponentMode::RotationComponentModeBase::ResetRotationDirection()
+{
+	m_rotationDirection = Math::Vector3::Zero;
+}
+
 void MRI::ComponentMode::RotationComponentModeBase::RegisterAdaptRotationDirectionTag(const std::uint32_t a_addRotationDirectionAdaptTag)
 {
 	if (a_addRotationDirectionAdaptTag == MRI::CommonConstant::k_invalidStaticID) { return; }

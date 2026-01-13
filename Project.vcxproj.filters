@@ -370,6 +370,12 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse">
       <UniqueIdentifier>{307dd400-0751-4846-91ad-6d81eb7f91ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant">
+      <UniqueIdentifier>{4a3c8356-9b2b-437c-96a2-ec7b89233bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth">
+      <UniqueIdentifier>{f0f5b49b-d9d7-48c3-81bc-de52566520e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -825,8 +831,14 @@
     <ClInclude Include="Src\MRIFramework\Utility\Axis\MRIAxisUtility.h">
       <Filter>Src\MRIFramework\Utility\Axis</Filter>
     </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentModeByMouseBase.h">
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentInstantByMouseMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentSmoothByMouseMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1130,8 +1142,14 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
     </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentModeByMouseBase.cpp">
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentInstantByMouseMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentSmoothByMouseMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -25,6 +25,8 @@ namespace MRI::ComponentMode
 	
 		nlohmann::json SerializePrefab() override;
 
+		void ResetRotationDirection();
+
 		void RegisterAdaptRotationDirectionTag(const std::uint32_t a_addRotationDirectionAdaptTag);
 
 	private:

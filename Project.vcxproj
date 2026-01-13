@@ -307,7 +307,9 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentModeByMouseBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentInstantByMouseMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentSmoothByMouseMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\Component\Camera\MRICameraComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Input\MRIInputComponent.h" />
@@ -453,7 +455,9 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentModeByMouseBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Instant\MRIRotationComponentInstantByMouseMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\MRIRotationComponentByMouseModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ByMouse\Smooth\MRIRotationComponentSmoothByMouseMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Camera\MRICameraComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Input\MRIInputComponent.cpp" />
