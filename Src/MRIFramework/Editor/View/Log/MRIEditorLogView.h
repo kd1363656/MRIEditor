@@ -35,7 +35,7 @@ namespace MRI::Editor
 		ImGuiTextBuffer m_textBuffer        = {};
 		ImGuiTextFilter m_textFilter        = {};
 		ImVector<int>   m_textLineOffsets   = {};
-		bool            m_canAutoScroll     = false;
-		bool            m_canScrollToBottom = false;
+		bool            m_canAutoScroll     = true;
+		bool            m_canScrollToBottom = true;
 	};
 }

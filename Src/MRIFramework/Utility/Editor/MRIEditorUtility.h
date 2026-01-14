@@ -124,11 +124,10 @@ namespace MRI::EditorUtility
 	// ドラッグアンドドロップ
 	//==================================================================
 	template <typename Type>
-		requires MRI::Concept::IsSmartPTRConcept<Type>
-	inline bool DragDropSource(const char*  a_label , const Type& a_payload)
+	inline bool DragDropSource(const char* a_label, const Type& a_payload)
 	{
-		// ポインタの種類情報を取得
 		constexpr MRI::TypeTrait::PTRKind l_kind = MRI::TypeTrait::PTRType<Type>::k_kind;
+		static_assert(l_kind != MRI::TypeTrait::PTRKind::Unique , "std::unique_ptrはDrawDropに対応していません");
 
 		bool l_isDrag = false;
 		ImGui::PushID(&a_payload);
@@ -144,7 +143,7 @@ namespace MRI::EditorUtility
 		// 値渡し
 		if constexpr (l_kind == MRI::TypeTrait::PTRKind::None)
 		{
-			ImGui::SetDragDropPayload(a_label , &a_payload , sizeof(Type));
+			ImGui::SetDragDropPayload(a_label , &a_payload, sizeof(Type));
 		}
 		// 生ポインタ、シェアードポインタ
 		else if constexpr (l_kind == MRI::TypeTrait::PTRKind::Raw || l_kind == MRI::TypeTrait::PTRKind::Shared)
@@ -155,19 +154,18 @@ namespace MRI::EditorUtility
 			}
 		}
 
-		ImGui::Text             ("%s" , a_label);
+		ImGui::Text("%s", a_label);
 		ImGui::EndDragDropSource();
-		ImGui::PopID            ();
+		ImGui::PopID();
 
 		return l_isDrag;
 	}
 	template <typename Type>
-		requires MRI::Concept::IsSmartPTRConcept<Type>
-	inline bool DragDropTarget(const char* a_label , Type& a_outPayload)
+	inline bool DragDropTarget(const char* a_label, Type& a_outPayload)
 	{
-		// ポインタの種類情報を取得
 		constexpr MRI::TypeTrait::PTRKind l_kind = MRI::TypeTrait::PTRType<Type>::k_kind;
-		
+		static_assert(l_kind != MRI::TypeTrait::PTRKind::Unique, "std::unique_ptrはDrawDropに対応していません");
+
 		bool l_isDropped = false;
 		ImGui::PushID(&a_outPayload);
 
@@ -180,7 +178,7 @@ namespace MRI::EditorUtility
 		const ImGuiPayload* l_payload = ImGui::AcceptDragDropPayload(a_label);
 		if (!l_payload)
 		{
-			ImGui::PopID			();
+			ImGui::PopID();
 			ImGui::EndDragDropTarget();
 			return false;
 		}
@@ -190,6 +188,7 @@ namespace MRI::EditorUtility
 			if (l_payload->DataSize == sizeof(Type))
 			{
 				a_outPayload = *static_cast<const Type*>(l_payload->Data);
+				l_isDropped  = true;
 			}
 		}
 		else if constexpr (l_kind == MRI::TypeTrait::PTRKind::Raw || l_kind == MRI::TypeTrait::PTRKind::Shared)
@@ -198,11 +197,11 @@ namespace MRI::EditorUtility
 			if (l_ptr)
 			{
 				a_outPayload = *l_ptr;
-				l_isDropped  = true;
+				l_isDropped = true;
 			}
 		}
 
-		ImGui::PopID			();
+		ImGui::PopID            ();
 		ImGui::EndDragDropTarget();
 
 		return l_isDropped;

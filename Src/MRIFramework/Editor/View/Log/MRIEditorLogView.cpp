@@ -3,8 +3,8 @@
 void MRI::Editor::EditorLogView::Init()
 {
 	// 自動スクロールを"ON"にして置きログをすべてクリア
-	m_canAutoScroll     = false;
-	m_canScrollToBottom = false;
+	m_canAutoScroll     = true;
+	m_canScrollToBottom = true;
 	ClearLog();
 }
 void MRI::Editor::EditorLogView::DrawEditor()
