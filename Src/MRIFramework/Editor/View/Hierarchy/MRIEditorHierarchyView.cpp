@@ -334,7 +334,7 @@ void MRI::Editor::EditorHierarchyView::HandleHierarchyDragAndDrop(std::weak_ptr<
 	l_parentCache->AttachChildCache(l_dropped);
 }
 
-bool MRI::Editor::EditorHierarchyView::IsDescendantOf(std::weak_ptr<MRI::GameObject> a_descendantCache, std::weak_ptr<MRI::GameObject> a_ancestorCache)
+bool MRI::Editor::EditorHierarchyView::IsDescendantOf(std::weak_ptr<MRI::GameObject> a_descendantCache , std::weak_ptr<MRI::GameObject> a_ancestorCache)
 {
 	auto l_descendantCache = a_descendantCache.lock();
 	auto l_ancestorCache   = a_ancestorCache.lock  ();
