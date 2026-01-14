@@ -14,7 +14,7 @@ namespace MRI::Component
 
 		struct Transform final
 		{
-			Math::Vector3    scale    = Math::Vector3::Zero;
+			Math::Vector3    scale    = Math::Vector3::One;
 			Math::Quaternion rotation = Math::Quaternion::Identity;
 			Math::Vector3    pos      = Math::Vector3::Zero;
 			Math::Matrix     matrix   = Math::Matrix::Identity;
