@@ -27,7 +27,7 @@
             ],
             "MaxRotatableDegreeX": 90.0,
             "MinRotatableDegreeX": -90.0,
-            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentLinearByMouseMode",
+            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentConstantSpeedMouseMode",
             "RotationSpeed": 3.0,
             "TypeName": "MRI::Component::RotationComponent"
         },
@@ -43,7 +43,7 @@
                     "TagName": "MRI::Tag::AxisTagY"
                 }
             ],
-            "MoveComponentModeName": "MRI::ComponentMode::MoveComponentLinearFacingDirectionMode",
+            "MoveComponentModeName": "MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode",
             "MoveSpeed": 3.5,
             "TypeName": "MRI::Component::MoveComponent"
         }

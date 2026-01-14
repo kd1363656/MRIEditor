@@ -2,12 +2,12 @@
 
 namespace MRI::ComponentMode
 {
-	class RotationComponentLinearModeBase : public MRI::ComponentMode::RotationComponentModeBase
+	class RotationComponentConstantSpeedModeBase : public MRI::ComponentMode::RotationComponentModeBase
 	{
 	public:
 
-		RotationComponentLinearModeBase ()          = default;
-		~RotationComponentLinearModeBase() override = default;
+		RotationComponentConstantSpeedModeBase ()          = default;
+		~RotationComponentConstantSpeedModeBase() override = default;
 		
 		const MRI::TypeInfo& GetTypeInfo() const override;
 
@@ -29,4 +29,4 @@ namespace MRI::ComponentMode
 	};
 }
 
-MRI_REGISTER_TYPE_INFO(MRI::ComponentMode::RotationComponentLinearModeBase , MRI::ComponentMode::RotationComponentModeBase);
+MRI_REGISTER_TYPE_INFO(MRI::ComponentMode::RotationComponentConstantSpeedModeBase , MRI::ComponentMode::RotationComponentModeBase);

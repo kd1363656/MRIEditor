@@ -2,23 +2,23 @@
 
 namespace MRI::ComponentMode
 {
-	class RotationComponentLerpByMouseMode : public MRI::ComponentMode::RotationComponentLerpModeBase
+	class RotationComponentConstantSpeedMouseMode final : public MRI::ComponentMode::RotationComponentConstantSpeedModeBase
 	{
 	public:
 
-		RotationComponentLerpByMouseMode ()          = default;
-		~RotationComponentLerpByMouseMode() override = default;
-
+		RotationComponentConstantSpeedMouseMode ()          = default;
+		~RotationComponentConstantSpeedMouseMode() override = default;
+		
 		const MRI::TypeInfo& GetTypeInfo() const override;
 
 		void Init() override;
-
+		
 		void Update() override;
 
 		void EditPrefabInspector() override;
-
+	
 		void DeserializePrefab(const nlohmann::json& a_json) override;
-
+	
 		nlohmann::json SerializePrefab() override;
 
 	private:
@@ -27,4 +27,4 @@ namespace MRI::ComponentMode
 	};
 }
 
-MRI_REGISTER_TYPE_INFO(MRI::ComponentMode::RotationComponentLerpByMouseMode , MRI::ComponentMode::RotationComponentLerpModeBase);
+MRI_REGISTER_TYPE_INFO(MRI::ComponentMode::RotationComponentConstantSpeedMouseMode , MRI::ComponentMode::RotationComponentConstantSpeedModeBase);

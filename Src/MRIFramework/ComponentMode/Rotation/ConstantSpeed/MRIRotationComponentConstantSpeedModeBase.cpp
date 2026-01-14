@@ -1,25 +1,25 @@
-﻿#include "MRIRotationComponentLinearModeBase.h"
+﻿#include "MRIRotationComponentConstantSpeedModeBase.h"
 
-const MRI::TypeInfo& MRI::ComponentMode::RotationComponentLinearModeBase::GetTypeInfo() const
+const MRI::TypeInfo& MRI::ComponentMode::RotationComponentConstantSpeedModeBase::GetTypeInfo() const
 {
-	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentLinearModeBase>();
+	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentConstantSpeedModeBase>();
 }
 
-void MRI::ComponentMode::RotationComponentLinearModeBase::Init()
+void MRI::ComponentMode::RotationComponentConstantSpeedModeBase::Init()
 {
 	MRI::ComponentMode::RotationComponentModeBase::Init();
 
 	m_rotationSpeed = k_defaultRotationSpeed;
 }
 
-void MRI::ComponentMode::RotationComponentLinearModeBase::EditPrefabInspector()
+void MRI::ComponentMode::RotationComponentConstantSpeedModeBase::EditPrefabInspector()
 {
 	MRI::ComponentMode::RotationComponentModeBase::EditPrefabInspector();
 
 	ImGui::DragFloat("RotationSpeed" , &m_rotationSpeed , MRI::EditorCommonConstant::k_defaultDragValue);
 }
 
-void MRI::ComponentMode::RotationComponentLinearModeBase::DeserializePrefab(const nlohmann::json& a_json)
+void MRI::ComponentMode::RotationComponentConstantSpeedModeBase::DeserializePrefab(const nlohmann::json& a_json)
 {
 	if (a_json.is_null()) { return; }
 
@@ -28,7 +28,7 @@ void MRI::ComponentMode::RotationComponentLinearModeBase::DeserializePrefab(cons
 	m_rotationSpeed = a_json.value("RotationSpeed" , k_defaultRotationSpeed);
 }
 
-nlohmann::json MRI::ComponentMode::RotationComponentLinearModeBase::SerializePrefab()
+nlohmann::json MRI::ComponentMode::RotationComponentConstantSpeedModeBase::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
 

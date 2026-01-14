@@ -361,12 +361,6 @@
     <Filter Include="Src\MRIFramework\Utility\Axis">
       <UniqueIdentifier>{21a4f2ee-e3dd-47cb-82e6-a0f3973adab2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Linear">
-      <UniqueIdentifier>{bc76e8cf-2908-471a-8e39-2741c9b6d0a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse">
-      <UniqueIdentifier>{d6d270fb-2cff-496a-8550-451989668cb5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Src\MRIFramework\Helper\Component">
       <UniqueIdentifier>{2bd69437-163a-4f07-a15a-0f25948add3f}</UniqueIdentifier>
     </Filter>
@@ -375,12 +369,6 @@
     </Filter>
     <Filter Include="Src\MRIFramework\Helper\Component\Rotation\ByMouse">
       <UniqueIdentifier>{ec2806a1-6c84-4dc0-942d-65cc13bd1f28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\MRIFramework\ComponentMode\Move\Linear">
-      <UniqueIdentifier>{031880f5-6f30-42b3-9c2e-2680b755e668}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDiretion">
-      <UniqueIdentifier>{0f3bd006-59fc-47cd-b0b0-fa0c1bf66aee}</UniqueIdentifier>
     </Filter>
     <Filter Include="Src\MRIFramework\ComponentMode\Input">
       <UniqueIdentifier>{115ad507-a012-434a-bf66-00af4e518b13}</UniqueIdentifier>
@@ -397,11 +385,26 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp">
       <UniqueIdentifier>{aa79ceda-3820-46f5-a268-dd3026485e5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse">
-      <UniqueIdentifier>{bfec49cd-f628-4bcf-8e3b-448a0502868d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp">
       <UniqueIdentifier>{113acf79-db8a-47aa-b83f-d6204f33f356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\Mouse">
+      <UniqueIdentifier>{bfec49cd-f628-4bcf-8e3b-448a0502868d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed">
+      <UniqueIdentifier>{54a8b8b8-0241-401c-b96a-6200b123fa95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\Mouse">
+      <UniqueIdentifier>{3ea7b475-6d83-4b84-aaa6-9e221c329a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed">
+      <UniqueIdentifier>{8d724e35-12e6-40d3-8e88-3394237976cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection">
+      <UniqueIdentifier>{c60385e1-c283-4dc4-9704-471e081decb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection">
+      <UniqueIdentifier>{0fbc4f8d-eaa1-4b5d-8f8e-289df1fb6606}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -852,23 +855,11 @@
     <ClInclude Include="Src\MRIFramework\Utility\Axis\MRIAxisUtility.h">
       <Filter>Src\MRIFramework\Utility\Axis</Filter>
     </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Linear\MRIRotationComponentLinearModeBase.h">
-      <Filter>Src\MRIFramework\ComponentMode\Rotation\Linear</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse\MRIRotationComponentLinearByMouseMode.h">
-      <Filter>Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse</Filter>
-    </ClInclude>
     <ClInclude Include="Src\MRIFramework\Helper\Component\MRIComponentHelperBase.h">
       <Filter>Src\MRIFramework\Helper\Component</Filter>
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\Helper\Component\Rotation\ByMouse\MRIComponentRotationByMouseHelper.h">
       <Filter>Src\MRIFramework\Helper\Component\Rotation\ByMouse</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.h">
-      <Filter>Src\MRIFramework\ComponentMode\Move\Linear</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.h">
-      <Filter>Src\MRIFramework\ComponentMode\Move\Linear\FacingDiretion</Filter>
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Input</Filter>
@@ -888,11 +879,26 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\MRIRotationComponentLerpModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp</Filter>
     </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.h">
-      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse</Filter>
-    </ClInclude>
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\Mouse\MRIRotationComponentLerpMouseMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\MRIRotationComponentConstantSpeedModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\Mouse\MRIRotationComponentConstantSpeedMouseMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\MRIMoveComponentConstantSpeedModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move\ConstantSpeed</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection\MRIMoveComponentConstantSpeedFacingDirectionMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection\MRIRotationComponentLerpTargetViewDirectionMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1190,20 +1196,8 @@
     <ClCompile Include="Src\MRIFramework\Component\Move\MRIMoveComponent.cpp">
       <Filter>Src\MRIFramework\Component\Move</Filter>
     </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Linear\MRIRotationComponentLinearModeBase.cpp">
-      <Filter>Src\MRIFramework\ComponentMode\Rotation\Linear</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse\MRIRotationComponentLinearByMouseMode.cpp">
-      <Filter>Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse</Filter>
-    </ClCompile>
     <ClCompile Include="Src\MRIFramework\Helper\Component\Rotation\ByMouse\MRIComponentRotationByMouseHelper.cpp">
       <Filter>Src\MRIFramework\Helper\Component\Rotation\ByMouse</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.cpp">
-      <Filter>Src\MRIFramework\ComponentMode\Move\Linear</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.cpp">
-      <Filter>Src\MRIFramework\ComponentMode\Move\Linear\FacingDiretion</Filter>
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Input</Filter>
@@ -1220,11 +1214,26 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\MRIRotationComponentLerpModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp</Filter>
     </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.cpp">
-      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse</Filter>
-    </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\Mouse\MRIRotationComponentLerpMouseMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\MRIRotationComponentConstantSpeedModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\Mouse\MRIRotationComponentConstantSpeedMouseMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\ConstantSpeed\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\MRIMoveComponentConstantSpeedModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move\ConstantSpeed</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection\MRIMoveComponentConstantSpeedFacingDirectionMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection\MRIRotationComponentLerpTargetViewDirectionMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

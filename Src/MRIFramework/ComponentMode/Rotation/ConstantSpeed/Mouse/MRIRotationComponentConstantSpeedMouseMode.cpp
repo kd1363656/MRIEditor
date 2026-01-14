@@ -1,15 +1,15 @@
-﻿#include "MRIRotationComponentLinearByMouseMode.h"
+﻿#include "MRIRotationComponentConstantSpeedMouseMode.h"
 
 #include "../../../../../Application/main.h"
 
-const MRI::TypeInfo& MRI::ComponentMode::RotationComponentLinearByMouseMode::GetTypeInfo() const
+const MRI::TypeInfo& MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::GetTypeInfo() const
 {
-	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentLinearByMouseMode>();
+	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentConstantSpeedMouseMode>();
 }
 
-void MRI::ComponentMode::RotationComponentLinearByMouseMode::Init()
+void MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::Init()
 {
-	MRI::ComponentMode::RotationComponentLinearModeBase::Init();
+	MRI::ComponentMode::RotationComponentConstantSpeedModeBase::Init();
 
 	if (!m_componentRotationByMouseHelper)
 	{
@@ -19,7 +19,7 @@ void MRI::ComponentMode::RotationComponentLinearByMouseMode::Init()
 	m_componentRotationByMouseHelper->Init();
 }
 
-void MRI::ComponentMode::RotationComponentLinearByMouseMode::Update()
+void MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::Update()
 {
 	if (!m_componentRotationByMouseHelper) { return; }
 
@@ -45,7 +45,7 @@ void MRI::ComponentMode::RotationComponentLinearByMouseMode::Update()
 	Math::Vector3 l_movement = { l_mouseMovement.y , l_mouseMovement.x , l_mouseMovement.z };
 
 	// 回転速度にデルタタイムを乗算
-	l_movement *= MRI::ComponentMode::RotationComponentLinearModeBase::GetRotationSpeed() * l_application.GetScaledDeltaTime();
+	l_movement *= MRI::ComponentMode::RotationComponentConstantSpeedModeBase::GetRotationSpeed() * l_application.GetScaledDeltaTime();
 
 	// 現在のオイラー角を取得
 	Math::Vector3 l_rotation = MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection();
@@ -65,25 +65,25 @@ void MRI::ComponentMode::RotationComponentLinearByMouseMode::Update()
 	l_selfTransformComponentCache->SetRotation						  (l_resultRotation);
 }
 
-void MRI::ComponentMode::RotationComponentLinearByMouseMode::EditPrefabInspector()
+void MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::EditPrefabInspector()
 {
-	MRI::ComponentMode::RotationComponentLinearModeBase::EditPrefabInspector();
+	MRI::ComponentMode::RotationComponentConstantSpeedModeBase::EditPrefabInspector();
 
 	if (!m_componentRotationByMouseHelper) { return; }
 	
 	m_componentRotationByMouseHelper->EditPrefabInspector();
 }
 
-void MRI::ComponentMode::RotationComponentLinearByMouseMode::DeserializePrefab(const nlohmann::json& a_json)
+void MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::DeserializePrefab(const nlohmann::json& a_json)
 {
-	MRI::ComponentMode::RotationComponentLinearModeBase::DeserializePrefab(a_json);
+	MRI::ComponentMode::RotationComponentConstantSpeedModeBase::RotationComponentConstantSpeedModeBase::DeserializePrefab(a_json);
 
 	if (!m_componentRotationByMouseHelper) { return; }
 
 	m_componentRotationByMouseHelper->DeserializePrefab(a_json);
 }
 
-nlohmann::json MRI::ComponentMode::RotationComponentLinearByMouseMode::SerializePrefab()
+nlohmann::json MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
 
@@ -92,8 +92,8 @@ nlohmann::json MRI::ComponentMode::RotationComponentLinearByMouseMode::Serialize
 		return nlohmann::json();
 	}
 
-	MRI::JsonUtility::UpdateJson(l_rootJson , m_componentRotationByMouseHelper->SerializePrefab					  ());
-	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::ComponentMode::RotationComponentLinearModeBase::SerializePrefab());
+	MRI::JsonUtility::UpdateJson(l_rootJson , m_componentRotationByMouseHelper->SerializePrefab					         ());
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::ComponentMode::RotationComponentConstantSpeedModeBase::SerializePrefab());
 
 	return l_rootJson;
 }

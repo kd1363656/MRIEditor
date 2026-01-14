@@ -1,19 +1,19 @@
-﻿#include "MRIMoveComponentLinearFacingDirectionMode.h"
+﻿#include "MRIMoveComponentConstantSpeedFacingDirectionMode.h"
 
 #include "../../../../../Application/main.h"
 
-const MRI::TypeInfo& MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::GetTypeInfo() const
+const MRI::TypeInfo& MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode::GetTypeInfo() const
 {
-	return MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearFacingDirectionMode>();
+	return MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode>();
 }
 
-void MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::PreUpdate()
+void MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode::PreUpdate()
 {
 	// 移動方向をリセット
 	MRI::ComponentMode::MoveComponentModeBase::ResetMoveDirection();
 }
 
-void MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::Update()
+void MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode::Update()
 {
 	auto l_selfTransformComponentCache = MRI::ComponentMode::MoveComponentModeBase::GetSelfTransformComponentCache().lock();
 	if (!l_selfTransformComponentCache) { return; }
@@ -23,7 +23,7 @@ void MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::Update()
 	// 移動方向が格納されていないか値が小さければ"return"
 	if (l_moveDirection.LengthSquared() <= MRI::CommonConstant::k_epsilon) { return; }
 
-	const float l_moveSpeed = MRI::ComponentMode::MoveComponentLinearModeBase::GetMoveSpeed() * Application::GetInstance().GetScaledDeltaTime();
+	const float l_moveSpeed = MRI::ComponentMode::MoveComponentConstantSpeedModeBase::GetMoveSpeed() * Application::GetInstance().GetScaledDeltaTime();
 
 	// 移動方向を正規化
 	l_moveDirection.Normalize();
@@ -33,7 +33,7 @@ void MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::Update()
 	Math::Vector3 l_resultMoveDirection = Math::Vector3::TransformNormal                   (l_moveDirection , l_rotationMatrix);
 
 	// 使用しない軸の値を"0.0F"にして使用しないようにする
-	MRI::AxisUtility::ResetAdaptDirection(MRI::ComponentMode::MoveComponentLinearModeBase::GetWorkAdaptMoveAxisTagSet() , l_resultMoveDirection);
+	MRI::AxisUtility::ResetAdaptDirection(MRI::ComponentMode::MoveComponentConstantSpeedModeBase::GetWorkAdaptMoveAxisTagSet() , l_resultMoveDirection);
 
 	// 使用しない軸の移動方向を"0.0F"にしてから正規化
 	l_resultMoveDirection.Normalize();

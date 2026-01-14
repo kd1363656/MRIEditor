@@ -35,11 +35,12 @@ void MRI::FactoryUtility::RegisterObserverNotifierFactory()
 void MRI::FactoryUtility::RegisterComponentModeFactory()
 {
 	// 移動
-	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::MoveComponentMode , MRI::ComponentMode::MoveComponentLinearFacingDirectionMode);
-
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::MoveComponentMode , MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode);
+	
 	// 回転
-	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLinearByMouseMode);
-	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLerpByMouseMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentConstantSpeedMouseMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLerpMouseMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLerpTargetViewDirectionMode);
 
 	// 入力
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::InputComponentMode , MRI::ComponentMode::InputComponentFourWayMoveMode);

@@ -1,13 +1,13 @@
-﻿#include "MRIRotationComponentLerpByMouseMode.h"
+﻿#include "MRIRotationComponentLerpMouseMode.h"
 
 #include "../../../../../Application/main.h"
 
-const MRI::TypeInfo& MRI::ComponentMode::RotationComponentLerpByMouseMode::GetTypeInfo() const
+const MRI::TypeInfo& MRI::ComponentMode::RotationComponentLerpMouseMode::GetTypeInfo() const
 {
-	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentLerpByMouseMode>();
+	return MRI::GetTypeInfo<MRI::ComponentMode::RotationComponentLerpMouseMode>();
 }
 
-void MRI::ComponentMode::RotationComponentLerpByMouseMode::Init()
+void MRI::ComponentMode::RotationComponentLerpMouseMode::Init()
 {
 	MRI::ComponentMode::RotationComponentLerpModeBase::Init();
 
@@ -19,7 +19,7 @@ void MRI::ComponentMode::RotationComponentLerpByMouseMode::Init()
 	m_componentRotationByMouseHelper->Init();
 }
 
-void MRI::ComponentMode::RotationComponentLerpByMouseMode::Update()
+void MRI::ComponentMode::RotationComponentLerpMouseMode::Update()
 {
 	if (!m_componentRotationByMouseHelper) { return; }
 
@@ -85,7 +85,7 @@ void MRI::ComponentMode::RotationComponentLerpByMouseMode::Update()
 	l_interpolatorModifierCache->Update();
 }
 
-void MRI::ComponentMode::RotationComponentLerpByMouseMode::EditPrefabInspector()
+void MRI::ComponentMode::RotationComponentLerpMouseMode::EditPrefabInspector()
 {
 	MRI::ComponentMode::RotationComponentLerpModeBase::EditPrefabInspector();
 
@@ -94,7 +94,7 @@ void MRI::ComponentMode::RotationComponentLerpByMouseMode::EditPrefabInspector()
 	m_componentRotationByMouseHelper->EditPrefabInspector();
 }
 
-void MRI::ComponentMode::RotationComponentLerpByMouseMode::DeserializePrefab(const nlohmann::json& a_json)
+void MRI::ComponentMode::RotationComponentLerpMouseMode::DeserializePrefab(const nlohmann::json& a_json)
 {
 	MRI::ComponentMode::RotationComponentLerpModeBase::DeserializePrefab(a_json);
 
@@ -103,7 +103,7 @@ void MRI::ComponentMode::RotationComponentLerpByMouseMode::DeserializePrefab(con
 	m_componentRotationByMouseHelper->DeserializePrefab(a_json);
 }
 
-nlohmann::json MRI::ComponentMode::RotationComponentLerpByMouseMode::SerializePrefab()
+nlohmann::json MRI::ComponentMode::RotationComponentLerpMouseMode::SerializePrefab()
 {
 	auto l_rootJson = nlohmann::json();
 
