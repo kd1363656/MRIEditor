@@ -310,6 +310,8 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\MRIRotationComponentLerpModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse\MRIRotationComponentLinearByMouseMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Linear\MRIRotationComponentLinearModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.h" />
@@ -464,6 +466,8 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\MRIComponentModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\MRIRotationComponentLerpModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Linear\ByMouse\MRIRotationComponentLinearByMouseMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Linear\MRIRotationComponentLinearModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.cpp" />

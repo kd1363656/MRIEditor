@@ -138,6 +138,8 @@
 #include "ComponentMode/Rotation/MRIRotationComponentModeBase.h"
 #include "ComponentMode/Rotation/Linear/MRIRotationComponentLinearModeBase.h"
 #include "ComponentMode/Rotation/Linear/ByMouse/MRIRotationComponentLinearByMouseMode.h"
+#include "ComponentMode/Rotation/Lerp/MRIRotationComponentLerpModeBase.h"
+#include "ComponentMode/Rotation/Lerp/ByMouse/MRIRotationComponentLerpByMouseMode.h"
 #include "ComponentMode/Move/MRIMoveComponentModeBase.h"
 #include "ComponentMode/Move/Linear/MRIMoveComponentLinearModeBase.h"
 #include "ComponentMode/Move/Linear/FacingDirection/MRIMoveComponentLinearFacingDirectionMode.h"

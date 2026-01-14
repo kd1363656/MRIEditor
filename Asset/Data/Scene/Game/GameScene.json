@@ -8,6 +8,9 @@
                         {
                             "FieldOfView": 45.0,
                             "TypeName": "MRI::Component::CameraComponent"
+                        },
+                        {
+                            "TypeName": "MRI::Component::RotationComponent"
                         }
                     ],
                     "MRI::Component::TransformComponent": {

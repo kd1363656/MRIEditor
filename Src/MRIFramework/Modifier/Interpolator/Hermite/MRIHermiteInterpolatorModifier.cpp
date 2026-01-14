@@ -45,7 +45,7 @@ void MRI::Modifier::HermiteInterpolatorModifier::Update()
 		const auto& l_k0 = m_keyFrameList[l_i];
 		const auto& l_k1 = m_keyFrameList[l_i + 1ULL];
 
-		if (l_elapsed < l_k0.time || l_elapsed > l_k1.time) { continue; }
+		if (l_elapsed <= l_k0.time || l_elapsed > l_k1.time) { continue; }
 
 		// 気フレーム二点間と経過時間から進捗度を求める
 		const float l_progressBetweenKeys = (l_elapsed - l_k0.time) / (l_k1.time - l_k0.time);

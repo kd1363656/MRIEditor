@@ -4,6 +4,35 @@
         {
             "TagName": "MRI::Tag::CameraMainTag",
             "TypeName": "MRI::Component::CameraComponent"
+        },
+        {
+            "AdaptRotationAxisTagSet": [
+                {
+                    "TagName": "MRI::Tag::AxisTagX"
+                },
+                {
+                    "TagName": "MRI::Tag::AxisTagY"
+                }
+            ],
+            "InterpolatorModifierName": "MRI::Modifier::HermiteInterpolatorModifier",
+            "KeyFrameList": [
+                {
+                    "Tangent": 0.0,
+                    "Time": 0.0,
+                    "Value": 5.0
+                },
+                {
+                    "Tangent": 0.0,
+                    "Time": 1.0,
+                    "Value": 5.0
+                }
+            ],
+            "MaxMeasurementTime": 1.0,
+            "MaxRotatableDegreeX": 90.0,
+            "MaxValue": 5.0,
+            "MinRotatableDegreeX": -90.0,
+            "RotationComponentModeName": "MRI::ComponentMode::RotationComponentLerpByMouseMode",
+            "TypeName": "MRI::Component::RotationComponent"
         }
     ],
     "ComponentObserver": {

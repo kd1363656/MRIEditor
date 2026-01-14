@@ -394,6 +394,12 @@
     <Filter Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT">
       <UniqueIdentifier>{af7aea87-6cac-4b32-8f42-68b91e3781f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp">
+      <UniqueIdentifier>{aa79ceda-3820-46f5-a268-dd3026485e5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse">
+      <UniqueIdentifier>{bfec49cd-f628-4bcf-8e3b-448a0502868d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -876,6 +882,12 @@
     <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.h">
       <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\MRIRotationComponentLerpModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -1198,6 +1210,12 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.cpp">
       <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\MRIRotationComponentLerpModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

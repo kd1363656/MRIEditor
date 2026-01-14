@@ -39,6 +39,7 @@ void MRI::FactoryUtility::RegisterComponentModeFactory()
 
 	// 回転
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLinearByMouseMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLerpByMouseMode);
 
 	// 入力
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::InputComponentMode , MRI::ComponentMode::InputComponentFourWayMoveMode);
