@@ -71,10 +71,8 @@ void MRI::Converter::SceneConverter::DecidePrefabGameObject() const
 	// ルートゲームオブジェクトのキャッシュのみ取得
 	for (const auto& l_gameObject : l_sceneCache->GetGameObjectList())
 	{
-		// ヌルポインタ化子ゲームオブジェクトなら処理を飛ばす
-		if (!l_gameObject)             { continue; }
-		if (l_gameObject->HasParent()) { continue; }
-
+		if (!l_gameObject) { continue; }
+		
 		// プレハブ名からプレハブを取得
 		auto l_prefab = l_prefabControllerCache->FetchPrefabCache(l_gameObject->GetPrefabName()).lock();
 		if (!l_prefab) { continue; }

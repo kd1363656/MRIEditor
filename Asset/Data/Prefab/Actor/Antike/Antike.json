@@ -1,5 +1,38 @@
 {
-    "ChildList": [],
+    "ChildList": [
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TagName": "MRI::Tag::CameraMainTag",
+                    "TypeName": "MRI::Component::CameraComponent"
+                }
+            ],
+            "ComponentObserver": {
+                "SubscribedEventTypeDataMap": []
+            },
+            "MRI::Component::TransformComponent": {
+                "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSTRParentT",
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 1.2999999523162842,
+                    "Z": -1.399999976158142
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TPVCamera"
+        }
+    ],
     "ComponentList": [
         {
             "Color": {

@@ -188,17 +188,17 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 		return; 
 	}
 
-	// ドラッグアンドドロップで親子関係を結ぶ処理
-	HandleHierarchyDragAndDrop(a_gameObject);
-
-	// コンテキストメニューの表示
-	HandleContextMenu(a_gameObject);
-
 	// クリックしたゲームオブジェクトを選択されているゲームオブジェクトとして格納
 	if (ImGui::IsItemClicked())
 	{
 		SetSelectedGameObjectCache(a_gameObject);
 	}
+
+	// ドラッグアンドドロップで親子関係を結ぶ処理
+	HandleHierarchyDragAndDrop(a_gameObject);
+
+	// コンテキストメニューの表示
+	HandleContextMenu(a_gameObject);
 
 	// ノードの再帰的な描画
 	for (const auto& l_childCache : a_gameObject->GetChildCacheList())
@@ -322,6 +322,4 @@ void MRI::Editor::EditorHierarchyView::SetSelectedGameObjectCache(const std::wea
 
 	m_selectedGameObjectCache = l_gameObjectCache;
 	m_selectedGameObjectUUID  = l_gameObjectCache->GetUUID();
-
-	MRI_ADD_LOG("今ヒエラルキーで選んでいるゲームオブジェクト : %s" , l_gameObjectCache->GetPrefabName().data());
 }

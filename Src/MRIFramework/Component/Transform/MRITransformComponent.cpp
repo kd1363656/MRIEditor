@@ -15,6 +15,15 @@ void MRI::Component::TransformComponent::Init()
 
 void MRI::Component::TransformComponent::PostLoadInit()
 {
+	auto l_ownerCache = MRI::Component::ComponentBase::GetWorkOwnerCache().lock();
+	if (!l_ownerCache) { return; }
+
+	// 親がいたら親の"TransformComponent"をキャッシュする
+	if (auto l_parentCache = l_ownerCache->GetParentCache().lock())
+	{
+		m_parentTransformComponentCache = l_parentCache->GetSelfTransformComponentCache().lock();
+	}
+
 	// 行列の更新
 	FixMatrixStrategy();
 }

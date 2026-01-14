@@ -1,7 +1,37 @@
 {
     "GameObjectList": [
         {
-            "ChildList": [],
+            "ChildList": [
+                {
+                    "ChildList": [],
+                    "ComponentList": [
+                        {
+                            "FieldOfView": 45.0,
+                            "TypeName": "MRI::Component::CameraComponent"
+                        }
+                    ],
+                    "MRI::Component::TransformComponent": {
+                        "Pos": {
+                            "X": 0.0,
+                            "Y": 1.2999999523162842,
+                            "Z": -1.399999976158142
+                        },
+                        "Rotation": {
+                            "W": 1.0,
+                            "X": 0.0,
+                            "Y": 0.0,
+                            "Z": 0.0
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 1.0
+                        }
+                    },
+                    "PrefabName": "TPVCamera",
+                    "UUID": "ff782263-4bd9-4b1b-80c3-83969d9e108d"
+                }
+            ],
             "ComponentList": [
                 {
                     "TypeName": "MRI::Component::RenderModelAnimationComponent"
@@ -27,35 +57,6 @@
             },
             "PrefabName": "Antike",
             "UUID": "a2ed82de-d4d5-40a7-bf76-fa698f1f81b3"
-        },
-        {
-            "ChildList": [],
-            "ComponentList": [
-                {
-                    "FieldOfView": 45.0,
-                    "TypeName": "MRI::Component::CameraComponent"
-                }
-            ],
-            "MRI::Component::TransformComponent": {
-                "Pos": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Rotation": {
-                    "W": 1.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                },
-                "Scale": {
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0
-                }
-            },
-            "PrefabName": "TPVCamera",
-            "UUID": "ff782263-4bd9-4b1b-80c3-83969d9e108d"
         }
     ],
     "PrefabMap": [
