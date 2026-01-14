@@ -7,6 +7,10 @@
         {
             "PrefabFilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
             "PrefabName": "Antike"
+        },
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
+            "PrefabName": "TPVCamera"
         }
     ]
 }

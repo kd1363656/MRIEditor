@@ -48,6 +48,7 @@
 // タグの基底構造体を継承しているかどうかを確認する"Concept"
 #include "Concept/IsDerived/MRIIsDerivedTagBaseConcept.h"
 #include "Concept/IsDerived/MRIIsDerivedAxisTagBaseConcept.h"
+#include "Concept/IsDerived/MRIIsDerivedInputEventTagBaseConcept.h"
 
 // "Axis"用便利関数
 #include "Utility/Axis/MRIAxisUtility.h"
@@ -119,6 +120,13 @@
 // ファクトリークラス
 #include "Factory/MRIGenericFactory.h"
 
+// キーコンフィグクラス
+#include "PlayerKeyConfig/MRIPlayerKeyConfig.h"
+
+// "Scene"
+#include "Scene/MRIScene.h"
+#include "Scene/MRISceneManager.h"
+
 // ヘルパークラス
 #include "Helper/AssetFilePath/MRIAssetFilePathHelper.h"
 #include "Helper/Component/MRIComponentHelperBase.h"
@@ -133,6 +141,9 @@
 #include "ComponentMode/Move/MRIMoveComponentModeBase.h"
 #include "ComponentMode/Move/Linear/MRIMoveComponentLinearModeBase.h"
 #include "ComponentMode/Move/Linear/FacingDirection/MRIMoveComponentLinearFacingDirectionMode.h"
+#include "ComponentMode/Input/MRIInputComponentModeBase.h"
+#include "ComponentMode/Input/Move/MRIInputComponentMoveModeBase.h"
+#include "ComponentMode/Input/Move/FourWay/MRIInputComponentFourWayMoveMode.h"
 
 // "Component"
 #include "Component/MRIComponentBase.h"
@@ -152,6 +163,7 @@
 #include "Strategy/MRIStrategyBase.h"
 #include "Component/Transform/MatrixStrategy/MRIMatrixStrategyBase.h"
 #include "Component/Transform/MatrixStrategy/CreateSRT/MRIMatrixStrategyCreateSRT.h"
+#include "Component/Transform/MatrixStrategy/CreateSTRParentT/MRIMatrixStrategyCreateSTRParentT.h"
 
 // ファクトリーの呼び出しを間違えないための"using"
 #include "Factory/Unique/MRIUniqueFactory.h"
@@ -182,15 +194,8 @@
 #include "FileIO/SceneManager/MRISceneManagerFileIO.h"
 #include "FileIO/PrefabController/MRIPrefabControllerFileIO.h"
 
-// キーコンフィグクラス
-#include "PlayerKeyConfig/MRIPlayerKeyConfig.h"
-
 // "RenderManager"
 #include "Render/MRIRenderManager.h"
-
-// "Scene"
-#include "Scene/MRIScene.h"
-#include "Scene/MRISceneManager.h"
 
 // エディターとシーンの記録を保存する便利関数
 #include "Utility/Editor/SceneSave/MRIEditorSceneSaveUtility.h"

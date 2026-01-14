@@ -2,12 +2,26 @@
 
 namespace MRI
 {
+	namespace Converter
+	{
+		class SceneConverter;
+	}
+
+	namespace Resource
+	{
+		class ResourceController;
+		class PrefabController;
+	}
+}
+
+namespace MRI
+{
 	class Scene final : public std::enable_shared_from_this<MRI::Scene>
 	{
 	public:
 
-		Scene () = default;
-		~Scene() = default;
+		Scene ();
+		~Scene();
 
 		void Init        ();
 		void PostLoadInit() const;

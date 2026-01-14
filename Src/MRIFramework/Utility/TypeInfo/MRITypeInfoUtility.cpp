@@ -70,10 +70,10 @@ void MRI::TypeInfoUtility::RegisterInputEventTag(MRI::TypeInfoRegistry& a_regist
 	// ルートタグ"InputEventTagBase"
 	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputEventTagBase>());
 
-	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputRightEventTag>());
-	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputLeftEventTag> ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputUpEventTag>   ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputDownEventTag> ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputRightEventTag>   ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputLeftEventTag>    ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputBackwardEventTag>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::InputForwardEventTag> ());
 }
 
 void MRI::TypeInfoUtility::RegisterAxisTag(MRI::TypeInfoRegistry& a_registry)
@@ -114,6 +114,11 @@ void MRI::TypeInfoUtility::RegisterComponentMode(MRI::TypeInfoRegistry& a_regist
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>                 ());
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearModeBase>           ());
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearFacingDirectionMode>());
+
+	// 入力
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentModeBase>       ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentMoveModeBase>   ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentFourWayMoveMode>());
 }
 
 void MRI::TypeInfoUtility::RegisterStrategy(MRI::TypeInfoRegistry& a_registry)

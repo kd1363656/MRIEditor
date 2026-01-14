@@ -11,9 +11,10 @@ bool MRI::EditorUtility::IsPrefabGameObjectInSceneGameObjectList(const std::stri
 	// 消す予定もしくはプレハブ名が一致しなければ一致しない
 	return std::ranges::any_of(l_sceneCache->GetGameObjectList() , [&a_prefabName](const auto& a_gameObject) 
 	{
-		if (!a_gameObject)					               { return false; }
-		if (a_gameObject->GetIsDestroyed())                { return false; }
-		if (a_gameObject->GetPrefabName() != a_prefabName) { return false; }
+		if (!a_gameObject || a_gameObject->GetIsDestroyed() || a_gameObject->GetPrefabName() != a_prefabName)
+		{
+			return false; 
+		}
 	
 		return true;
 	});

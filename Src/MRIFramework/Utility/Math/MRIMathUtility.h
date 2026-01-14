@@ -39,7 +39,7 @@ namespace MRI::MathUtility
 		return std::atan2f(a_euler.x , a_euler.z);
 	}
 
-	inline void AddDirection(const Math::Vector3& a_addDirection , Math::Vector3& a_target)
+	inline void AddDirection(Math::Vector3& a_target , const Math::Vector3& a_addDirection)
 	{
 		a_target += a_addDirection;
 		

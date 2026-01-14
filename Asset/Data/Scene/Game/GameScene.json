@@ -4,44 +4,6 @@
             "ChildList": [],
             "ComponentList": [
                 {
-                    "FieldOfView": 45.0,
-                    "TypeName": "MRI::Component::CameraComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::InputComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::RotationComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::MoveComponent"
-                }
-            ],
-            "MRI::Component::TransformComponent": {
-                "Pos": {
-                    "X": 0.07055716216564178,
-                    "Y": 1.1497479677200317,
-                    "Z": -2.1597986221313477
-                },
-                "Rotation": {
-                    "W": 0.9975290894508362,
-                    "X": 0.06411217153072357,
-                    "Y": -0.028669236227869987,
-                    "Z": 0.0018425998277962208
-                },
-                "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                }
-            },
-            "PrefabName": "FreeCamera",
-            "UUID": "b1c96011-2c6c-4f63-812f-b325a25d9498"
-        },
-        {
-            "ChildList": [],
-            "ComponentList": [
-                {
                     "TypeName": "MRI::Component::RenderModelAnimationComponent"
                 }
             ],
@@ -65,16 +27,45 @@
             },
             "PrefabName": "Antike",
             "UUID": "a2ed82de-d4d5-40a7-bf76-fa698f1f81b3"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "FieldOfView": 45.0,
+                    "TypeName": "MRI::Component::CameraComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                }
+            },
+            "PrefabName": "TPVCamera",
+            "UUID": "ff782263-4bd9-4b1b-80c3-83969d9e108d"
         }
     ],
     "PrefabMap": [
         {
-            "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
-            "PrefabName": "FreeCamera"
-        },
-        {
             "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
             "PrefabName": "Antike"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
+            "PrefabName": "TPVCamera"
         }
     ],
     "SceneShiftMap": [],

@@ -32,7 +32,7 @@ void MRI::Component::RotationComponent::EditPrefabInspector()
 	if (!l_ownerCache) { return; }
 
 	// 回転のモード切替を行う
-	if (const bool l_isCreate = MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::RotationComponentMode>("RotationComponentMode", m_rotationComponentMode);
+	if (const bool l_isCreate = MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::RotationComponentMode>("RotationComponentMode", m_rotationComponentMode);
 		l_isCreate && m_rotationComponentMode)
 	{
 		// インスタンスが生成されたら初期化
@@ -48,16 +48,7 @@ void MRI::Component::RotationComponent::DeserializePrefab(const nlohmann::json& 
 {
 	if (a_json.is_null()) { return; }
 
-	const auto& l_factory = MRI::UniqueFactory::RotationComponentMode::GetInstance();
-
-	const std::string& l_rotationComponentModeName = a_json.value("RotationComponentModeName" , std::string());
-	m_rotationComponentMode						   = l_factory.Create(l_rotationComponentModeName);
-
-	if (m_rotationComponentMode)
-	{
-		m_rotationComponentMode->Init             ();
-		m_rotationComponentMode->DeserializePrefab(a_json);
-	}
+	MRI::JsonUtility::DeserializeInstancePrefab<MRI::SharedFactory::RotationComponentMode>(a_json , "RotationComponentModeName" , m_rotationComponentMode);
 }
 
 nlohmann::json MRI::Component::RotationComponent::SerializePrefab()
@@ -69,8 +60,7 @@ nlohmann::json MRI::Component::RotationComponent::SerializePrefab()
 
 	auto l_rootJson = nlohmann::json();
 
-	l_rootJson["RotationComponentModeName"] = m_rotationComponentMode->GetTypeInfo().k_name.data();
-	MRI::JsonUtility::UpdateJson											      (l_rootJson , m_rotationComponentMode->SerializePrefab());
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::JsonUtility::SerializeInstancePrefab("RotationComponentModeName" , m_rotationComponentMode));
 
 	return l_rootJson;
 }

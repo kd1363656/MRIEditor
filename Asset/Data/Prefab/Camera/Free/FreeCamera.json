@@ -6,6 +6,11 @@
             "TypeName": "MRI::Component::CameraComponent"
         },
         {
+            "InputComponentModeList": [
+                {
+                    "InputComponentModeName": "MRI::ComponentMode::InputComponentFourWayMoveMode"
+                }
+            ],
             "TypeName": "MRI::Component::InputComponent"
         },
         {
@@ -23,7 +28,7 @@
             "MaxRotatableDegreeX": 90.0,
             "MinRotatableDegreeX": -90.0,
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentLinearByMouseMode",
-            "RotationSpeed": 5.0,
+            "RotationSpeed": 3.0,
             "TypeName": "MRI::Component::RotationComponent"
         },
         {
@@ -39,7 +44,7 @@
                 }
             ],
             "MoveComponentModeName": "MRI::ComponentMode::MoveComponentLinearFacingDirectionMode",
-            "MoveSpeed": 5.0,
+            "MoveSpeed": 3.5,
             "TypeName": "MRI::Component::MoveComponent"
         }
     ],
@@ -49,15 +54,15 @@
     "MRI::Component::TransformComponent": {
         "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
         "Pos": {
-            "X": 0.07055716216564178,
-            "Y": 1.1497479677200317,
-            "Z": -2.1597986221313477
+            "X": -0.002010572701692581,
+            "Y": 1.2301160097122192,
+            "Z": -0.8196081519126892
         },
         "Rotation": {
-            "W": 0.9975290894508362,
-            "X": 0.06411217153072357,
-            "Y": -0.028669236227869987,
-            "Z": 0.0018425998277962208
+            "W": 0.9987674951553345,
+            "X": -0.04944024607539177,
+            "Y": 0.004359615035355091,
+            "Z": 0.0002158064307877794
         },
         "Scale": {
             "X": 1.0,

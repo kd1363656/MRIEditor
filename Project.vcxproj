@@ -303,6 +303,9 @@
     <ClInclude Include="Src\Framework\Utility\KdDataStorage.h" />
     <ClInclude Include="Src\Framework\Utility\KdCSVData.h" />
     <ClInclude Include="Src\Framework\Utility\KdRandom.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h" />
@@ -319,11 +322,13 @@
     <ClInclude Include="Src\MRIFramework\Component\Render\Model\Static\MRIRenderModelStaticComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Rotation\MRIRotationComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT\MRIMatrixStrategyCreateSRT.h" />
+    <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.h" />
     <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\MRIMatrixStrategyBase.h" />
     <ClInclude Include="Src\MRIFramework\Component\Transform\MRITransformComponent.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedAxisTagBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedComponentBaseConcept.h" />
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedInputEventTagBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedInterpolatorModifierBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedTagBaseConcept.h" />
     <ClInclude Include="Src\MRIFramework\Concept\IsSmartPTR\MRIIsSmartPTRConcept.h" />
@@ -452,6 +457,9 @@
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp" />
     <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp" />
@@ -468,6 +476,7 @@
     <ClCompile Include="Src\MRIFramework\Component\Render\Model\Static\MRIRenderModelStaticComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Rotation\MRIRotationComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSRT\MRIMatrixStrategyCreateSRT.cpp" />
+    <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\MRIMatrixStrategyBase.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Transform\MRITransformComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Converter\GameObject\MRIGameObjectConverter.cpp" />

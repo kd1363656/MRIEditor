@@ -11,24 +11,6 @@ void MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::PreUpdate()
 {
 	// 移動方向をリセット
 	MRI::ComponentMode::MoveComponentModeBase::ResetMoveDirection();
-
-	if (MRI::InputManager::GetInstance().IsInputHeld('A'))
-	{
-		MRI::MathUtility::AddDirection(Math::Vector3::Left , MRI::ComponentMode::MoveComponentModeBase::GetWorkMoveDirection());
-	}
-	else if (MRI::InputManager::GetInstance().IsInputHeld('D'))
-	{
-		MRI::MathUtility::AddDirection(Math::Vector3::Right , MRI::ComponentMode::MoveComponentModeBase::GetWorkMoveDirection());
-	}
-
-	if (MRI::InputManager::GetInstance().IsInputHeld('W'))
-	{
-		MRI::MathUtility::AddDirection(Math::Vector3::Backward, MRI::ComponentMode::MoveComponentModeBase::GetWorkMoveDirection());
-	}
-	else if (MRI::InputManager::GetInstance().IsInputHeld('S'))
-	{
-		MRI::MathUtility::AddDirection(Math::Vector3::Forward , MRI::ComponentMode::MoveComponentModeBase::GetWorkMoveDirection());
-	}
 }
 
 void MRI::ComponentMode::MoveComponentLinearFacingDirectionMode::Update()

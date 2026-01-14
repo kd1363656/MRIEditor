@@ -21,6 +21,7 @@ void MRI::FactoryUtility::RegisterComponentFactory()
 void MRI::FactoryUtility::RegisterStrategyFactory()
 {
 	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase> , MRI::Strategy::MatrixStrategyCreateSRT);
+	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase> , MRI::Strategy::MatrixStrategyCreateSTRParentT);
 }
 void MRI::FactoryUtility::RegisterInterpolatorModifierFactory()
 {
@@ -33,6 +34,12 @@ void MRI::FactoryUtility::RegisterObserverNotifierFactory()
 }
 void MRI::FactoryUtility::RegisterComponentModeFactory()
 {
-	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::MoveComponentMode     , MRI::ComponentMode::MoveComponentLinearFacingDirectionMode);
-	MRI_REGISTER_FACTORY_METHOD(MRI::UniqueFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLinearByMouseMode);
+	// 移動
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::MoveComponentMode , MRI::ComponentMode::MoveComponentLinearFacingDirectionMode);
+
+	// 回転
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLinearByMouseMode);
+
+	// 入力
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::InputComponentMode , MRI::ComponentMode::InputComponentFourWayMoveMode);
 }

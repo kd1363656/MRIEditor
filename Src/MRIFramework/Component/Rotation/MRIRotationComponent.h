@@ -24,7 +24,7 @@ namespace MRI::Component
 
 	private:
 
-		std::unique_ptr<MRI::ComponentMode::RotationComponentModeBase> m_rotationComponentMode = nullptr;
+		std::shared_ptr<MRI::ComponentMode::RotationComponentModeBase> m_rotationComponentMode = nullptr;
 	};
 }
 

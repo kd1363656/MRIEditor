@@ -45,11 +45,7 @@ void MRI::Editor::EditorSpawnSceneShiftInspectorView::DrawAddSceneShiftSelector(
 		bool l_isSelected = m_addSceneShiftTag == l_key;
 
 		auto l_typeInfo = l_typeInfoRegistry.FetchTypeInfoByID(l_key);
-		if (!l_typeInfo) 
-		{
-			ImGui::PopID();
-			continue;
-		}
+		if (!l_typeInfo) { continue; }
 
 		ImGui::PushID(&l_key);
 

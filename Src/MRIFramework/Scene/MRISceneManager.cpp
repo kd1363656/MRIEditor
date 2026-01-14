@@ -1,5 +1,8 @@
 ﻿#include "MRISceneManager.h"
 
+MRI::SceneManager::SceneManager () = default;
+MRI::SceneManager::~SceneManager() = default;
+
 void MRI::SceneManager::Init()
 {
 	if (!m_scene)

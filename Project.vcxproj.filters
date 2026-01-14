@@ -382,6 +382,18 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDiretion">
       <UniqueIdentifier>{0f3bd006-59fc-47cd-b0b0-fa0c1bf66aee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Input">
+      <UniqueIdentifier>{115ad507-a012-434a-bf66-00af4e518b13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Input\Move">
+      <UniqueIdentifier>{d83a1398-04f6-4425-bee7-3ca7067bfccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay">
+      <UniqueIdentifier>{00144241-3124-4e3c-a433-a7970a17bf3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT">
+      <UniqueIdentifier>{af7aea87-6cac-4b32-8f42-68b91e3781f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -849,6 +861,21 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Move\Linear\FacingDiretion</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Move\FourWay</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedInputEventTagBaseConcept.h">
+      <Filter>Src\MRIFramework\Concept\IsDerived</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.h">
+      <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -1159,6 +1186,18 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Move\Linear\FacingDiretion</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Move\FourWay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.cpp">
+      <Filter>Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

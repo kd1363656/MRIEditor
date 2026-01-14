@@ -26,6 +26,8 @@ namespace MRI::ComponentMode
 
 		const auto& GetSelfTransformComponentCache() const { return m_selfTransformComponentCache; }
 
+		Math::Vector3& GetWorkMoveDirection() { return m_moveDirection; }
+
 		void SetMoveDirection(const Math::Vector3& a_set) { m_moveDirection = a_set; }
 
 	private:
@@ -41,8 +43,6 @@ namespace MRI::ComponentMode
 		std::uint32_t m_debugAddMoveAxisAdaptTag = MRI::CommonConstant::k_invalidStaticID;
 
 	protected:
-
-		Math::Vector3& GetWorkMoveDirection() { return m_moveDirection; }
 
 		const Math::Vector3& GetMoveDirection() const { return m_moveDirection; }
 

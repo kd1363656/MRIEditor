@@ -27,7 +27,7 @@ void MRI::Component::MoveComponent::Update()
 
 void MRI::Component::MoveComponent::EditPrefabInspector()
 {
-	MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::MoveComponentMode>("MoveComponentModeSelector" , m_moveComponentMode);
+	MRI::EditorUtility::FactoryRadioButtonSelector<MRI::SharedFactory::MoveComponentMode>("MoveComponentModeSelector" , m_moveComponentMode);
 
 	if (!m_moveComponentMode) { return; }
 	m_moveComponentMode->EditPrefabInspector();
@@ -37,27 +37,19 @@ void MRI::Component::MoveComponent::DeserializePrefab(const nlohmann::json& a_js
 {
 	if (a_json.is_null()) { return; }
 
-	const auto& l_factory = MRI::UniqueFactory::MoveComponentMode::GetInstance();
-
-	const std::string& l_moveComponentModeName = a_json.value    ("MoveComponentModeName" , std::string());
-	m_moveComponentMode						   = l_factory.Create(l_moveComponentModeName);
-
-	if (m_moveComponentMode)
-	{
-		m_moveComponentMode->Init             ();
-		m_moveComponentMode->DeserializePrefab(a_json);
-	}
+	MRI::JsonUtility::DeserializeInstancePrefab<MRI::SharedFactory::MoveComponentMode>(a_json , "MoveComponentModeName" , m_moveComponentMode);
 }
 
 nlohmann::json MRI::Component::MoveComponent::SerializePrefab()
 {
-	auto l_rootJson = nlohmann::json();
-
-	if (m_moveComponentMode)
+	if(!m_moveComponentMode)
 	{
-		l_rootJson["MoveComponentModeName"] = m_moveComponentMode->GetTypeInfo().k_name.data();
-		MRI::JsonUtility::UpdateJson									      (l_rootJson , m_moveComponentMode->SerializePrefab());
+		return nlohmann::json();
 	}
 
+	auto l_rootJson = nlohmann::json();
+
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::JsonUtility::SerializeInstancePrefab("MoveComponentModeName" , m_moveComponentMode));
+	
 	return l_rootJson;
 }

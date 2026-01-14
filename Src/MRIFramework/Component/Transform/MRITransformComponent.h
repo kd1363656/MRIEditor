@@ -45,6 +45,8 @@ namespace MRI::Component
 		Math::Matrix CalcRotationMatrix   () const { return Math::Matrix::CreateFromQuaternion(m_transform.rotation); }
 		Math::Matrix CalcTranslationMatrix() const { return Math::Matrix::CreateTranslation   (m_transform.pos);	  }
 	
+		const auto& GetParentTransformComponentCache() const { return m_parentTransformComponentCache; }
+
 		const auto& GetTransform() const { return m_transform; }
 
 		const Math::Matrix& GetMatrix() const { return m_transform.matrix; }

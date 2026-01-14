@@ -3,6 +3,16 @@
 namespace MRI
 {
 	class PlayerKeyConfig;
+
+	namespace FileIO 
+	{
+		class SceneManagerFileIO;
+	}
+
+	namespace Converter
+	{
+		class SceneManagerConverter;
+	}
 }
 
 namespace MRI
@@ -63,7 +73,7 @@ namespace MRI
 		//===============================
 		friend class MRI::SingletonBase<MRI::SceneManager>;
 	
-		SceneManager ()          = default;
-		~SceneManager() override = default;
+		SceneManager ();
+		~SceneManager() override;
 	};
 }

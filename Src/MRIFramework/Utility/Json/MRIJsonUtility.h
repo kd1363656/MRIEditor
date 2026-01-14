@@ -229,7 +229,7 @@ namespace MRI::JsonUtility
 	// インスタンスから型情報を保存しプレハブ情報を保存
 	template <typename Type>
 		requires MRI::Concept::IsSmartPTRConcept<Type>
-	inline nlohmann::json SerializeInstancePrefab(const char* a_key , Type& a_instance)
+	inline nlohmann::json SerializeInstancePrefab(const char* a_key , const Type& a_instance)
 	{
 		if (!a_instance) 
 		{

@@ -16,7 +16,7 @@ namespace MRI::Strategy
 	
 		const MRI::TypeInfo& GetTypeInfo() const override;
 
-		void Execute(std::weak_ptr<MRI::Component::TransformComponent>& a_owner) override;
+		void Execute(std::weak_ptr<MRI::Component::TransformComponent>& a_ownerCache) override;
 	};
 }
 

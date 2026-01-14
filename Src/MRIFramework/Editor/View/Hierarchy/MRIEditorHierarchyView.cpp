@@ -345,7 +345,7 @@ bool MRI::Editor::EditorHierarchyView::IsDescendantOf(std::weak_ptr<MRI::GameObj
 	for (const auto& l_childCache : l_descendantCache->GetChildCacheList())
 	{
 		auto l_child = l_childCache.lock();
-		if (!l_child) { return false; }
+		if (!l_child) { continue; }
 	
 		if (l_child == l_ancestorCache)				  { return true; }
 		if (IsDescendantOf(l_child, a_ancestorCache)) { return true; }

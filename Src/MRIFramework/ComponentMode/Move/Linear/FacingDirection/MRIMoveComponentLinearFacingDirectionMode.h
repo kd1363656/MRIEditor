@@ -2,7 +2,7 @@
 
 namespace MRI::ComponentMode
 {
-	class MoveComponentLinearFacingDirectionMode : public MRI::ComponentMode::MoveComponentLinearModeBase
+	class MoveComponentLinearFacingDirectionMode final : public MRI::ComponentMode::MoveComponentLinearModeBase
 	{
 	public:
 

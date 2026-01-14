@@ -9,11 +9,11 @@
             "VKCode": 65
         },
         {
-            "TagName": "MRI::Tag::InputUpEventTag",
+            "TagName": "MRI::Tag::InputBackwardEventTag",
             "VKCode": 87
         },
         {
-            "TagName": "MRI::Tag::InputDownEventTag",
+            "TagName": "MRI::Tag::InputForwardEventTag",
             "VKCode": 83
         }
     ]

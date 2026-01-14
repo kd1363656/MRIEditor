@@ -22,9 +22,11 @@ namespace MRI::Component
 
 		nlohmann::json SerializePrefab() override;
 
+		std::weak_ptr<MRI::ComponentMode::MoveComponentModeBase> GetMoveComponentModeCache() const { return m_moveComponentMode; }
+
 	private:
 
-		std::unique_ptr<MRI::ComponentMode::MoveComponentModeBase> m_moveComponentMode = nullptr;
+		std::shared_ptr<MRI::ComponentMode::MoveComponentModeBase> m_moveComponentMode = nullptr;
 	};
 }
 

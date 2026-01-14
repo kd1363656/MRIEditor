@@ -1,5 +1,8 @@
 ﻿#include "MRIScene.h"
 
+MRI::Scene::Scene () = default;
+MRI::Scene::~Scene() = default;
+
 void MRI::Scene::Init()
 {
 	if (!m_sceneShiftObserver)
