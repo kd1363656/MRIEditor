@@ -135,14 +135,21 @@
 // コンポーネントモードクラス
 // コンポーネントの挙動を切り替えたり必要な変数を保持、必要な処理をまとめたクラス
 #include "ComponentMode/MRIComponentModeBase.h"
+
+// 回転
 #include "ComponentMode/Rotation/MRIRotationComponentModeBase.h"
 #include "ComponentMode/Rotation/Linear/MRIRotationComponentLinearModeBase.h"
 #include "ComponentMode/Rotation/Linear/ByMouse/MRIRotationComponentLinearByMouseMode.h"
 #include "ComponentMode/Rotation/Lerp/MRIRotationComponentLerpModeBase.h"
 #include "ComponentMode/Rotation/Lerp/ByMouse/MRIRotationComponentLerpByMouseMode.h"
+
+// 移動
 #include "ComponentMode/Move/MRIMoveComponentModeBase.h"
 #include "ComponentMode/Move/Linear/MRIMoveComponentLinearModeBase.h"
 #include "ComponentMode/Move/Linear/FacingDirection/MRIMoveComponentLinearFacingDirectionMode.h"
+#include "ComponentMode/Move/Lerp/MRIMoveComponentLerpModeBase.h"
+
+// 入力
 #include "ComponentMode/Input/MRIInputComponentModeBase.h"
 #include "ComponentMode/Input/Move/MRIInputComponentMoveModeBase.h"
 #include "ComponentMode/Input/Move/FourWay/MRIInputComponentFourWayMoveMode.h"

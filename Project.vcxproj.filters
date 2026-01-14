@@ -400,6 +400,9 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse">
       <UniqueIdentifier>{bfec49cd-f628-4bcf-8e3b-448a0502868d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp">
+      <UniqueIdentifier>{113acf79-db8a-47aa-b83f-d6204f33f356}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -888,6 +891,9 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -1216,6 +1222,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse\MRIRotationComponentLerpByMouseMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\ByMouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

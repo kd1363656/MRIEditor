@@ -116,6 +116,7 @@ void MRI::TypeInfoUtility::RegisterComponentMode(MRI::TypeInfoRegistry& a_regist
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentModeBase>                 ());
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearModeBase>           ());
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLinearFacingDirectionMode>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpModeBase>             ());
 
 	// 入力
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentModeBase>       ());

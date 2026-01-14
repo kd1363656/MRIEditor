@@ -306,6 +306,7 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.h" />
@@ -462,6 +463,7 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\FacingDirection\MRIMoveComponentLinearFacingDirectionMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Linear\MRIMoveComponentLinearModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\MRIMoveComponentModeBase.cpp" />
