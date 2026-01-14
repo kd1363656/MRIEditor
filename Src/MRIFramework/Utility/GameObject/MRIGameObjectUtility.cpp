@@ -41,8 +41,8 @@ void MRI::GameObjectUtility::RecursiveAddChild(const std::shared_ptr<MRI::GameOb
 	{
 		if (!l_childLoad.self) { continue; }
 
-		a_parent->AttachChildCache (l_childLoad.self);
-		l_sceneCache->AddGameObject(l_childLoad.self);
-		RecursiveAddChild		   (l_childLoad.self , l_childLoad.childLoadList);
+		a_parent->CreateParentChildRelationship(l_childLoad.self);
+		l_sceneCache->AddGameObject            (l_childLoad.self);
+		RecursiveAddChild		               (l_childLoad.self , l_childLoad.childLoadList);
 	}
 }

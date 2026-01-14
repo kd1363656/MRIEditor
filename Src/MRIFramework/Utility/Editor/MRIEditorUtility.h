@@ -124,12 +124,13 @@ namespace MRI::EditorUtility
 	// ドラッグアンドドロップ
 	//==================================================================
 	template <typename Type>
-	inline bool DragDropSource(const char* a_label, const Type& a_payload)
+	inline bool DragDropSource(const char* a_label , const Type& a_payload)
 	{
 		constexpr MRI::TypeTrait::PTRKind l_kind = MRI::TypeTrait::PTRType<Type>::k_kind;
 		static_assert(l_kind != MRI::TypeTrait::PTRKind::Unique , "std::unique_ptrはDrawDropに対応していません");
 
-		bool l_isDrag = false;
+		bool l_isDragging = false;
+
 		ImGui::PushID(&a_payload);
 
 		if (!ImGui::BeginDragDropSource(ImGuiDragDropFlags_None))
@@ -138,12 +139,11 @@ namespace MRI::EditorUtility
 			return false;
 		}
 
-		l_isDrag = true;
-
 		// 値渡し
 		if constexpr (l_kind == MRI::TypeTrait::PTRKind::None)
 		{
 			ImGui::SetDragDropPayload(a_label , &a_payload, sizeof(Type));
+			l_isDragging = true;
 		}
 		// 生ポインタ、シェアードポインタ
 		else if constexpr (l_kind == MRI::TypeTrait::PTRKind::Raw || l_kind == MRI::TypeTrait::PTRKind::Shared)
@@ -151,6 +151,7 @@ namespace MRI::EditorUtility
 			if (a_payload)
 			{
 				ImGui::SetDragDropPayload(a_label , &a_payload , sizeof(a_payload));
+				l_isDragging = true;
 			}
 		}
 
@@ -158,10 +159,10 @@ namespace MRI::EditorUtility
 		ImGui::EndDragDropSource();
 		ImGui::PopID();
 
-		return l_isDrag;
+		return l_isDragging;
 	}
 	template <typename Type>
-	inline bool DragDropTarget(const char* a_label, Type& a_outPayload)
+	inline void DragDropTarget(const char* a_label , Type& a_outPayload)
 	{
 		constexpr MRI::TypeTrait::PTRKind l_kind = MRI::TypeTrait::PTRType<Type>::k_kind;
 		static_assert(l_kind != MRI::TypeTrait::PTRKind::Unique, "std::unique_ptrはDrawDropに対応していません");
@@ -172,15 +173,15 @@ namespace MRI::EditorUtility
 		if (!ImGui::BeginDragDropTarget())
 		{
 			ImGui::PopID();
-			return false;
+			return;
 		}
 
 		const ImGuiPayload* l_payload = ImGui::AcceptDragDropPayload(a_label);
 		if (!l_payload)
 		{
-			ImGui::PopID();
+			ImGui::PopID            ();
 			ImGui::EndDragDropTarget();
-			return false;
+			return;
 		}
 
 		if constexpr (l_kind == MRI::TypeTrait::PTRKind::None)
@@ -203,8 +204,6 @@ namespace MRI::EditorUtility
 
 		ImGui::PopID            ();
 		ImGui::EndDragDropTarget();
-
-		return l_isDropped;
 	}
 
 	//===================================================================

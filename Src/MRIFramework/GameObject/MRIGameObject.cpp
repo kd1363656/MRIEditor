@@ -219,7 +219,7 @@ void MRI::GameObject::AddComponent(const std::shared_ptr<MRI::Component::Compone
 	}
 }
 
-void MRI::GameObject::AttachChildCache(std::weak_ptr<MRI::GameObject> a_childCache)
+void MRI::GameObject::CreateParentChildRelationship(std::weak_ptr<MRI::GameObject> a_childCache)
 {
 	auto l_child = a_childCache.lock();
 	if (!l_child) { return; }

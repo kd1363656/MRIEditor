@@ -32,8 +32,8 @@ namespace MRI
 
 		void AddComponent(const std::shared_ptr<MRI::Component::ComponentBase> a_component);
 
-		void AttachChildCache(std::weak_ptr<MRI::GameObject>       a_childCache);
-		void RemoveChildCache(const std::weak_ptr<MRI::GameObject> a_childCache);
+		void CreateParentChildRelationship(std::weak_ptr<MRI::GameObject>       a_childCache);
+		void RemoveChildCache             (const std::weak_ptr<MRI::GameObject> a_childCache);
 
 		void ResetParentCache() { m_parentCache.reset(); }
 
