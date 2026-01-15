@@ -39,7 +39,26 @@ void MRI::Component::CameraComponent::EditSpawnInspector()
 }
 void MRI::Component::CameraComponent::EditPrefabInspector()
 {
-	MRI::EditorUtility::TagRadioButtonSelector<MRI::Tag::CameraTagBase>("SelectCameraTag" , m_cameraTag);
+	if (!MRI::EditorUtility::SameLineButton("Is MainCamera")) { return; }
+
+	auto l_scene = MRI::SceneManager::GetInstance().GetSceneCache().lock();
+	if (!l_scene) { return; }
+
+	for (const auto& l_gameObject : l_scene->GetGameObjectList())
+	{
+		if (!l_gameObject) { continue; }
+
+		auto l_camera = l_gameObject->GetComponentCache<MRI::Component::CameraComponent>().lock();
+		if (!l_camera) { continue; }
+
+		// 既にメインカメラタグがぞんざいするなら"return"
+		if (l_camera->GetCameraTag() == MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id)
+		{
+			return;
+		}
+	}
+
+	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id;
 }
 
 void MRI::Component::CameraComponent::DeserializeSpawn(const nlohmann::json& a_json)
