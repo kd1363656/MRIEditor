@@ -29,6 +29,8 @@ namespace MRI::Component
 
 		std::uint32_t GetCameraTag() const { return m_cameraTag; }
 
+
+
 	private:
 
 		void CreateFrustum();
