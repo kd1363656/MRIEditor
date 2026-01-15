@@ -371,6 +371,7 @@
     <ClInclude Include="Src\MRIFramework\Helper\AssetFilePath\MRIAssetFilePathHelper.h" />
     <ClInclude Include="Src\MRIFramework\Helper\Component\MRIComponentHelperBase.h" />
     <ClInclude Include="Src\MRIFramework\Helper\Component\Rotation\ByMouse\MRIComponentRotationByMouseHelper.h" />
+    <ClInclude Include="Src\MRIFramework\Helper\Component\UUIDFetcher\MRIComponentUUIDFetcherHelper.h" />
     <ClInclude Include="Src\MRIFramework\Input\MRIInputManager.h" />
     <ClInclude Include="Src\MRIFramework\Modifier\Interpolator\Hermite\MRIHermiteInterpolatorModifier.h" />
     <ClInclude Include="Src\MRIFramework\Modifier\Interpolator\MRIInterpolatorModifierBase.h" />

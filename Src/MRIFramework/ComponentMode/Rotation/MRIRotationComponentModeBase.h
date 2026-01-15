@@ -29,6 +29,8 @@ namespace MRI::ComponentMode
 
 		void RegisterAdaptRotationAxisTag(const std::uint32_t a_addRotationAxisAdaptTag);
 
+		auto& GetWorkRotationDirection() { return m_rotationDirection; }
+
 	private:
 
 		void EditAddAdaptRotationAxisTag();

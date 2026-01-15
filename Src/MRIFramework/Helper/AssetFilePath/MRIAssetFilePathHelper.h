@@ -2,7 +2,7 @@
 
 namespace MRI::Helper
 {
-	class AssetFilePathHelper
+	class AssetFilePathHelper final
 	{
 	public:
 

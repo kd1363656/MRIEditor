@@ -406,6 +406,9 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection">
       <UniqueIdentifier>{0fbc4f8d-eaa1-4b5d-8f8e-289df1fb6606}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\Helper\Component\UUIDFetcher">
+      <UniqueIdentifier>{f51d60fa-834c-4995-905a-c765e6edd291}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -899,6 +902,9 @@
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection\MRIRotationComponentLerpTargetViewDirectionMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Helper\Component\UUIDFetcher\MRIComponentUUIDFetcherHelper.h">
+      <Filter>Src\MRIFramework\Helper\Component\UUIDFetcher</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

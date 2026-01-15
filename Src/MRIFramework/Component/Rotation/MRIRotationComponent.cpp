@@ -26,6 +26,12 @@ void MRI::Component::RotationComponent::Update()
 	m_rotationComponentMode->Update();
 }
 
+void MRI::Component::RotationComponent::EditSpawnInspector()
+{
+	if (!m_rotationComponentMode) { return; }
+	m_rotationComponentMode->EditSpawnInspector();
+}
+
 void MRI::Component::RotationComponent::EditPrefabInspector()
 {
 	auto l_ownerCache = MRI::Component::ComponentBase::GetWorkOwnerCache().lock();
@@ -51,6 +57,15 @@ void MRI::Component::RotationComponent::DeserializePrefab(const nlohmann::json& 
 	MRI::JsonUtility::DeserializeInstancePrefab<MRI::SharedFactory::RotationComponentMode>(a_json , "RotationComponentModeName" , m_rotationComponentMode);
 }
 
+void MRI::Component::RotationComponent::DeserializeSpawn(const nlohmann::json& a_json)
+{
+	if (a_json.is_null())         { return; }
+	if (!m_rotationComponentMode) { return; }
+
+	// "Prefab"で作製するべきクラスは作成されているのでその作成されたクラスに今のシーンでのみ適応される変更を適用
+	m_rotationComponentMode->DeserializeSpawn(a_json);
+}
+
 nlohmann::json MRI::Component::RotationComponent::SerializePrefab()
 {
 	if (!m_rotationComponentMode)
@@ -61,6 +76,19 @@ nlohmann::json MRI::Component::RotationComponent::SerializePrefab()
 	auto l_rootJson = nlohmann::json();
 
 	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::JsonUtility::SerializeInstancePrefab("RotationComponentModeName" , m_rotationComponentMode));
+
+	return l_rootJson;
+}
+nlohmann::json MRI::Component::RotationComponent::SerializeSpawn()
+{
+	if (!m_rotationComponentMode)
+	{
+		return nlohmann::json();
+	}
+
+	auto l_rootJson = nlohmann::json();
+
+	MRI::JsonUtility::UpdateJson(l_rootJson , m_rotationComponentMode->SerializeSpawn());
 
 	return l_rootJson;
 }

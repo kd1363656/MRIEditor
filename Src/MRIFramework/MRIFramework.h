@@ -127,10 +127,19 @@
 #include "Scene/MRIScene.h"
 #include "Scene/MRISceneManager.h"
 
+// コンポーネントの基底クラス
+#include "Component/MRIComponentBase.h"
+// "TransformComponent"
+#include "Component/Transform/MRITransformComponent.h"
+
+// コンポーネントの基底クラスを継承しているかどうかを確認する"Concept"
+#include "Concept/IsDerived/MRIIsDerivedComponentBaseConcept.h"
+
 // ヘルパークラス
 #include "Helper/AssetFilePath/MRIAssetFilePathHelper.h"
 #include "Helper/Component/MRIComponentHelperBase.h"
 #include "Helper/Component/Rotation/ByMouse/MRIComponentRotationByMouseHelper.h"
+#include "Helper/Component/UUIDFetcher/MRIComponentUUIDFetcherHelper.h"
 
 // コンポーネントモードクラス
 // コンポーネントの挙動を切り替えたり必要な変数を保持、必要な処理をまとめたクラス
@@ -155,8 +164,6 @@
 #include "ComponentMode/Input/Move/FourWay/MRIInputComponentFourWayMoveMode.h"
 
 // "Component"
-#include "Component/MRIComponentBase.h"
-#include "Component/Transform/MRITransformComponent.h"
 #include "Component/Camera/MRICameraComponent.h"
 #include "Component/Render/Model/MRIRenderModelComponentBase.h"
 #include "Component/Render/Model/Animation/MRIRenderModelAnimationComponent.h"
@@ -164,9 +171,6 @@
 #include "Component/Rotation/MRIRotationComponent.h"
 #include "Component/Move/MRIMoveComponent.h"
 #include "Component/Input/MRIInputComponent.h"
-
-// コンポーネントの基底クラスを継承しているかどうかを確認する"Concept"
-#include "Concept/IsDerived/MRIIsDerivedComponentBaseConcept.h"
 
 // "Strategy"
 #include "Strategy/MRIStrategyBase.h"

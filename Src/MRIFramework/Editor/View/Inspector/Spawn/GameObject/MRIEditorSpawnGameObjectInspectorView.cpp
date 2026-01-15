@@ -20,6 +20,10 @@ void MRI::Editor::EditorSpawnGameObjectInspectorView::DrawEditor()
 		return;
 	}
 
+	// "UUID"の描画
+	ImGui::Text("UUID : %s", MRI::UUIDUtility::UUIDToString(l_gameObjectCache->GetUUID()).c_str());
+
+	// "TransformComponent"のインスペクター表示
 	if (ImGui::TreeNode(l_selfTransformComponentCache->GetTypeInfo().k_name.data()))
 	{
 		l_selfTransformComponentCache->EditSpawnInspector();

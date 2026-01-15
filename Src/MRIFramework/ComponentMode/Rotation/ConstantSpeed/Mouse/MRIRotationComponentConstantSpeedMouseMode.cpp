@@ -51,8 +51,8 @@ void MRI::ComponentMode::RotationComponentConstantSpeedMouseMode::Update()
 	Math::Vector3 l_rotation = MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection();
 
 	// 回転適用が許されている軸にのみ回転を加算
-	MRI::AxisUtility::AddAdaptDirection  (MRI::ComponentMode::RotationComponentModeBase::GetWorkAdaptRotationAxisTagSet() , l_rotation , l_movement);
-	MRI::AxisUtility::ResetAdaptDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkAdaptRotationAxisTagSet() , l_rotation);
+	MRI::AxisUtility::AddAdaptAxisValue(MRI::ComponentMode::RotationComponentModeBase::GetWorkAdaptRotationAxisTagSet() , l_rotation , l_movement);
+	MRI::AxisUtility::ResetUnusedAxis  (MRI::ComponentMode::RotationComponentModeBase::GetWorkAdaptRotationAxisTagSet() , l_rotation);
 
 	// "X"軸の回転にのみ制限を掛ける(必要なら"3"軸全てにかけれるようにする)
 	l_rotation.x = std::clamp(l_rotation.x , m_componentRotationByMouseHelper->GetMinRotatableDegreeX() , m_componentRotationByMouseHelper->GetMaxRotatableDegreeX());

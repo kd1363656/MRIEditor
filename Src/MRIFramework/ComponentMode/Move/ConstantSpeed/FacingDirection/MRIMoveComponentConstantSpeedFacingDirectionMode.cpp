@@ -33,7 +33,7 @@ void MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode::Update()
 	Math::Vector3 l_resultMoveDirection = Math::Vector3::TransformNormal                   (l_moveDirection , l_rotationMatrix);
 
 	// 使用しない軸の値を"0.0F"にして使用しないようにする
-	MRI::AxisUtility::ResetAdaptDirection(MRI::ComponentMode::MoveComponentConstantSpeedModeBase::GetWorkAdaptMoveAxisTagSet() , l_resultMoveDirection);
+	MRI::AxisUtility::ResetUnusedAxis(MRI::ComponentMode::MoveComponentConstantSpeedModeBase::GetWorkAdaptMoveAxisTagSet() , l_resultMoveDirection);
 
 	// 使用しない軸の移動方向を"0.0F"にしてから正規化
 	l_resultMoveDirection.Normalize();

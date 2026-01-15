@@ -2,7 +2,7 @@
 
 namespace MRI::Helper
 {
-	class ComponentRotationByMouseHelper : public MRI::Helper::ComponentHelperBase
+	class ComponentRotationByMouseHelper final : public MRI::Helper::ComponentHelperBase
 	{
 	public:
 
