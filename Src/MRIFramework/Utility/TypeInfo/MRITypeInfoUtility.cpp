@@ -52,7 +52,8 @@ void MRI::TypeInfoUtility::RegisterCameraKindTag(MRI::TypeInfoRegistry& a_regist
 	// ルートタグ"CameraTagBase"
 	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::CameraTagBase>());
 
-	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::CameraMainTag>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::CameraMainTag> ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::Tag::CameraDebugTag>());
 }
 void MRI::TypeInfoUtility::RegisterShaderTypeTag(MRI::TypeInfoRegistry& a_registry)
 {

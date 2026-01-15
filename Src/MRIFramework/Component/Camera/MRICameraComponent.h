@@ -29,7 +29,12 @@ namespace MRI::Component
 
 		std::uint32_t GetCameraTag() const { return m_cameraTag; }
 
+		void SetDebugCameraTag();
+
 	private:
+
+		void EditEnableMainCamera ();
+		void EditDisableMainCamera();
 
 		void CreateFrustum();
 

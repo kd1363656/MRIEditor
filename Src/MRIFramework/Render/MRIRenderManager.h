@@ -35,7 +35,7 @@ namespace MRI
 		}
 
 		std::weak_ptr<MRI::Component::CameraComponent> m_mainCameraComponentCache;
-
+		
 		std::list<std::weak_ptr<MRI::Component::RenderModelComponentBase>> m_renderModelComponentBaseCacheList;
 
 		//===============================

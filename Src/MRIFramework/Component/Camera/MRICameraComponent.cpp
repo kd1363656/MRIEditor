@@ -39,26 +39,8 @@ void MRI::Component::CameraComponent::EditSpawnInspector()
 }
 void MRI::Component::CameraComponent::EditPrefabInspector()
 {
-	if (!MRI::EditorUtility::SameLineButton("Is MainCamera")) { return; }
-
-	auto l_scene = MRI::SceneManager::GetInstance().GetSceneCache().lock();
-	if (!l_scene) { return; }
-
-	for (const auto& l_gameObject : l_scene->GetGameObjectList())
-	{
-		if (!l_gameObject) { continue; }
-
-		auto l_camera = l_gameObject->GetComponentCache<MRI::Component::CameraComponent>().lock();
-		if (!l_camera) { continue; }
-
-		// 既にメインカメラタグがぞんざいするなら"return"
-		if (l_camera->GetCameraTag() == MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id)
-		{
-			return;
-		}
-	}
-
-	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id;
+	EditEnableMainCamera ();
+	EditDisableMainCamera();
 }
 
 void MRI::Component::CameraComponent::DeserializeSpawn(const nlohmann::json& a_json)
@@ -101,6 +83,53 @@ void MRI::Component::CameraComponent::PreDraw()
 	// 視錐台のキャッシュ作成、描画された後にすぐに行わないと
 	// 後の描画のカリングに使えず意味がないからここで実行
 	CreateFrustum();
+}
+
+void MRI::Component::CameraComponent::SetDebugCameraTag()
+{
+	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraDebugTag>().k_id;
+}
+
+void MRI::Component::CameraComponent::EditEnableMainCamera()
+{
+	auto l_ownerCache = MRI::Component::ComponentBase::GetWorkOwnerCache().lock();
+	if (!l_ownerCache) { return; }
+
+	if (!ImGui::Button("Enable MainCamera")) { return; }
+
+	auto l_scene = MRI::SceneManager::GetInstance().GetSceneCache().lock();
+	if (!l_scene) { return; }
+
+	for (const auto& l_gameObject : l_scene->GetGameObjectList())
+	{
+		if (!l_gameObject) { continue; }
+
+		auto l_camera = l_gameObject->GetComponentCache<MRI::Component::CameraComponent>().lock();
+		if (!l_camera) { continue; }
+
+		// 既にメインカメラタグがぞんざいするなら"return"
+		if (l_camera->GetCameraTag() == MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id)
+		{
+			MRI_ADD_LOG("[%s : UUID : %s]はメインカメラです。\nシーンには一つしか存在してはいけません" , l_ownerCache->GetPrefabName().data() , MRI::UUIDUtility::UUIDToString(l_ownerCache->GetUUID()).c_str());
+			return;
+		}
+	}
+
+	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id;
+
+	MRI_ADD_LOG("[%s]はメインカメラとして有効化されました" , l_ownerCache->GetPrefabName().data());
+}
+void MRI::Component::CameraComponent::EditDisableMainCamera()
+{
+	auto l_ownerCache = MRI::Component::ComponentBase::GetWorkOwnerCache().lock();
+	if (!l_ownerCache) { return; }
+
+	if (!MRI::EditorUtility::SameLineButton("Disable MainCamera")) { return; }
+
+	// デバックカメラとして扱う
+	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraDebugTag>().k_id;
+
+	MRI_ADD_LOG("[%s]はメインカメラとして無効化されました" , l_ownerCache->GetPrefabName().data());
 }
 
 void MRI::Component::CameraComponent::CreateFrustum()

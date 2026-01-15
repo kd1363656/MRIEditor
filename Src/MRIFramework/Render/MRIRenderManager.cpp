@@ -3,7 +3,7 @@
 void MRI::RenderManager::Init()
 {
 	m_mainCameraComponentCache.reset();
-
+	
 	m_renderModelComponentBaseCacheList.clear();
 }
 void MRI::RenderManager::PostLoadInit()
