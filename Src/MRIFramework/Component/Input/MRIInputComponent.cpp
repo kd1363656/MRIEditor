@@ -160,7 +160,7 @@ bool MRI::Component::InputComponent::IsAlreadyContains(const std::shared_ptr<MRI
 	}
 
 	// 同じものを再度登録しないようにする
-	std::ranges::any_of(m_inputComponentModeList, [&a_addComponentMode](const auto& a_inputComponentMode) -> bool
+	return std::ranges::any_of(m_inputComponentModeList , [&a_addComponentMode](const auto& a_inputComponentMode) -> bool
 	{
 		if (!a_inputComponentMode)
 		{
@@ -169,8 +169,6 @@ bool MRI::Component::InputComponent::IsAlreadyContains(const std::shared_ptr<MRI
 
 		return a_addComponentMode->GetTypeInfo().k_id == a_inputComponentMode->GetTypeInfo().k_id;
 	});
-
-	return false;
 }
 
 void MRI::Component::InputComponent::EditAddInputComponentModeList()

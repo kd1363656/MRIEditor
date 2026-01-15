@@ -303,9 +303,11 @@
     <ClInclude Include="Src\Framework\Utility\KdDataStorage.h" />
     <ClInclude Include="Src\Framework\Utility\KdCSVData.h" />
     <ClInclude Include="Src\Framework\Utility\KdRandom.h" />
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentMoveFourWayMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay\MRIInputComponentRotationFourWayMode.h" />
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Rotation\MRIInputComponentRotationModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection\MRIMoveComponentConstantSpeedFacingDirectionMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\MRIMoveComponentConstantSpeedModeBase.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.h" />
@@ -462,9 +464,11 @@
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp" />
     <ClCompile Include="Src\Framework\Utility\KdCSVData.cpp" />
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentMoveFourWayMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\MRIInputComponentModeBase.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay\MRIInputComponentRotationFourWayMode.cpp" />
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Rotation\MRIInputComponentRotationModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\FacingDirection\MRIMoveComponentConstantSpeedFacingDirectionMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\ConstantSpeed\MRIMoveComponentConstantSpeedModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\MRIMoveComponentLerpModeBase.cpp" />

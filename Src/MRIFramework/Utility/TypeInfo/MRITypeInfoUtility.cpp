@@ -119,9 +119,11 @@ void MRI::TypeInfoUtility::RegisterComponentMode(MRI::TypeInfoRegistry& a_regist
 	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentConstantSpeedModeBase>           ());
 
 	// 入力
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentModeBase>       ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentMoveModeBase>   ());
-	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentFourWayMoveMode>());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentModeBase>           ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentMoveModeBase>       ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentMoveFourWayMode>    ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentRotationModeBase>   ());
+	a_registry.Register(MRI::GetTypeInfo<MRI::ComponentMode::InputComponentRotationFourWayMode>());
 }
 
 void MRI::TypeInfoUtility::RegisterStrategy(MRI::TypeInfoRegistry& a_registry)

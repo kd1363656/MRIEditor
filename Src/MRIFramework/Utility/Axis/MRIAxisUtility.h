@@ -45,4 +45,15 @@ namespace MRI::AxisUtility
 			a_adaptDirection.z = 0.0F;
 		}
 	}
+
+	// 指定された入力タグから仮想キーコードを取得しベクトルを足しこむ
+	template <MRI::Concept::IsDerivedInputEventTagBaseConcept Type>
+	void ApplyDirectionIfKeyHeld(Math::Vector3& a_target , const Math::Vector3& a_inputDirection)
+	{
+		auto l_playerKeyConfigCache = MRI::SceneManager::GetInstance().GetPlayerKeyConfigCache().lock();
+		if (!l_playerKeyConfigCache) { return; }
+
+		if (!l_playerKeyConfigCache->IsInputHeld<Type>()) { return; }
+		MRI::MathUtility::AddDirection(a_target, a_inputDirection);
+	}
 }

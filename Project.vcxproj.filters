@@ -409,6 +409,12 @@
     <Filter Include="Src\MRIFramework\Helper\Component\UUIDFetcher">
       <UniqueIdentifier>{f51d60fa-834c-4995-905a-c765e6edd291}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Input\Rotation">
+      <UniqueIdentifier>{46d2f028-6f35-430b-9065-18308c780d1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay">
+      <UniqueIdentifier>{6bfb5d65-44aa-4b9f-ab11-2694d1638036}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -870,7 +876,7 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.h">
       <Filter>Src\MRIFramework\ComponentMode\Input\Move</Filter>
     </ClInclude>
-    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.h">
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentMoveFourWayMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Input\Move\FourWay</Filter>
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\Concept\IsDerived\MRIIsDerivedInputEventTagBaseConcept.h">
@@ -905,6 +911,12 @@
     </ClInclude>
     <ClInclude Include="Src\MRIFramework\Helper\Component\UUIDFetcher\MRIComponentUUIDFetcherHelper.h">
       <Filter>Src\MRIFramework\Helper\Component\UUIDFetcher</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Rotation\MRIInputComponentRotationModeBase.h">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Rotation</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay\MRIInputComponentRotationFourWayMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Rotation\FourWay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1211,7 +1223,7 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\MRIInputComponentMoveModeBase.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Input\Move</Filter>
     </ClCompile>
-    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentFourWayMoveMode.cpp">
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Move\FourWay\MRIInputComponentMoveFourWayMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Input\Move\FourWay</Filter>
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\Component\Transform\MatrixStrategy\CreateSTRParentT\MRIMatrixStrategyCreateSTRParentT.cpp">
@@ -1240,6 +1252,12 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection\MRIRotationComponentLerpTargetViewDirectionMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Rotation\MRIInputComponentRotationModeBase.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Rotation</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay\MRIInputComponentRotationFourWayMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Input\Rotation\FourWay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -43,5 +43,6 @@ void MRI::FactoryUtility::RegisterComponentModeFactory()
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentLerpTargetViewDirectionMode);
 
 	// 入力
-	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::InputComponentMode , MRI::ComponentMode::InputComponentFourWayMoveMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::InputComponentMode , MRI::ComponentMode::InputComponentMoveFourWayMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::InputComponentMode , MRI::ComponentMode::InputComponentRotationFourWayMode);
 }

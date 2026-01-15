@@ -50,17 +50,11 @@
 #include "Concept/IsDerived/MRIIsDerivedAxisTagBaseConcept.h"
 #include "Concept/IsDerived/MRIIsDerivedInputEventTagBaseConcept.h"
 
-// "Axis"用便利関数
-#include "Utility/Axis/MRIAxisUtility.h"
-
 // "UUID"用便利関数
 #include "Utility/UUID/MRIUUIDUtility.h"
 
 // ファイル読み取り便利関数
 #include "Utility/FileIO/MRIFileIOUtility.h"
-
-// "InputManager"
-#include "Input/MRIInputManager.h"
 
 // "FPS"管理クラス
 #include "FPS/MRIFPSController.h"
@@ -91,9 +85,6 @@
 // "GameObject"用便利関数
 #include "Utility/GameObject/MRIGameObjectUtility.h"
 
-// 計算便利関数
-#include "Utility/Math/MRIMathUtility.h"
-
 // 仮想キーコード用便利関数
 #include "Utility/VKCode/MRIVKCodeUtility.h"
 
@@ -120,12 +111,21 @@
 // ファクトリークラス
 #include "Factory/MRIGenericFactory.h"
 
-// キーコンフィグクラス
-#include "PlayerKeyConfig/MRIPlayerKeyConfig.h"
-
 // "Scene"
 #include "Scene/MRIScene.h"
 #include "Scene/MRISceneManager.h"
+
+// 計算便利関数
+#include "Utility/Math/MRIMathUtility.h"
+
+// "InputManager"
+#include "Input/MRIInputManager.h"
+
+// キーコンフィグクラス
+#include "PlayerKeyConfig/MRIPlayerKeyConfig.h"
+
+// "Axis"用便利関数
+#include "Utility/Axis/MRIAxisUtility.h"
 
 // コンポーネントの基底クラス
 #include "Component/MRIComponentBase.h"
@@ -161,7 +161,9 @@
 // 入力
 #include "ComponentMode/Input/MRIInputComponentModeBase.h"
 #include "ComponentMode/Input/Move/MRIInputComponentMoveModeBase.h"
-#include "ComponentMode/Input/Move/FourWay/MRIInputComponentFourWayMoveMode.h"
+#include "ComponentMode/Input/Move/FourWay/MRIInputComponentMoveFourWayMode.h"
+#include "ComponentMode/Input/Rotation/MRIInputComponentRotationModeBase.h"
+#include "ComponentMode/Input/Rotation/FourWay/MRIInputComponentRotationFourWayMode.h"
 
 // "Component"
 #include "Component/Camera/MRICameraComponent.h"

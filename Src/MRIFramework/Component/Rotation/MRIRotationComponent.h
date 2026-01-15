@@ -25,6 +25,8 @@ namespace MRI::Component
 		nlohmann::json SerializePrefab() override;
 		nlohmann::json SerializeSpawn() override;
 
+		std::weak_ptr<MRI::ComponentMode::RotationComponentModeBase> GetRotationComponentModeCache() { return m_rotationComponentMode; }
+
 	private:
 
 		std::shared_ptr<MRI::ComponentMode::RotationComponentModeBase> m_rotationComponentMode = nullptr;

@@ -7,9 +7,9 @@
         },
         {
             "InputComponentModeList": [
-                {
-                    "InputComponentModeName": "MRI::ComponentMode::InputComponentFourWayMoveMode"
-                }
+				{
+					"InputComponentModeName": "MRI::ComponentMode::InputComponentMoveFourWayMode"
+				}
             ],
             "TypeName": "MRI::Component::InputComponent"
         },

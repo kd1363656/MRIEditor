@@ -36,24 +36,6 @@ void MRI::ComponentMode::RotationComponentLerpTargetViewDirectionMode::PreUpdate
 }
 void MRI::ComponentMode::RotationComponentLerpTargetViewDirectionMode::Update()
 {
-	if (MRI::InputManager::GetInstance().IsInputHeld('A'))
-	{
-		MRI::MathUtility::AddDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkRotationDirection() , Math::Vector3::Left);
-	}
-	else if (MRI::InputManager::GetInstance().IsInputHeld('D'))
-	{
-		MRI::MathUtility::AddDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkRotationDirection() , Math::Vector3::Right);
-	}
-
-	if (MRI::InputManager::GetInstance().IsInputHeld('W'))
-	{
-		MRI::MathUtility::AddDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkRotationDirection(), Math::Vector3::Backward);
-	}
-	else if (MRI::InputManager::GetInstance().IsInputHeld('S'))
-	{
-		MRI::MathUtility::AddDirection(MRI::ComponentMode::RotationComponentModeBase::GetWorkRotationDirection(), Math::Vector3::Forward);
-	}
-
 	if (!m_targetTransformComponent) { return; }
 
 	auto l_interpolatorModifierCache = MRI::ComponentMode::RotationComponentLerpModeBase::GetInterpolatorModifierCache().lock();
