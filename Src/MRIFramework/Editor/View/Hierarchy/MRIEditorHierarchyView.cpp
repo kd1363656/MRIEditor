@@ -179,6 +179,18 @@ void MRI::Editor::EditorHierarchyView::DrawAddGameObjectButton()
 			// シーンのリストに追加
 			l_sceneCache->AddGameObject(l_gameObject);
 
+			for (const auto& l_component : l_gameObject->GetComponentList())
+			{
+				if (!l_component) { continue; }
+
+				// もし"renderModelComponentCache"がうまくキャストできなければ空の"std::weak_ptr<MRI::Component::renderModelComponentBase>"が帰ってくる
+				auto l_renderModelComponentCache = MRI::TypeInfoUtility::SafeCast<MRI::Component::RenderModelComponentBase>(l_component);
+				if (l_renderModelComponentCache.expired()) { continue; }
+
+				// 描画コンポーネントを描画マネージャーに追加
+				MRI::RenderManager::GetInstance().AddRenderModelComponentBase(l_renderModelComponentCache);
+			}
+
 			// もしプレハブ反映用ゲームオブジェクトが存在しなければ
 			// 今生成したゲームオブジェクトをきゃしゅに格納
 			if (l_prefabCache->GetGameObjectCache().expired())

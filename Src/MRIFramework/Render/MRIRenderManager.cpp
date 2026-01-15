@@ -40,7 +40,7 @@ void MRI::RenderManager::PostLoadInit()
 			auto l_renderModelComponentCache = MRI::TypeInfoUtility::SafeCast<MRI::Component::RenderModelComponentBase>(l_component);
 			if (l_renderModelComponentCache.expired()) { continue; }
 
-			m_renderModelComponentBaseCacheList.emplace_back(l_renderModelComponentCache);
+			AddRenderModelComponentBase(l_renderModelComponentCache);
 		}
 	}
 }
@@ -66,9 +66,9 @@ void MRI::RenderManager::PreDraw() const
 	l_editorGameView->RenderTargetClearTex();
 	l_editorGameView->ChangeRenderTarget  ();
 
-	// カメラ描画
 	l_mainCameraComponentCache->PreDraw();
 	
+
 	// 描画をバックバッファーに戻す
 	l_editorGameView->UndoRenderTarget();
 }
@@ -170,6 +170,28 @@ void MRI::RenderManager::EndDraw() const
 
 	// "BackBuffer" "->" 画面表示
 	KdDirect3D::Instance().WorkSwapChain()->Present(0, 0);
+}
+
+void MRI::RenderManager::AddRenderModelComponentBase(std::weak_ptr<MRI::Component::RenderModelComponentBase> a_componentCache)
+{
+	m_renderModelComponentBaseCacheList.emplace_back(a_componentCache);
+}
+
+bool MRI::RenderManager::HasAlreadyRenderModelComponentBaseCache(const std::weak_ptr<MRI::Component::RenderModelComponentBase> a_renderModelComponentBaseCache)
+{
+	auto l_renderModelComponentBaseCache = a_renderModelComponentBaseCache.lock();
+	if (!l_renderModelComponentBaseCache)
+	{
+		return false;
+	}
+
+	// もし同じアドレスを示すなら"return"
+	return std::ranges::any_of(m_renderModelComponentBaseCacheList , [&l_renderModelComponentBaseCache](const auto& a_component) -> bool
+	{
+		auto l_componentCache = a_component.lock ();
+		
+		if (l_componentCache.get() == l_renderModelComponentBaseCache.get()) { return true; }
+	});
 }
 
 void MRI::RenderManager::Reset()

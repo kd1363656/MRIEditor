@@ -17,6 +17,10 @@ namespace MRI
 		void DrawDebug  ()									 const;
 		void EndDraw    ()                                   const;
 
+		void AddRenderModelComponentBase(std::weak_ptr<MRI::Component::RenderModelComponentBase> a_componentCache);
+
+		bool HasAlreadyRenderModelComponentBaseCache(const std::weak_ptr<MRI::Component::RenderModelComponentBase> a_renderModelComponentBaseCache);
+
 	private:
 
 		void Reset();
