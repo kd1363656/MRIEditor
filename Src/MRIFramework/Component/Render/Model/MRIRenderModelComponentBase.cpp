@@ -86,7 +86,7 @@ void MRI::Component::RenderModelComponentBase::EditPrefabInspector()
 		}
 	}
 
-	m_assetFilePathHelper->EditPrefabInspector  ();
+	m_assetFilePathHelper->EditPrefabInspector();
 }
 
 void MRI::Component::RenderModelComponentBase::DeserializePrefab(const nlohmann::json& a_json)

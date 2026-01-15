@@ -1,0 +1,20 @@
+{
+    "InputConfigMap": [
+        {
+            "TagName": "MRI::Tag::InputRightEventTag",
+            "VKCode": 68
+        },
+        {
+            "TagName": "MRI::Tag::InputLeftEventTag",
+            "VKCode": 65
+        },
+        {
+            "TagName": "MRI::Tag::InputBackwardEventTag",
+            "VKCode": 87
+        },
+        {
+            "TagName": "MRI::Tag::InputForwardEventTag",
+            "VKCode": 83
+        }
+    ]
+}

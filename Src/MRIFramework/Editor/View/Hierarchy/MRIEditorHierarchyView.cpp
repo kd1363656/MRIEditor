@@ -12,6 +12,8 @@ void MRI::Editor::EditorHierarchyView::Init()
 
 void MRI::Editor::EditorHierarchyView::DrawEditor()
 {
+	RunOnceSetPrevGameObjectCache();
+
 	if (!ImGui::Begin("HierarchyView"))
 	{
 		ImGui::End();
@@ -38,6 +40,45 @@ void MRI::Editor::EditorHierarchyView::DrawEditor()
 	}
 	
 	ImGui::End();
+}
+
+void MRI::Editor::EditorHierarchyView::LoadFile()
+{
+	auto l_rootJson = MRI::FileIOUtility::LoadJsonFile(k_fileIOPath);
+	if (l_rootJson.is_null()) { return; }
+
+	UUID l_prevSelectedUUID = MRI::JsonUtility::DeserializeUUID(l_rootJson);
+	if (l_prevSelectedUUID == GUID_NULL) { return; }
+
+	m_selectedGameObjectUUID = l_prevSelectedUUID;
+}
+void MRI::Editor::EditorHierarchyView::SaveFile()
+{
+	// 選択されているゲームオブジェクトが存在するかどうかを確認
+	if (!MRI::EditorUtility::HasSameUUIDGameObjectInSceneGameObjectList(m_selectedGameObjectUUID)) { return; }
+	
+	// 存在して入れば"UUID"を"json"に保存
+	auto l_rootJson = nlohmann::json();
+
+	MRI::JsonUtility::UpdateJson    (l_rootJson , MRI::JsonUtility::SerializeUUID(m_selectedGameObjectUUID));
+	MRI::FileIOUtility::SaveJsonFile(l_rootJson , k_fileIOPath);
+}
+
+void MRI::Editor::EditorHierarchyView::RunOnceSetPrevGameObjectCache()
+{
+	auto l_sceneCache = MRI::SceneManager::GetInstance().GetSceneCache().lock();
+
+	if (!l_sceneCache || m_isFirstTime || m_selectedGameObjectUUID == GUID_NULL) { return; }
+
+	// 一致する"UUID"を持つなら前回選択されたゲームオブジェクトなので今選択されているゲームオブジェクト
+	// とみなしてキャッシュを格納する
+	for (const auto& l_gameObject : l_sceneCache->GetGameObjectList())
+	{
+		if (!l_gameObject) { continue; }
+		if (l_gameObject->GetUUID() != m_selectedGameObjectUUID) { continue; }
+
+		m_selectedGameObjectCache = l_gameObject;
+	}
 }
 
 void MRI::Editor::EditorHierarchyView::DrawAddGameObjectSelector()

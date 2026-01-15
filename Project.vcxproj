@@ -321,6 +321,7 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection\MRIRotationComponentLerpTargetViewDirectionMode.h" />
     <ClInclude Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.h" />
     <ClInclude Include="Src\MRIFramework\Component\Camera\MRICameraComponent.h" />
+    <ClInclude Include="Src\MRIFramework\Component\Hit\Collider\HitColliderComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Input\MRIInputComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\Move\MRIMoveComponent.h" />
     <ClInclude Include="Src\MRIFramework\Component\MRIComponentBase.h" />
@@ -483,6 +484,7 @@
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\Lerp\TargetViewDirection\MRIRotationComponentLerpTargetViewDirectionMode.cpp" />
     <ClCompile Include="Src\MRIFramework\ComponentMode\Rotation\MRIRotationComponentModeBase.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Camera\MRICameraComponent.cpp" />
+    <ClCompile Include="Src\MRIFramework\Component\Hit\Collider\HitColliderComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Input\MRIInputComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\Move\MRIMoveComponent.cpp" />
     <ClCompile Include="Src\MRIFramework\Component\MRIComponentBase.cpp" />

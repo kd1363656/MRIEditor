@@ -1,0 +1,43 @@
+{
+    "ChildList": [],
+    "ComponentList": [
+        {
+            "Color": {
+                "W": 1.0,
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+            },
+            "FilePath": "Asset\\Model\\Map\\BackGround\\Skysphere\\Morning\\Sky.gltf",
+            "ShaderTagList": [
+                {
+                    "TagName": "MRI::Tag::ShaderTagUnLit"
+                }
+            ],
+            "TypeName": "MRI::Component::RenderModelStaticComponent"
+        }
+    ],
+    "ComponentObserver": {
+        "SubscribedEventTypeDataMap": []
+    },
+    "MRI::Component::TransformComponent": {
+        "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
+        "Pos": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Rotation": {
+            "W": 1.0,
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Scale": {
+            "X": 10.0,
+            "Y": 10.0,
+            "Z": 10.0
+        }
+    },
+    "PrefabName": "TestSkySphere"
+}

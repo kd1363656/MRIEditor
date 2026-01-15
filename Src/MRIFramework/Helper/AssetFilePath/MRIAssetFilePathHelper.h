@@ -17,14 +17,16 @@ namespace MRI::Helper
 
 		nlohmann::json SerializePrefab();
 
-		void SetFilters(const std::string& a_set) { m_filters = a_set; }
+		void SetFilters(const char* a_set) { m_filters = a_set; }
 
 		const std::string& GetFilePath() const { return m_filePath; }
+
+		bool GetIsChanged() const { return m_isChanged; }
 
 	private:
 
 		std::string m_filePath = std::string();
-		std::string m_filters  = std::string();
+		const char* m_filters  = "";
 
 		bool m_isChanged = false;
 	};

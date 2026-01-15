@@ -33,6 +33,22 @@ void MRI::Component::RenderModelAnimationComponent::DeserializePrefab(const nloh
 	}
 }
 
+void MRI::Component::RenderModelAnimationComponent::EditPrefabInspector()
+{
+	if (!m_modelWork) { return; }
+
+	MRI::Component::RenderModelComponentBase::EditPrefabInspector();
+
+	auto l_assetFilePathHelperCache = MRI::Component::RenderModelComponentBase::GetAssetFilePathHelperCache().lock();
+	if (!l_assetFilePathHelperCache) { return; }
+
+	// アセットのファイルパスが変更されたらモデルを再度読み込む
+	if (l_assetFilePathHelperCache->GetIsChanged())
+	{
+		m_modelWork->SetModelData(l_assetFilePathHelperCache->GetFilePath());
+	}
+}
+
 void MRI::Component::RenderModelAnimationComponent::Draw(const std::uint32_t a_shaderTag)
 {
 	// もし使用可能なシェーダーであるなら処理を実行

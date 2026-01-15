@@ -1,5 +1,7 @@
 ﻿#include "MRIMoveComponentLerpFacingDirectionMode.h"
 
+#include "../../../../../Application/main.h"
+
 const MRI::TypeInfo& MRI::ComponentMode::MoveComponentLerpFacingDirectionMode::GetTypeInfo() const
 {	
 	return MRI::GetTypeInfo<MRI::ComponentMode::MoveComponentLerpFacingDirectionMode>();
@@ -31,7 +33,7 @@ void MRI::ComponentMode::MoveComponentLerpFacingDirectionMode::Update()
 	l_resultMoveDirection.Normalize();
 
 	// 最終的な移動量を計算
-	Math::Vector3 l_resultMovement = l_resultMoveDirection                   * l_interpolatorModifierCache->GetCurrentValue();
+	Math::Vector3 l_resultMovement = l_resultMoveDirection                   * l_interpolatorModifierCache->GetCurrentValue() * Application::GetInstance().GetScaledDeltaTime();
 	const auto&   l_resultPos      = l_selfTransformComponentCache->GetPos() + l_resultMovement;
 
 	// 現在の座標と移動量を足しこんだ座標を格納

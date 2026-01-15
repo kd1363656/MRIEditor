@@ -418,6 +418,12 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection">
       <UniqueIdentifier>{07416290-edde-49b3-92eb-bbdced05c06a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\Component\Hit">
+      <UniqueIdentifier>{b5112ff6-13fc-44e3-8e83-8cbca1b49164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\MRIFramework\Component\Hit\Collider">
+      <UniqueIdentifier>{8b68987c-e826-465e-b8c8-4f4f86882eae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -924,6 +930,9 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\Component\Hit\Collider\HitColliderComponent.h">
+      <Filter>Src\MRIFramework\Component\Hit\Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -1267,6 +1276,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\Component\Hit\Collider\HitColliderComponent.cpp">
+      <Filter>Src\MRIFramework\Component\Hit\Collider</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

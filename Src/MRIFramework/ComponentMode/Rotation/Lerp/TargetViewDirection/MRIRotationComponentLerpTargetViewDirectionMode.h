@@ -2,7 +2,7 @@
 
 namespace MRI::ComponentMode
 {
-	class RotationComponentLerpTargetViewDirectionMode : public MRI::ComponentMode::RotationComponentLerpModeBase
+	class RotationComponentLerpTargetViewDirectionMode final : public MRI::ComponentMode::RotationComponentLerpModeBase
 	{
 	public:
 

@@ -2,7 +2,7 @@
 
 namespace MRI::ComponentMode
 {
-	class InputComponentRotationFourWayMode : public MRI::ComponentMode::InputComponentRotationModeBase
+	class InputComponentRotationFourWayMode final : public MRI::ComponentMode::InputComponentRotationModeBase
 	{
 	public:
 

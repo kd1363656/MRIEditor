@@ -3,7 +3,7 @@
 void MRI::Helper::AssetFilePathHelper::Init()
 {
 	m_filePath.clear();
-	m_filters.clear ();
+	m_filters = "";
 
 	m_isChanged = false;
 }
@@ -18,8 +18,8 @@ void MRI::Helper::AssetFilePathHelper::EditPrefabInspector()
 	const char* const l_filePath = m_filePath.empty() ? "Empty" : m_filePath.c_str();
 	ImGui::Text("AssetFilePath : %s" , l_filePath);
 
-	if (!MRI::EditorUtility::SameLineSmallButton("ChangeFilePath"))															 { return; }
-	if (!MRI::EditorUtility::OpenFileDialog(m_filePath , MRI::EditorCommonConstant::k_defaultTitleOpen , m_filters.c_str())) { return; }
+	if (!MRI::EditorUtility::SameLineSmallButton("ChangeFilePath"))													 { return; }
+	if (!MRI::EditorUtility::OpenFileDialog(m_filePath , MRI::EditorCommonConstant::k_defaultTitleOpen , m_filters)) { return; }
 
 	m_isChanged = true;
 }

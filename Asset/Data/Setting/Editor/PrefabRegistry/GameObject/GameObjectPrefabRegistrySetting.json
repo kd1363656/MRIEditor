@@ -11,6 +11,14 @@
         {
             "PrefabFilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
             "PrefabName": "TPVCamera"
+        },
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
+        },
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestSkySphere.json",
+            "PrefabName": "TestSkySphere"
         }
     ]
 }

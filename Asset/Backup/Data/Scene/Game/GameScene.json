@@ -1,0 +1,150 @@
+{
+    "GameObjectList": [
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 10.0,
+                    "Y": 10.0,
+                    "Z": 10.0
+                }
+            },
+            "PrefabName": "TestSkySphere",
+            "UUID": "8c738682-83b0-481f-b0a2-3364a46458be"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "8bfa91ba-c69c-406b-92b3-ce9d81b8de93"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "2ce8db50-5e57-470a-b85e-b3985f2f7daf"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "FieldOfView": 45.0,
+                    "TypeName": "MRI::Component::CameraComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::RotationComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::MoveComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::InputComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.8191791772842407,
+                    "Y": 2.4876842498779297,
+                    "Z": -6.603292942047119
+                },
+                "Rotation": {
+                    "W": 0.965314507484436,
+                    "X": -0.010578073561191559,
+                    "Y": -0.26085996627807617,
+                    "Z": -0.0028585458640009165
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "FreeCamera",
+            "UUID": "28b0a9bd-e4dc-4699-93ba-922f729a9458"
+        }
+    ],
+    "PrefabMap": [
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
+            "PrefabName": "TPVCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
+            "PrefabName": "FreeCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestSkySphere.json",
+            "PrefabName": "TestSkySphere"
+        }
+    ],
+    "SceneShiftMap": [],
+    "SubscribedEventTypeDataMap": []
+}

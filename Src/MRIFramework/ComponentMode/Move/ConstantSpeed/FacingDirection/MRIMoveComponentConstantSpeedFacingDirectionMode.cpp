@@ -30,7 +30,7 @@ void MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode::Update()
 	l_resultMoveDirection.Normalize();
 
 	// 最終的な移動量を計算
-	Math::Vector3 l_resultMovement = l_resultMoveDirection                   * MRI::ComponentMode::MoveComponentConstantSpeedModeBase::GetMoveSpeed();
+	Math::Vector3 l_resultMovement = l_resultMoveDirection                   * MRI::ComponentMode::MoveComponentConstantSpeedModeBase::GetMoveSpeed() * Application::GetInstance().GetScaledDeltaTime();
 	const auto&   l_resultPos      = l_selfTransformComponentCache->GetPos() + l_resultMovement;
 
 	// 現在の座標と移動量を足しこんだ座標を格納

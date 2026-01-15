@@ -14,9 +14,14 @@ namespace MRI::Editor
 		void Init      () override;
 		void DrawEditor() override;
 		
+		void LoadFile() override;
+		void SaveFile() override;
+
 		std::weak_ptr<MRI::GameObject> GetSelectedGameObjectCache() const { return m_selectedGameObjectCache; }
 
 	private:
+
+		void RunOnceSetPrevGameObjectCache();
 
 		void DrawAddGameObjectSelector       ();
 		void DrawAddGameObjectButton         ();
@@ -32,11 +37,15 @@ namespace MRI::Editor
 
 		void SetSelectedGameObjectCache(const std::weak_ptr<MRI::GameObject> a_gameObjectCache);
 
+		const std::string k_fileIOPath = "Asset/Data/Setting/Editor/Hierarchy/HierarchySetting.json";
+
 		std::weak_ptr<MRI::GameObject> m_selectedGameObjectCache;
 		std::weak_ptr<MRI::GameObject> m_draggingGameObjectCache;
 
 		UUID m_selectedGameObjectUUID = GUID_NULL;
 
 		std::string m_createGameObjectName = MRI::CommonConstant::k_stringUnknown.data();
+
+		bool m_isFirstTime = false;
 	};
 }

@@ -32,6 +32,22 @@ void MRI::Component::RenderModelStaticComponent::DeserializePrefab(const nlohman
 	}
 }
 
+void MRI::Component::RenderModelStaticComponent::EditPrefabInspector()
+{
+	if (!m_modelData) { return; }
+
+	MRI::Component::RenderModelComponentBase::EditPrefabInspector();
+
+	auto l_assetFilePathHelperCache = MRI::Component::RenderModelComponentBase::GetAssetFilePathHelperCache().lock();
+	if (!l_assetFilePathHelperCache) { return; }
+
+	// アセットのファイルパスが変更されたらモデルを再度読み込む
+	if (l_assetFilePathHelperCache->GetIsChanged())
+	{
+		m_modelData->Load(l_assetFilePathHelperCache->GetFilePath());
+	}
+}
+
 void MRI::Component::RenderModelStaticComponent::Draw(const std::uint32_t a_shaderTag)
 {
 	// もし使用可能なシェーダーであるなら処理を実行
@@ -42,5 +58,5 @@ void MRI::Component::RenderModelStaticComponent::Draw(const std::uint32_t a_shad
 
 	if (!m_modelData) { return; }
 
-	KdShaderManager::Instance().m_StandardShader.DrawModel(*m_modelData, l_selfTransformComponentCache->GetMatrix(), MRI::Component::RenderModelStaticComponent::GetColor());
+	KdShaderManager::Instance().m_StandardShader.DrawModel(*m_modelData , l_selfTransformComponentCache->GetMatrix() , MRI::Component::RenderModelStaticComponent::GetColor());
 }

@@ -2,7 +2,7 @@
 
 namespace MRI::ComponentMode
 {
-	class RotationComponentLerpMouseMode : public MRI::ComponentMode::RotationComponentLerpModeBase
+	class RotationComponentLerpMouseMode final : public MRI::ComponentMode::RotationComponentLerpModeBase
 	{
 	public:
 

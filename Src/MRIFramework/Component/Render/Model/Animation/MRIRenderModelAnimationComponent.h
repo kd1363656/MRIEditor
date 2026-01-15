@@ -15,6 +15,8 @@ namespace MRI::Component
 
 		void DeserializePrefab(const nlohmann::json& a_json) override;
 
+		void EditPrefabInspector() override;
+
 		void Draw(const std::uint32_t a_shaderTag) override;
 
 	private:

@@ -67,7 +67,7 @@ void MRI::ComponentMode::RotationComponentLerpMouseMode::Update()
 	
 	// 現在の回転方向と目標の回転方向を取得
 	Math::Quaternion l_currentQuaternion = l_selfTransformComponentCache->GetRotation();
-	Math::Quaternion l_targetQuaternion = MRI::MathUtility::EulerToQuaternion       (MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection());
+	Math::Quaternion l_targetQuaternion  = MRI::MathUtility::EulerToQuaternion       (MRI::ComponentMode::RotationComponentModeBase::GetRotationDirection());
 
 	// 内積を取得
 	// クオータニオンの最短経路補正
