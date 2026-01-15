@@ -44,6 +44,8 @@ namespace MRI::ComponentMode
 
 	protected:
 
+		virtual Math::Vector3 CalcMoveDirection();
+
 		const Math::Vector3& GetMoveDirection() const { return m_moveDirection; }
 
 		const auto& GetWorkAdaptMoveAxisTagSet() const { return m_adaptMoveAxisTagSet; }

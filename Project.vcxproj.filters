@@ -415,6 +415,9 @@
     <Filter Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay">
       <UniqueIdentifier>{6bfb5d65-44aa-4b9f-ab11-2694d1638036}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection">
+      <UniqueIdentifier>{07416290-edde-49b3-92eb-bbdced05c06a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -918,6 +921,9 @@
     <ClInclude Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay\MRIInputComponentRotationFourWayMode.h">
       <Filter>Src\MRIFramework\ComponentMode\Input\Rotation\FourWay</Filter>
     </ClInclude>
+    <ClInclude Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.h">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -1258,6 +1264,9 @@
     </ClCompile>
     <ClCompile Include="Src\MRIFramework\ComponentMode\Input\Rotation\FourWay\MRIInputComponentRotationFourWayMode.cpp">
       <Filter>Src\MRIFramework\ComponentMode\Input\Rotation\FourWay</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection\MRIMoveComponentLerpFacingDirectionMode.cpp">
+      <Filter>Src\MRIFramework\ComponentMode\Move\Lerp\FacingDirection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

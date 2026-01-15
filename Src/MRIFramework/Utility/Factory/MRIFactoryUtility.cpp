@@ -36,6 +36,7 @@ void MRI::FactoryUtility::RegisterComponentModeFactory()
 {
 	// 移動
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::MoveComponentMode , MRI::ComponentMode::MoveComponentConstantSpeedFacingDirectionMode);
+	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::MoveComponentMode , MRI::ComponentMode::MoveComponentLerpFacingDirectionMode);
 	
 	// 回転
 	MRI_REGISTER_FACTORY_METHOD(MRI::SharedFactory::RotationComponentMode , MRI::ComponentMode::RotationComponentConstantSpeedMouseMode);

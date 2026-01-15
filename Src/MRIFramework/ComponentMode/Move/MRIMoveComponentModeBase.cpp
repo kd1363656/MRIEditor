@@ -114,3 +114,31 @@ void MRI::ComponentMode::MoveComponentModeBase::EditAddAdaptMoveDirectionTag()
 	if (!MRI::EditorUtility::SameLineButton("Add AdaptMoveAxisTag")) { return; }
 	RegisterAdaptMoveAxisTag(m_debugAddMoveAxisAdaptTag);
 }
+
+Math::Vector3 MRI::ComponentMode::MoveComponentModeBase::CalcMoveDirection()
+{
+	auto l_selfTransformComponentCache = MRI::ComponentMode::MoveComponentModeBase::GetSelfTransformComponentCache().lock();
+	if (!l_selfTransformComponentCache) 
+	{
+		return Math::Vector3::Zero; 
+	}
+
+	auto l_moveDirection = MRI::ComponentMode::MoveComponentModeBase::GetMoveDirection();
+
+	// 移動方向が格納されていないか値が小さければ"return"
+	if (l_moveDirection.LengthSquared() <= MRI::CommonConstant::k_epsilon) 
+	{
+		return Math::Vector3::Zero; 
+	}
+
+	// 移動方向を正規化
+	l_moveDirection.Normalize();
+
+	// このゲームオブジェクトの正面方向から見て向くべき方向を計算
+	Math::Matrix  l_rotationMatrix      = l_selfTransformComponentCache->CalcRotationMatrix();
+	Math::Vector3 l_resultMoveDirection = Math::Vector3::TransformNormal                   (l_moveDirection , l_rotationMatrix);
+
+	// 使用しない軸の値を"0.0F"にして使用しないようにする
+	MRI::AxisUtility::ResetUnusedAxis(m_adaptMoveAxisTagSet , l_resultMoveDirection);
+	return l_resultMoveDirection;
+}

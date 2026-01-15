@@ -48,10 +48,10 @@
                     "Z": -1.399999976158142
                 },
                 "Rotation": {
-                    "W": 0.9999885559082031,
-                    "X": 0.0008704506326466799,
-                    "Y": -0.00424293102696538,
-                    "Z": 2.993192356370855e-05
+                    "W": 0.9997212886810303,
+                    "X": 0.0031362506560981274,
+                    "Y": 0.023299267515540123,
+                    "Z": -7.708638440817595e-05
                 },
                 "Scale": {
                     "X": 1.0,
@@ -112,9 +112,39 @@
             "InputComponentModeList": [
                 {
                     "InputComponentModeName": "MRI::ComponentMode::InputComponentRotationFourWayMode"
+                },
+                {
+                    "InputComponentModeName": "MRI::ComponentMode::InputComponentMoveFourWayMode"
                 }
             ],
             "TypeName": "MRI::Component::InputComponent"
+        },
+        {
+            "AdaptMoveAxisTagSet": [
+                {
+                    "TagName": "MRI::Tag::AxisTagX"
+                },
+                {
+                    "TagName": "MRI::Tag::AxisTagZ"
+                }
+            ],
+            "InterpolatorModifierName": "MRI::Modifier::HermiteInterpolatorModifier",
+            "KeyFrameList": [
+                {
+                    "Tangent": 0.0,
+                    "Time": 0.0,
+                    "Value": 0.25999999046325684
+                },
+                {
+                    "Tangent": 0.0,
+                    "Time": 1.0,
+                    "Value": 1.0
+                }
+            ],
+            "MaxMeasurementTime": 1.0,
+            "MaxValue": 1.0,
+            "MoveComponentModeName": "MRI::ComponentMode::MoveComponentLerpFacingDirectionMode",
+            "TypeName": "MRI::Component::MoveComponent"
         }
     ],
     "ComponentObserver": {
@@ -128,9 +158,9 @@
             "Z": 0.0
         },
         "Rotation": {
-            "W": 0.9995473623275757,
+            "W": 1.0,
             "X": 0.0,
-            "Y": 0.03008614107966423,
+            "Y": 0.0,
             "Z": 0.0
         },
         "Scale": {

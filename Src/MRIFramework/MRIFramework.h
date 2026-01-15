@@ -157,6 +157,8 @@
 #include "ComponentMode/Move/MRIMoveComponentModeBase.h"
 #include "ComponentMode/Move/ConstantSpeed/MRIMoveComponentConstantSpeedModeBase.h"
 #include "ComponentMode/Move/ConstantSpeed/FacingDirection/MRIMoveComponentConstantSpeedFacingDirectionMode.h"
+#include "ComponentMode/Move/Lerp/MRIMoveComponentLerpModeBase.h"
+#include "ComponentMode/Move/Lerp/FacingDirection/MRIMoveComponentLerpFacingDirectionMode.h"
 
 // 入力
 #include "ComponentMode/Input/MRIInputComponentModeBase.h"

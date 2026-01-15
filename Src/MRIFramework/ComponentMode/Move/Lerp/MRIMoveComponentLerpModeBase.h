@@ -17,6 +17,8 @@ namespace MRI::ComponentMode
 
 		nlohmann::json SerializePrefab() override;
 
+		std::weak_ptr<MRI::Modifier::InterpolatorModifierBase> GetInterpolatorModifierCache() { return m_interpolatorModifier; }
+
 	private:
 
 		std::shared_ptr<MRI::Modifier::InterpolatorModifierBase> m_interpolatorModifier = nullptr;
