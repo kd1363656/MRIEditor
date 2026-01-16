@@ -233,12 +233,26 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 		l_flags |= ImGuiTreeNodeFlags_Leaf;
 	}
 
+	const bool l_isPrefabGameObject = MRI::GameObjectUtility::IsPrefabGameObject(a_gameObject);
+
+	// もしプレハブゲームオブジェクトなら色を変える
+	if (l_isPrefabGameObject)
+	{
+		ImGui::PushStyleColor(ImGuiCol_Text , k_prefabGameObjectColor);
+	}
+
 	// ノードの描画
 	// ノードが開いていなければ"return"
 	if (!ImGui::TreeNodeEx(a_gameObject->GetPrefabName().data() , l_flags))
 	{
-		ImGui::PopID();
+		ImGui::PopStyleColor();
+		ImGui::PopID        ();
 		return; 
+	}
+
+	if (l_isPrefabGameObject)
+	{
+		ImGui::PopStyleColor();
 	}
 
 	// クリックしたゲームオブジェクトを選択されているゲームオブジェクトとして格納

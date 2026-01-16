@@ -37,7 +37,7 @@
             ],
             "MRI::Component::TransformComponent": {
                 "Pos": {
-                    "X": 0.0,
+                    "X": 4.0,
                     "Y": 0.0,
                     "Z": 0.0
                 },
@@ -48,9 +48,9 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
                 }
             },
             "PrefabName": "TestTerrain",
@@ -76,9 +76,9 @@
                     "Z": 0.0
                 },
                 "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
                 }
             },
             "PrefabName": "TestTerrain",
@@ -103,15 +103,15 @@
             ],
             "MRI::Component::TransformComponent": {
                 "Pos": {
-                    "X": 0.8191791772842407,
-                    "Y": 2.4876842498779297,
-                    "Z": -6.603292942047119
+                    "X": 1.827662467956543,
+                    "Y": 13.743260383605957,
+                    "Z": -15.453328132629395
                 },
                 "Rotation": {
-                    "W": 0.965314507484436,
-                    "X": -0.010578073561191559,
-                    "Y": -0.26085996627807617,
-                    "Z": -0.0028585458640009165
+                    "W": 0.9695612788200378,
+                    "X": 0.23181942105293274,
+                    "Y": -0.07664705812931061,
+                    "Z": 0.01832609809935093
                 },
                 "Scale": {
                     "X": 1.0,
@@ -121,6 +121,1350 @@
             },
             "PrefabName": "FreeCamera",
             "UUID": "28b0a9bd-e4dc-4699-93ba-922f729a9458"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -4.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "aecb381c-62ce-4b3d-af14-3c8c3c28ecb0"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -8.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "16264f4c-72ff-4801-ac25-621ec4c24f15"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 8.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "9f98aee8-e343-4e6e-9e64-615c1984556a"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -12.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "d421d7cc-188e-4c05-92c4-b436de24ae00"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 4.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "ca15af0b-9346-4550-8643-ac0ae2409912"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 8.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "4a3dcf80-d1e8-4dd6-ade0-bcaea491d30f"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "41f43d43-92ed-42c5-9cc8-c3be91aeec2f"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -4.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "0e3faae3-aeea-47d4-833e-0a490d15ea70"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -8.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "bdeae5a1-5b00-4982-81ed-ec8de988df23"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -12.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "defd1396-c198-4b03-889a-fc9c9040f900"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -16.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "f9f66396-9f46-4732-b828-d0753e912160"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -20.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "f4323ee1-a8b4-41d2-b9ad-36626bbcaabb"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -16.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "43be6903-4784-4512-b782-09310c25c65e"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -20.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "a0b1d259-d72d-4405-aae2-f1a538074e90"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 4.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "38af17d7-7135-4237-b8b9-c54d2224a5f3"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 8.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "ee868c7b-7e90-4a53-b82e-e4db910710e2"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "912ea3fb-892d-43f2-9744-1cd020a4c685"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -4.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "a2072f49-53b4-41b3-bce7-719bbfb4a4cc"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -8.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "65cd099b-4a0d-41ec-9ef9-29e695872624"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -12.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "7c59c589-6b27-4c74-9d5e-a893403904e0"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -16.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "e4e13d94-92cd-475b-8a31-e17115448ba1"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -20.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "e9b00332-0842-45f6-bf2b-851fb9ee6bb5"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 12.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "cb269b04-8c37-4797-9295-eadda40ca6a4"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 12.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "7c450fd5-77b4-4832-8ef7-93c833b5b8c5"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 12.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "1281cdc7-18ca-438a-a3d0-dc713b526880"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 16.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "c1014914-6982-466d-8924-66a2a31a4a22"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 16.0,
+                    "Y": 0.0,
+                    "Z": 4.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "6f401634-56f3-4658-8345-df581d8b33c3"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 16.0,
+                    "Y": 0.0,
+                    "Z": 8.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "7ae046a1-140d-4c6f-a2bb-d2864c51c5ac"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 12.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "0b78ff4d-dfe7-4554-8872-29af76b1dacd"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 16.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "0cbd8997-5b74-4b8b-80ec-1b27b651df78"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 8.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "7be2ea12-4b38-49db-bd12-88b7e782418c"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 4.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "4580d7d0-0d9a-47dd-8a00-925742630194"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "ddf01cd1-edd8-4b05-8745-111774b69fb0"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -4.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "5f5d0278-9dc6-41f0-8c10-788bf8423425"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -8.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "feafefc7-bcaf-494e-acf0-82c33bcea628"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -12.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "53360724-f11b-492f-8bb0-12c655086ca3"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -16.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "7d07cd8d-09ca-4d7d-804a-f2efa6844a33"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -20.0,
+                    "Y": 0.0,
+                    "Z": 12.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "ac3e69c8-1f0b-4de6-858d-e181f62f9052"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "605b10ae-1610-431d-886b-b8badc4270d7"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 4.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "c9066e7f-8c17-4be5-83fe-ffa6ccd02f26"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 8.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "3b10f258-7273-4993-b2b1-b749136f9528"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 12.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "0050b8ae-be6e-49c2-9348-0938641c6fda"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 16.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "5ea730e1-a91c-4dcc-a20e-e69131b2e1c1"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -4.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "78fef829-b20d-4f28-9e11-ea7f35fed617"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -8.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "f17ca0a6-0e5d-4181-ae1a-689ec089dd6a"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -12.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "9f455ed0-0cb4-4039-9c4b-6982d23f165b"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -16.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "104118e3-5646-4677-8a1f-65aceda6b05c"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -20.0,
+                    "Y": 0.0,
+                    "Z": 16.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain",
+            "UUID": "033a92ac-eccf-45a3-83d8-6deb8a911591"
         }
     ],
     "PrefabMap": [

@@ -45,7 +45,11 @@ void MRI::Component::TransformComponent::EditSpawnInspector()
 }
 void MRI::Component::TransformComponent::EditPrefabInspector()
 {
-	MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase>>("MatrixStrategy" , m_fixMatrixStrategy);
+	// 行列が生成されれば一回だけ行列を確定する
+	if (MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase>>("MatrixStrategy" , m_fixMatrixStrategy))
+	{
+		FixMatrixStrategy();
+	}
 
 	const bool l_hasParamChanged = EditCommonInspector();
 
@@ -60,6 +64,8 @@ void MRI::Component::TransformComponent::DeserializeSpawn(const nlohmann::json& 
 {
 	if (a_json.is_null()) { return; }	
 	DeserializeCommon(a_json);
+
+	m_transform.pos = MRI::JsonUtility::DeserializeVec3(a_json , "Pos");
 }
 void MRI::Component::TransformComponent::DeserializePrefab(const nlohmann::json& a_json)
 {
@@ -76,7 +82,8 @@ void MRI::Component::TransformComponent::DeserializePrefab(const nlohmann::json&
 nlohmann::json MRI::Component::TransformComponent::SerializeSpawn()
 {
 	auto l_rootJson = nlohmann::json();
-	MRI::JsonUtility::UpdateJson    (l_rootJson , SerializeCommon());
+	MRI::JsonUtility::UpdateJson(l_rootJson , SerializeCommon				 ());
+	MRI::JsonUtility::UpdateJson(l_rootJson , MRI::JsonUtility::SerializeVec3(m_transform.pos, "Pos"));
 
 	return l_rootJson;
 }
@@ -131,7 +138,6 @@ void MRI::Component::TransformComponent::DeserializeCommon(const nlohmann::json&
 
 	m_transform.scale    = MRI::JsonUtility::DeserializeVec3      (a_json , "Scale");
 	m_transform.rotation = MRI::JsonUtility::DeserializeQuaternion(a_json , "Rotation");
-	m_transform.pos      = MRI::JsonUtility::DeserializeVec3      (a_json , "Pos");
 }
 
 nlohmann::json MRI::Component::TransformComponent::SerializeCommon() const
@@ -140,11 +146,9 @@ nlohmann::json MRI::Component::TransformComponent::SerializeCommon() const
 
 	auto l_scaleJson    = MRI::JsonUtility::SerializeVec3      (m_transform.scale   , "Scale");
 	auto l_rotationJson = MRI::JsonUtility::SerializeQuaternion(m_transform.rotation, "Rotation");
-	auto l_posJson      = MRI::JsonUtility::SerializeVec3      (m_transform.pos     , "Pos");
-
+	
 	MRI::JsonUtility::UpdateJson(l_rootJson , l_scaleJson);
 	MRI::JsonUtility::UpdateJson(l_rootJson , l_rotationJson);
-	MRI::JsonUtility::UpdateJson(l_rootJson , l_posJson);
 	
 	return l_rootJson;
 }

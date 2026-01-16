@@ -29,7 +29,7 @@ void MRI::GameObjectUtility::RecursiveAddComponent(std::weak_ptr<MRI::GameObject
 
 void MRI::GameObjectUtility::RecursiveAddChild(const std::shared_ptr<MRI::GameObject>& a_parent , std::vector<MRI::CommonStruct::ChildLoad> a_childLoadList)
 {
-	// 子であろうが一つにリストに格納
+	// 子であろうが一つのリストに格納
 	auto l_sceneCache = SceneManager::GetInstance().GetSceneCache().lock();
 	if (!l_sceneCache || !a_parent)
 	{
@@ -45,4 +45,38 @@ void MRI::GameObjectUtility::RecursiveAddChild(const std::shared_ptr<MRI::GameOb
 		l_sceneCache->AddGameObject            (l_childLoad.self);
 		RecursiveAddChild		               (l_childLoad.self , l_childLoad.childLoadList);
 	}
+}
+
+bool MRI::GameObjectUtility::IsPrefabGameObject(const std::shared_ptr<MRI::GameObject>& a_gameObject)
+{
+	if (!a_gameObject) 
+	{
+		return false; 
+	}
+
+	auto l_sceneCache = SceneManager::GetInstance().GetSceneCache().lock();
+	if (!l_sceneCache)
+	{
+		return false;
+	}
+
+	auto l_prefabControllerCache = l_sceneCache->GetPrefabControllerCache().lock();
+	if (!l_prefabControllerCache) 
+	{
+		return false; 
+	}
+
+	auto l_prefabCache = l_prefabControllerCache->FetchPrefabCache(a_gameObject->GetPrefabName()).lock();
+	if (!l_prefabCache) 
+	{
+		return false;
+	}
+
+	auto l_prefabGameObject = l_prefabCache->GetGameObjectCache().lock();
+	if (!l_prefabGameObject)
+	{
+		return false;
+	}
+
+	return l_prefabGameObject.get() == a_gameObject.get();
 }
