@@ -165,26 +165,26 @@ void MRI::GameObject::DeserializePrefab(const nlohmann::json& a_json , std::vect
 
 nlohmann::json MRI::GameObject::SerializeSpawn() const
 {
-	auto l_rootJson       = nlohmann::json						 ();
-	auto l_gameObjectJson = m_gameObjectConverter->SerializeSpawn();
-
 	if (!m_gameObjectConverter)
 	{
 		return nlohmann::json(); 
 	}
+
+	auto l_rootJson       = nlohmann::json						 ();
+	auto l_gameObjectJson = m_gameObjectConverter->SerializeSpawn();
 
 	MRI::JsonUtility::UpdateJson(l_rootJson , l_gameObjectJson);
 	return l_rootJson;
 }
 nlohmann::json MRI::GameObject::SerializePrefab() const
 {
-	auto l_rootJson       = nlohmann::json						  ();
-	auto l_gameObjectJson = m_gameObjectConverter->SerializePrefab();
-
 	if (!m_gameObjectConverter)
 	{
 		return nlohmann::json(); 
 	}
+
+	auto l_rootJson       = nlohmann::json						  ();
+	auto l_gameObjectJson = m_gameObjectConverter->SerializePrefab();
 
 	MRI::JsonUtility::UpdateJson(l_rootJson , l_gameObjectJson);
 	return l_rootJson;

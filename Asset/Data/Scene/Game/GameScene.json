@@ -108,10 +108,10 @@
                     "Z": -20.687135696411133
                 },
                 "Rotation": {
-                    "W": 0.9986932277679443,
-                    "X": 0.005959512200206518,
-                    "Y": -0.05075549706816673,
-                    "Z": 0.0003028737846761942
+                    "W": 0.9990885257720947,
+                    "X": -0.0003542287740856409,
+                    "Y": -0.04268550127744675,
+                    "Z": -1.5134227396629285e-05
                 },
                 "Scale": {
                     "X": 1.0,
@@ -1577,24 +1577,48 @@
             },
             "PrefabName": "TestTree",
             "UUID": "b21a57b9-4560-4d37-a612-98fc5658fa3f"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "Test",
+            "UUID": "95d1b269-a25d-429c-b03a-12fa82aa4d6c"
         }
     ],
     "PrefabMap": [
-        {
-            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
-            "PrefabName": "TestTree"
-        },
         {
             "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
             "PrefabName": "Antike"
         },
         {
-            "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
-            "PrefabName": "TPVCamera"
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
+            "PrefabName": "TestTree"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
             "PrefabName": "TestTerrain"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
+            "PrefabName": "TPVCamera"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",

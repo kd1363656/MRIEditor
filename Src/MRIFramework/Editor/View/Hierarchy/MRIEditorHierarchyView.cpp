@@ -245,8 +245,12 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 	// ノードが開いていなければ"return"
 	if (!ImGui::TreeNodeEx(a_gameObject->GetPrefabName().data() , l_flags))
 	{
-		ImGui::PopStyleColor();
-		ImGui::PopID        ();
+		if (l_isPrefabGameObject)
+		{
+			ImGui::PopStyleColor();
+		}
+
+		ImGui::PopID();
 		return; 
 	}
 
