@@ -103,15 +103,15 @@
             ],
             "MRI::Component::TransformComponent": {
                 "Pos": {
-                    "X": 0.5257097482681274,
-                    "Y": 7.25108003616333,
-                    "Z": -18.625991821289063
+                    "X": 0.7357545495033264,
+                    "Y": 7.275806903839111,
+                    "Z": -20.687135696411133
                 },
                 "Rotation": {
-                    "W": 0.9962314367294312,
-                    "X": 0.0359610915184021,
-                    "Y": -0.07887689769268036,
-                    "Z": 0.002847229363396764
+                    "W": 0.9986932277679443,
+                    "X": 0.005959512200206518,
+                    "Y": -0.05075549706816673,
+                    "Z": 0.0003028737846761942
                 },
                 "Scale": {
                     "X": 1.0,
@@ -1581,20 +1581,20 @@
     ],
     "PrefabMap": [
         {
-            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
-            "PrefabName": "Antike"
-        },
-        {
             "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
             "PrefabName": "TestTree"
         },
         {
-            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
-            "PrefabName": "TestTerrain"
+            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
             "PrefabName": "TPVCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",

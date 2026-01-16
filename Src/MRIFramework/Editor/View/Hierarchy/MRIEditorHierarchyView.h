@@ -37,7 +37,7 @@ namespace MRI::Editor
 
 		void SetSelectedGameObjectCache(const std::weak_ptr<MRI::GameObject> a_gameObjectCache);
 
-		static constexpr ImVec4 k_prefabGameObjectColor = ImVec4(0.30F , 0.30F , 1.0F , 1.0F);
+		static constexpr ImVec4 k_prefabGameObjectColor = ImVec4(0.30F , 1.0F , 0.30F , 1.0F);
 
 		const std::string k_fileIOPath = "Asset/Data/Setting/Editor/Hierarchy/HierarchySetting.json";
 

@@ -27,7 +27,8 @@ void MRI::Component::InputComponent::EarlyUpdate()
 {	
 	for (const auto& l_inputComponentMode : m_inputComponentModeList)
 	{
-		if (!l_inputComponentMode) { continue; }
+		if (!l_inputComponentMode)    { continue; }
+		if (ImGui::IsAnyItemActive()) { continue; }	// "ImGui"走査中なら"continue"
 		l_inputComponentMode->EarlyUpdate();
 	}
 }
