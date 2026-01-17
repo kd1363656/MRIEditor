@@ -103,15 +103,15 @@
             ],
             "MRI::Component::TransformComponent": {
                 "Pos": {
-                    "X": 1.827662467956543,
-                    "Y": 13.743260383605957,
-                    "Z": -15.453328132629395
+                    "X": 0.7357545495033264,
+                    "Y": 7.275806903839111,
+                    "Z": -20.687135696411133
                 },
                 "Rotation": {
-                    "W": 0.9695612788200378,
-                    "X": 0.23181942105293274,
-                    "Y": -0.07664705812931061,
-                    "Z": 0.01832609809935093
+                    "W": 0.9990885257720947,
+                    "X": -0.0003542287740856409,
+                    "Y": -0.04268550127744675,
+                    "Z": -1.5134227396629285e-05
                 },
                 "Scale": {
                     "X": 1.0,
@@ -1465,12 +1465,152 @@
             },
             "PrefabName": "TestTerrain",
             "UUID": "033a92ac-eccf-45a3-83d8-6deb8a911591"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -17.399999618530273,
+                    "Y": 2.799999952316284,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TestTree",
+            "UUID": "9e54a30a-a6b8-45aa-936f-e825f9c81c7d"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 3.0,
+                    "Y": 2.799999952316284,
+                    "Z": 11.600000381469727
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TestTree",
+            "UUID": "7d8333b2-bf2f-480d-baf1-c8adc34e938a"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 8.600000381469727,
+                    "Y": 2.799999952316284,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TestTree",
+            "UUID": "b2636e0a-d573-45fd-8870-1dc64da25536"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": -9.100000381469727,
+                    "Y": 2.799999952316284,
+                    "Z": 7.400000095367432
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "TestTree",
+            "UUID": "b21a57b9-4560-4d37-a612-98fc5658fa3f"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "Test",
+            "UUID": "95d1b269-a25d-429c-b03a-12fa82aa4d6c"
         }
     ],
     "PrefabMap": [
         {
             "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
             "PrefabName": "Antike"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
+            "PrefabName": "TestTree"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
