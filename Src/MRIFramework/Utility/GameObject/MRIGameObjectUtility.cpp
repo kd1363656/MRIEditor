@@ -7,16 +7,15 @@ std::shared_ptr<MRI::GameObject> MRI::GameObjectUtility::CreateGameObject()
 	return std::make_shared<MRI::GameObject>();
 }
 
-void MRI::GameObjectUtility::RecursiveAddComponent(std::weak_ptr<MRI::GameObject> a_self , const std::vector<std::shared_ptr<MRI::Component::ComponentBase>>& a_componentList , std::vector<MRI::CommonStruct::ChildLoad>& a_childLoadList)
+void MRI::GameObjectUtility::RecursiveAddComponent(const std::shared_ptr<MRI::GameObject>& a_self , const std::vector<std::shared_ptr<MRI::Component::ComponentBase>>& a_addComponentList , std::vector<MRI::CommonStruct::ChildLoad>& a_childLoadList)
 {
-	auto l_self = a_self.lock();
-	if (!l_self) { return; }
+	if (!a_self) { return; }
 
 	// 親のコンポーネントを親のコンポーネントリストに追加
-	for (const auto& l_component : a_componentList)
+	for (const auto& l_component : a_addComponentList)
 	{
 		if (!l_component) { continue; }
-		l_self->AddComponent(l_component);
+		a_self->AddComponent(l_component);
 	}
 
 	// このコンポーネントを子のコンポーネントリストに再帰的に追加

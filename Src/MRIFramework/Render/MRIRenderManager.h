@@ -21,6 +21,8 @@ namespace MRI
 
 		bool HasAlreadyRenderModelComponentBaseCache(const std::weak_ptr<MRI::Component::RenderModelComponentBase> a_renderModelComponentBaseCache);
 
+		void SetMainCameraComponentCache(const std::shared_ptr<MRI::Component::CameraComponent> a_cameraComponentCache) { m_mainCameraComponentCache = a_cameraComponentCache; }
+
 	private:
 
 		void Reset();

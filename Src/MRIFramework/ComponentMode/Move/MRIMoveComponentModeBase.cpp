@@ -131,9 +131,6 @@ Math::Vector3 MRI::ComponentMode::MoveComponentModeBase::CalcMoveDirection()
 		return Math::Vector3::Zero; 
 	}
 
-	// 移動方向を正規化
-	l_moveDirection.Normalize();
-
 	// このゲームオブジェクトの正面方向から見て向くべき方向を計算
 	Math::Matrix  l_rotationMatrix      = l_selfTransformComponentCache->CalcRotationMatrix();
 	Math::Vector3 l_resultMoveDirection = Math::Vector3::TransformNormal                   (l_moveDirection , l_rotationMatrix);

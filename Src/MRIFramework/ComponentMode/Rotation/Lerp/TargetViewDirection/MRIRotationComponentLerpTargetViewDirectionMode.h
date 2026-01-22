@@ -25,7 +25,7 @@ namespace MRI::ComponentMode
 
 	private:
 
-		std::shared_ptr<MRI::Helper::ComponentUUIDFetcherHelper<MRI::Component::TransformComponent>> m_targetTransformComponent = nullptr;
+		std::shared_ptr<MRI::Helper::ComponentUUIDFetcherHelper<MRI::Component::TransformComponent>> m_targetTransformComponentFetcher = nullptr;
 	};
 }
 

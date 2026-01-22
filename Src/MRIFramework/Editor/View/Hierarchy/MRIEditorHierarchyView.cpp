@@ -263,6 +263,12 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 	if (ImGui::IsItemClicked())
 	{
 		SetSelectedGameObjectCache(a_gameObject);
+
+		// 選択したオブジェクトがカメラならカメラの主導権を渡す
+		if(auto l_cameraComponentCache = a_gameObject->GetComponentCache<MRI::Component::CameraComponent>().lock())
+		{
+			MRI::RenderManager::GetInstance().SetMainCameraComponentCache(l_cameraComponentCache);
+		}
 	}
 
 	// ドラッグアンドドロップで親子関係を結ぶ処理

@@ -88,44 +88,6 @@
             "ChildList": [],
             "ComponentList": [
                 {
-                    "FieldOfView": 45.0,
-                    "TypeName": "MRI::Component::CameraComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::RotationComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::MoveComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::InputComponent"
-                }
-            ],
-            "MRI::Component::TransformComponent": {
-                "Pos": {
-                    "X": 0.7357545495033264,
-                    "Y": 7.275806903839111,
-                    "Z": -20.687135696411133
-                },
-                "Rotation": {
-                    "W": 0.9990885257720947,
-                    "X": -0.0003542287740856409,
-                    "Y": -0.04268550127744675,
-                    "Z": -1.5134227396629285e-05
-                },
-                "Scale": {
-                    "X": 1.0,
-                    "Y": 1.0,
-                    "Z": 1.0
-                }
-            },
-            "PrefabName": "FreeCamera",
-            "UUID": "28b0a9bd-e4dc-4699-93ba-922f729a9458"
-        },
-        {
-            "ChildList": [],
-            "ComponentList": [
-                {
                     "TypeName": "MRI::Component::RenderModelStaticComponent"
                 }
             ],
@@ -1600,25 +1562,96 @@
                 }
             },
             "PrefabName": "Test",
-            "UUID": "95d1b269-a25d-429c-b03a-12fa82aa4d6c"
+            "UUID": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+            "ChildList": [
+                {
+                    "ChildList": [],
+                    "ComponentList": [
+                        {
+                            "FieldOfView": 45.0,
+                            "TypeName": "MRI::Component::CameraComponent"
+                        },
+                        {
+                            "TypeName": "MRI::Component::RotationComponent"
+                        }
+                    ],
+                    "MRI::Component::TransformComponent": {
+                        "Pos": {
+                            "X": 0.0,
+                            "Y": 1.0,
+                            "Z": -1.0
+                        },
+                        "Rotation": {
+                            "W": -1.0,
+                            "X": -1.2724408406938892e-06,
+                            "Y": 3.2905649050007924e-07,
+                            "Z": -4.240744644334882e-09
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 0.5
+                        }
+                    },
+                    "PrefabName": "TPVCamera",
+                    "UUID": "56245587-2232-4155-a39c-9eae54256eca"
+                }
+            ],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelAnimationComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::RotationComponent",
+                    "UUID": "56245587-2232-4155-a39c-9eae54256eca"
+                },
+                {
+                    "TypeName": "MRI::Component::InputComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::MoveComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": -7.9113054275512695
+                },
+                "Rotation": {
+                    "W": 0.999901533126831,
+                    "X": 0.0,
+                    "Y": 0.014025489799678326,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 1.0
+                }
+            },
+            "PrefabName": "Antike",
+            "UUID": "43518c25-8fb2-4b66-aed6-537c67cb2423"
         }
     ],
     "PrefabMap": [
-        {
-            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
-            "PrefabName": "Antike"
-        },
         {
             "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
             "PrefabName": "TestTree"
         },
         {
-            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
-            "PrefabName": "TestTerrain"
+            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
             "PrefabName": "TPVCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
