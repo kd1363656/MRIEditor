@@ -7,6 +7,8 @@ const MRI::TypeInfo& MRI::Component::RenderModelComponentBase::GetTypeInfo() con
 
 void MRI::Component::RenderModelComponentBase::Init()
 {
+	MRI::RenderManager::GetInstance().AddRenderModelComponentBase(weak_from_this());
+
 	// フィルター情報は各派生クラスで使う("gltf"や"png"どちらを選ぶか現状分からないから)
 	if (!m_assetFilePathHelper)
 	{

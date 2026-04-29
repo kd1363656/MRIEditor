@@ -2,7 +2,8 @@
 
 namespace MRI::Component
 {
-	class RenderModelComponentBase : public MRI::Component::ComponentBase
+	class RenderModelComponentBase : public MRI::Component::ComponentBase,
+									 public std::enable_shared_from_this<MRI::Component::RenderModelComponentBase>
 	{
 	public:
 
