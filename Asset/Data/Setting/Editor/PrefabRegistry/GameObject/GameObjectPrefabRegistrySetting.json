@@ -5,20 +5,24 @@
             "PrefabName": "FreeCamera"
         },
         {
-            "PrefabFilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
-            "PrefabName": "Antike"
-        },
-        {
             "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
             "PrefabName": "TestTree"
         },
         {
-            "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
-            "PrefabName": "TestTerrain"
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
+        },
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain_1.json",
+            "PrefabName": "TestTerrain_1"
         },
         {
             "PrefabFilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
             "PrefabName": "TPVCamera"
+        },
+        {
+            "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
         },
         {
             "PrefabFilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestSkySphere.json",

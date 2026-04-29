@@ -1601,24 +1601,56 @@
             },
             "PrefabName": "FreeCamera",
             "UUID": "a31abf59-1cc2-4426-95d3-323681fcae30"
+        },
+        {
+            "ChildList": [],
+            "ComponentList": [
+                {
+                    "TypeName": "MRI::Component::RenderModelStaticComponent"
+                }
+            ],
+            "MRI::Component::TransformComponent": {
+                "Pos": {
+                    "X": 0.6000000238418579,
+                    "Y": 4.800000190734863,
+                    "Z": 0.0
+                },
+                "Rotation": {
+                    "W": 1.0,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                },
+                "Scale": {
+                    "X": 2.0,
+                    "Y": 2.0,
+                    "Z": 2.0
+                }
+            },
+            "PrefabName": "TestTerrain_1",
+            "UUID": "23d75dfd-93c5-47dd-8b5a-cca4a2ed376f"
         }
     ],
     "PrefabMap": [
-        {
-            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
-            "PrefabName": "Antike"
-        },
         {
             "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
             "PrefabName": "TestTree"
         },
         {
-            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
-            "PrefabName": "TestTerrain"
+            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain_1.json",
+            "PrefabName": "TestTerrain_1"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
             "PrefabName": "TPVCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",
