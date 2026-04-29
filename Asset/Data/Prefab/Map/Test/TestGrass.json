@@ -1,0 +1,38 @@
+{
+    "ChildList": [],
+    "ComponentList": [
+        {
+            "Color": {
+                "W": 1.0,
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+            },
+            "FilePath": "Asset\\Model\\Map\\Terrain\\Test\\TerrainGrass_1.gltf",
+            "ShaderTagList": [
+                {
+                    "TagName": "MRI::Tag::ShaderTagUnLit"
+                }
+            ],
+            "TypeName": "MRI::Component::RenderModelStaticComponent"
+        }
+    ],
+    "ComponentObserver": {
+        "SubscribedEventTypeDataMap": []
+    },
+    "MRI::Component::TransformComponent": {
+        "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
+        "Rotation": {
+            "W": 1.0,
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+        },
+        "Scale": {
+            "X": 1.0,
+            "Y": 6.900000095367432,
+            "Z": 1.0
+        }
+    },
+    "PrefabName": "TestGrass"
+}
