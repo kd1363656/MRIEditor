@@ -25,7 +25,8 @@ namespace MRI::Editor
 
 		void RunOnceSetPrevGameObjectCache();
 
-		void SetUUID(const std::shared_ptr<MRI::GameObject> a_gameObject);
+		void SetUUID           (const std::shared_ptr<MRI::GameObject> a_gameObject);
+		void BatchSetupPostLoad(const std::shared_ptr<MRI::GameObject> a_gameObject);
 
 		void DrawAddGameObjectSelector       ();
 		void DrawAddGameObjectButton         ();

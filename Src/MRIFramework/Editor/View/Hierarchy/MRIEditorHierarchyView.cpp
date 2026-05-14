@@ -126,6 +126,20 @@ void MRI::Editor::EditorHierarchyView::SetUUID(const std::shared_ptr<MRI::GameOb
 		SetUUID(l_child);
 	}
 }
+void MRI::Editor::EditorHierarchyView::BatchSetupPostLoad(const std::shared_ptr<MRI::GameObject> a_gameObject)
+{
+	if (!a_gameObject) { return; }
+
+	a_gameObject->PostLoadInit();
+
+	for (const auto& l_childCache : a_gameObject->GetChildCacheList())
+	{
+		const auto& l_child = l_childCache.lock();
+		if (!l_child) { continue; }
+
+		BatchSetupPostLoad(l_child);
+	}
+}
 
 void MRI::Editor::EditorHierarchyView::DrawAddGameObjectSelector()
 {
@@ -208,7 +222,7 @@ void MRI::Editor::EditorHierarchyView::DrawAddGameObjectButton()
 			MRI::GameObjectUtility::RecursiveAddChild    (l_gameObject , l_childLoadList);
 
 			// 読み込んだ後にコンポーネント同士の接続やリソースのロードを行う
-			l_gameObject->PostLoadInit();
+			BatchSetupPostLoad(l_gameObject);
 
 			// シーンのリストに追加
 			l_sceneCache->AddGameObject(l_gameObject);
