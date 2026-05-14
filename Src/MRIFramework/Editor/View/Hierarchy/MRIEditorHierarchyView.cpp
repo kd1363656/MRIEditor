@@ -102,6 +102,31 @@ void MRI::Editor::EditorHierarchyView::RunOnceSetPrevGameObjectCache()
 	}
 }
 
+void MRI::Editor::EditorHierarchyView::SetUUID(const std::shared_ptr<MRI::GameObject> a_gameObject)
+{
+	if (!a_gameObject) { return; }
+
+	// "UUID"を生成
+	UUID l_uuid = GUID_NULL;
+
+	// シーン内にあるゲームオブジェクトと同じ"UUID"を取り続けるか"GUID_NULL"なら抽選し直し続ける
+	while (l_uuid == GUID_NULL || MRI::EditorUtility::HasSameUUIDGameObjectInSceneGameObjectList(l_uuid))
+	{
+		MRI::UUIDUtility::GenerateUUID(l_uuid);
+	}
+
+	// 最終的に生成された"UUID"をゲームオブジェクトにセット
+	a_gameObject->SetUUID(l_uuid);
+
+	for (const auto& l_childCache : a_gameObject->GetChildCacheList())
+	{
+		const auto& l_child = l_childCache.lock();
+		if (!l_child) { continue; }
+
+		SetUUID(l_child);
+	}
+}
+
 void MRI::Editor::EditorHierarchyView::DrawAddGameObjectSelector()
 {
 	auto l_sceneCache = SceneManager::GetInstance().GetSceneCache().lock();
@@ -164,18 +189,6 @@ void MRI::Editor::EditorHierarchyView::DrawAddGameObjectButton()
 	l_gameObject->Init											();
 	l_gameObject->SetPrefabName									(m_createGameObjectName);
 
-	// "UUID"を生成
-	UUID l_uuid = GUID_NULL;
-	
-	// シーン内にあるゲームオブジェクトと同じ"UUID"を取り続けるか"GUID_NULL"なら抽選し直し続ける
-	while (l_uuid == GUID_NULL || MRI::EditorUtility::HasSameUUIDGameObjectInSceneGameObjectList(l_uuid))
-	{
-		MRI::UUIDUtility::GenerateUUID(l_uuid);
-	}
-
-	// 最終的に生成された"UUID"をゲームオブジェクトにセット
-	l_gameObject->SetUUID(l_uuid);
-
 	// プレハブが存在すれば必要なコンポーネントと子ゲームオブジェクトを
 	// デシリアライズして作成して格納
 	if (auto l_prefabCache = l_prefabControllerCache->FetchPrefabCache(m_createGameObjectName).lock();
@@ -211,14 +224,12 @@ void MRI::Editor::EditorHierarchyView::DrawAddGameObjectButton()
 				// 描画コンポーネントを描画マネージャーに追加
 				MRI::RenderManager::GetInstance().AddRenderModelComponentBase(l_renderModelComponentCache);
 			}
-
-			// もしプレハブ反映用ゲームオブジェクトが存在しなければ
-			// 今生成したゲームオブジェクトをきゃしゅに格納
-			if (l_prefabCache->GetGameObjectCache().expired())
-			{
-				l_prefabCache->SetGameObjectCache(l_gameObject);
-			}
 		}
+
+		// もしプレハブ反映用ゲームオブジェクトが存在しなければ
+		// 今生成したゲームオブジェクトをキャッシュに格納
+		SetupPrefabCache(l_gameObject);
+		SetUUID		    (l_gameObject);
 	}
 
 	// 追加したゲームオブジェクトの"Inspector"を捜査したい可能性が非常に高いため
@@ -417,4 +428,44 @@ void MRI::Editor::EditorHierarchyView::SetSelectedGameObjectCache(const std::wea
 
 	m_selectedGameObjectCache = l_gameObjectCache;
 	m_selectedGameObjectUUID  = l_gameObjectCache->GetUUID();
+}
+
+void MRI::Editor::EditorHierarchyView::SetupPrefabCache(const std::shared_ptr<MRI::GameObject> a_gameObject)
+{
+	auto l_sceneCache = MRI::SceneManager::GetInstance().GetSceneCache().lock();
+	if (!l_sceneCache) { return; }
+
+	auto l_prefabControllerCache = l_sceneCache->GetPrefabControllerCache().lock();
+	if (!l_prefabControllerCache) { return; }
+
+	if (auto l_prefabCache = l_prefabControllerCache->FetchPrefabCache(a_gameObject->GetPrefabName()).lock();
+		l_prefabCache)
+	{
+		// もしプレハブ反映用ゲームオブジェクトが存在しなければ
+		// 今生成したゲームオブジェクトをキャッシュに格納
+		if (l_prefabCache->GetGameObjectCache().expired())
+		{
+			l_prefabCache->SetGameObjectCache(a_gameObject);
+		}
+
+		//for (const auto& l_gameObjectCache : l_sceneCache->GetGameObjectList())
+		//{
+		//	// 自身は含めない
+		//	if (a_gameObject  == l_gameObjectCache) { continue; }
+		//	if (auto l_prefab = l_prefabCache->GetGameObjectCache().lock();
+		//		l_prefab)
+		//	{
+		//		
+		//	}
+
+		//}
+
+		for (const auto& l_childCache : a_gameObject->GetChildCacheList())
+		{
+			auto l_child = l_childCache.lock();
+			if (!l_child) { continue; }
+
+			SetupPrefabCache(l_child);
+		}
+	}
 }

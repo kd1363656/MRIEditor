@@ -25,6 +25,8 @@ namespace MRI::Editor
 
 		void RunOnceSetPrevGameObjectCache();
 
+		void SetUUID(const std::shared_ptr<MRI::GameObject> a_gameObject);
+
 		void DrawAddGameObjectSelector       ();
 		void DrawAddGameObjectButton         ();
 		void DrawGameObjectHierarchy         ();
@@ -38,6 +40,8 @@ namespace MRI::Editor
 		bool IsDescendant(const std::weak_ptr<MRI::GameObject> a_parentCache , const std::weak_ptr<MRI::GameObject> a_targetCache);
 
 		void SetSelectedGameObjectCache(const std::weak_ptr<MRI::GameObject> a_gameObjectCache);
+
+		void SetupPrefabCache(const std::shared_ptr<MRI::GameObject> a_gameObject);
 
 		static constexpr ImVec4 k_prefabGameObjectColor = ImVec4(0.30F , 1.0F , 0.30F , 1.0F);
 
