@@ -1565,33 +1565,66 @@
             "UUID": "00000000-0000-0000-0000-000000000000"
         },
         {
-            "ChildList": [],
+            "ChildList": [
+                {
+                    "ChildList": [],
+                    "ComponentList": [
+                        {
+                            "FieldOfView": 45.0,
+                            "TypeName": "MRI::Component::CameraComponent"
+                        },
+                        {
+                            "TypeName": "MRI::Component::RotationComponent"
+                        }
+                    ],
+                    "MRI::Component::TransformComponent": {
+                        "Pos": {
+                            "X": 0.0,
+                            "Y": 1.399999976158142,
+                            "Z": -0.8999999761581421
+                        },
+                        "Rotation": {
+                            "W": 0.9986953735351563,
+                            "X": 0.04468899592757225,
+                            "Y": 0.024681594222784042,
+                            "Z": -0.0011044368147850037
+                        },
+                        "Scale": {
+                            "X": 1.0,
+                            "Y": 1.0,
+                            "Z": 0.5
+                        }
+                    },
+                    "PrefabName": "TPVCamera",
+                    "UUID": "c0f2a3f2-b3b4-4866-b62d-d1625fda3d30"
+                }
+            ],
             "ComponentList": [
                 {
-                    "FieldOfView": 45.0,
-                    "TypeName": "MRI::Component::CameraComponent"
+                    "TypeName": "MRI::Component::RenderModelAnimationComponent"
                 },
                 {
-                    "TypeName": "MRI::Component::RotationComponent"
-                },
-                {
-                    "TypeName": "MRI::Component::MoveComponent"
+                    "TypeName": "MRI::Component::RotationComponent",
+                    "UUID": "c0f2a3f2-b3b4-4866-b62d-d1625fda3d30"
                 },
                 {
                     "TypeName": "MRI::Component::InputComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::MoveComponent"
                 }
             ],
             "MRI::Component::TransformComponent": {
                 "Pos": {
-                    "X": -2.406508445739746,
-                    "Y": 8.61270809173584,
-                    "Z": -14.237163543701172
+                    "X": -4.843700408935547,
+                    "Y": 1.899999976158142,
+                    "Z": 10.08845043182373
                 },
                 "Rotation": {
-                    "W": 0.9999982714653015,
-                    "X": -0.0011401621159166098,
-                    "Y": -0.0014833230525255203,
-                    "Z": -1.6912316596062738e-06
+                    "W": 0.9982829689979553,
+                    "X": 0.0,
+                    "Y": 0.05857309699058533,
+                    "Z": 0.0
                 },
                 "Scale": {
                     "X": 1.0,
@@ -1599,26 +1632,26 @@
                     "Z": 1.0
                 }
             },
-            "PrefabName": "FreeCamera",
-            "UUID": "359df7ce-54fb-4312-9be3-dcc777d02113"
+            "PrefabName": "Antike",
+            "UUID": "fbb1074d-93f8-4d00-9651-4bc085e58f1b"
         }
     ],
     "PrefabMap": [
-        {
-            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
-            "PrefabName": "Antike"
-        },
         {
             "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTree.json",
             "PrefabName": "TestTree"
         },
         {
-            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
-            "PrefabName": "TestTerrain"
+            "FilePath": "Asset\\Data\\Prefab\\Actor\\Antike\\Antike.json",
+            "PrefabName": "Antike"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\TPV\\TPVCamera.json",
             "PrefabName": "TPVCamera"
+        },
+        {
+            "FilePath": "Asset\\Data\\Prefab\\Map\\Test\\TestTerrain.json",
+            "PrefabName": "TestTerrain"
         },
         {
             "FilePath": "Asset\\Data\\Prefab\\Camera\\Free\\FreeCamera.json",

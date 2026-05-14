@@ -43,10 +43,10 @@
             "MRI::Component::TransformComponent": {
                 "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSTRParentT",
                 "Rotation": {
-                    "W": -0.9999301433563232,
-                    "X": 0.005218125879764557,
-                    "Y": -0.010608946904540062,
-                    "Z": -5.536268508876674e-05
+                    "W": 0.9986953735351563,
+                    "X": 0.04468899592757225,
+                    "Y": 0.024681594222784042,
+                    "Z": -0.0011044368147850037
                 },
                 "Scale": {
                     "X": 1.0,
@@ -90,16 +90,16 @@
                 {
                     "Tangent": 0.0,
                     "Time": 0.0,
-                    "Value": 5.119999885559082
+                    "Value": 5.699999809265137
                 },
                 {
                     "Tangent": 0.0,
-                    "Time": 1.0,
-                    "Value": 5.119999885559082
+                    "Time": 0.23999999463558197,
+                    "Value": 5.585999965667725
                 }
             ],
             "MaxMeasurementTime": 1.0,
-            "MaxValue": 8.0,
+            "MaxValue": 5.699999809265137,
             "RotationComponentModeName": "MRI::ComponentMode::RotationComponentLerpTargetViewDirectionMode",
             "TypeName": "MRI::Component::RotationComponent"
         },
@@ -148,9 +148,9 @@
     "MRI::Component::TransformComponent": {
         "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
         "Rotation": {
-            "W": -0.9997699856758118,
+            "W": 0.9982829689979553,
             "X": 0.0,
-            "Y": 0.021442610770463943,
+            "Y": 0.05857309699058533,
             "Z": 0.0
         },
         "Scale": {
