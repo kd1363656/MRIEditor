@@ -18,10 +18,12 @@ void MRI::Component::TransformComponent::PostLoadInit()
 	auto l_ownerCache = MRI::Component::ComponentBase::GetWorkOwnerCache().lock();
 	if (!l_ownerCache) { return; }
 
+	m_parentTransformComponentCache.reset();
+
 	// 親がいたら親の"TransformComponent"をキャッシュする
 	if (auto l_parentCache = l_ownerCache->GetParentCache().lock())
 	{
-		m_parentTransformComponentCache = l_parentCache->GetSelfTransformComponentCache().lock();
+		m_parentTransformComponentCache = l_parentCache->GetSelfTransformComponentCache();
 	}
 
 	// 行列の更新
@@ -101,31 +103,38 @@ void MRI::Component::TransformComponent::FixMatrix()
 	FixMatrixStrategy();
 }
 
+void MRI::Component::TransformComponent::SetParentTransformComponentCache(const std::weak_ptr<MRI::Component::TransformComponent>& a_set)
+{
+	m_parentTransformComponentCache = a_set;
+
+	// 親Transformが変更されたら、現在のストラテジーで行列を再計算する
+	FixMatrixStrategy();
+}
+
 bool MRI::Component::TransformComponent::EditCommonInspector()
 {
 	bool l_hasParamChanged = false;
 
-	// 行列が生成されれば一回だけ行列を確定する
+	// MatrixStrategyが変更されたら、呼び出し元で行列を再計算する
 	if (MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase>>("MatrixStrategy", m_fixMatrixStrategy))
 	{
-		FixMatrixStrategy();
 		l_hasParamChanged = true;
 	}
 
 	Math::Vector3 l_euler = MRI::MathUtility::QuaternionToEuler(m_transform.rotation);
 
 	// 拡大率を操作
-	if (ImGui::DragFloat3(U8("拡大") , &m_transform.scale.x , MRI::EditorCommonConstant::k_defaultDragValue))
+	if (ImGui::DragFloat3(U8("拡大"), &m_transform.scale.x, MRI::EditorCommonConstant::k_defaultDragValue))
 	{
 		l_hasParamChanged = true;
 	}
 
 	// 回転率を操作
-	if (ImGui::DragFloat3(U8("回転") , &l_euler.x , MRI::EditorCommonConstant::k_defaultDragValue))
+	if (ImGui::DragFloat3(U8("回転"), &l_euler.x, MRI::EditorCommonConstant::k_defaultDragValue))
 	{
 		// オイラー角に変換していたクオータニオンをオイラー角に戻して格納
 		Math::Quaternion l_dragResult = MRI::MathUtility::EulerToQuaternion(l_euler);
-		m_transform.rotation          = l_dragResult;
+		m_transform.rotation = l_dragResult;
 
 		l_hasParamChanged = true;
 	}

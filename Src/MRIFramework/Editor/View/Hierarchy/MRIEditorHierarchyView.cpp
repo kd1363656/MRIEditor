@@ -403,8 +403,14 @@ void MRI::Editor::EditorHierarchyView::HandleHierarchyDragAndDrop(const std::wea
 	// ドロップしたゲームオブジェクトを格納
 	m_draggingGameObjectCache = l_dropped;
 
-	// 子孫なら意味のないドロップになるので"return"
-	if (IsDescendant(l_gameObjectCache, l_dropped)) { return; }
+	// 自分自身にドロップしているなら意味のないドロップになるので"return"
+	if (l_gameObjectCache.get() == l_dropped.get()) { return; }
+
+	// 自分自身にドロップしているなら意味のないドロップになるので"return"
+	if (l_gameObjectCache.get() == l_dropped.get()) { return; }
+
+	// ドロップ先がドラッグ中ゲームオブジェクトの子孫なら循環参照になるので"return"
+	if (IsDescendant(l_dropped, l_gameObjectCache)) { return; }
 
 	// 既に親を持っているなら親子関係を断ち切る
 	if (auto l_parent = l_dropped->GetParentCache().lock())

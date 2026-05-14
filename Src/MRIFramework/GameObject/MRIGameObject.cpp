@@ -224,22 +224,25 @@ void MRI::GameObject::CreateParentChildRelationship(std::weak_ptr<MRI::GameObjec
 	auto l_child = a_childCache.lock();
 	if (!l_child) { return; }
 
+	// 自分自身を子にしない
+	if (l_child.get() == this) { return; }
+
 	// すでに同じ子がいる子をチェック、もし同じ子なら"return"
-	auto l_itr = std::find_if(m_childCacheList.begin() , m_childCacheList.end() , [l_child](const std::weak_ptr<MRI::GameObject> a_inListChildCache)
-	{
-		auto l_inListChild = a_inListChildCache.lock();
-		if (!l_inListChild) 
+	auto l_itr = std::find_if(m_childCacheList.begin(), m_childCacheList.end(), [l_child](const std::weak_ptr<MRI::GameObject> a_inListChildCache)
 		{
-			return false;
-		}
-	
-		// ポインタ同士を比較
-		return l_inListChild.get() == l_child.get();
-	});
+			auto l_inListChild = a_inListChildCache.lock();
+			if (!l_inListChild)
+			{
+				return false;
+			}
+
+			// ポインタ同士を比較
+			return l_inListChild.get() == l_child.get();
+		});
 
 	// もし同じポインタなら"return"
-	if(const bool l_isInListChild = l_itr != m_childCacheList.end();
-	   l_isInListChild)
+	if (const bool l_isInListChild = l_itr != m_childCacheList.end();
+		l_isInListChild)
 	{
 		return;
 	}
@@ -248,8 +251,14 @@ void MRI::GameObject::CreateParentChildRelationship(std::weak_ptr<MRI::GameObjec
 	l_child->ResetParentCache();
 
 	// 親子関係を構築
-	l_child->SetParentCache      (weak_from_this());
+	l_child->SetParentCache(weak_from_this());
 	m_childCacheList.emplace_back(l_child);
+
+	auto l_childTransformComponentCache = l_child->GetSelfTransformComponentCache().lock();
+	if (!l_childTransformComponentCache) { return; }
+
+	// 子のTransformComponentに、親のTransformComponentをキャッシュする
+	l_childTransformComponentCache->SetParentTransformComponentCache(GetSelfTransformComponentCache());
 }
 void MRI::GameObject::RemoveChildCache(const std::weak_ptr<MRI::GameObject> a_childCache)
 {
@@ -266,6 +275,18 @@ void MRI::GameObject::RemoveChildCache(const std::weak_ptr<MRI::GameObject> a_ch
 
 		return false;
 	});
+}
+
+void MRI::GameObject::ResetParentCache()
+{
+	m_parentCache.reset();
+
+	auto l_selfTransformComponentCache = GetSelfTransformComponentCache().lock();
+	if (!l_selfTransformComponentCache) { return; }
+
+	// GameObject側の親子関係を解除したので、
+	// TransformComponent側の親Transformキャッシュも解除する
+	l_selfTransformComponentCache->SetParentTransformComponentCache(std::weak_ptr<MRI::Component::TransformComponent>());
 }
 
 void MRI::GameObject::SetParentCache(const std::weak_ptr<MRI::GameObject> a_parentCache)

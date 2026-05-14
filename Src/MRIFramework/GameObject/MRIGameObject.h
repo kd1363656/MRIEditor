@@ -35,7 +35,7 @@ namespace MRI
 		void CreateParentChildRelationship(std::weak_ptr<MRI::GameObject>       a_childCache);
 		void RemoveChildCache             (const std::weak_ptr<MRI::GameObject> a_childCache);
 
-		void ResetParentCache() { m_parentCache.reset(); }
+		void ResetParentCache();
 
 		bool HasParent() const { return !m_parentCache.expired(); }
 
