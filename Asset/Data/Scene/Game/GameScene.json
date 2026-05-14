@@ -1565,66 +1565,33 @@
             "UUID": "00000000-0000-0000-0000-000000000000"
         },
         {
-            "ChildList": [
-                {
-                    "ChildList": [],
-                    "ComponentList": [
-                        {
-                            "FieldOfView": 45.0,
-                            "TypeName": "MRI::Component::CameraComponent"
-                        },
-                        {
-                            "TypeName": "MRI::Component::RotationComponent"
-                        }
-                    ],
-                    "MRI::Component::TransformComponent": {
-                        "Pos": {
-                            "X": 0.0,
-                            "Y": 1.0,
-                            "Z": -1.399999976158142
-                        },
-                        "Rotation": {
-                            "W": -0.9975335597991943,
-                            "X": -0.06272592395544052,
-                            "Y": -0.03143297880887985,
-                            "Z": 0.001976539148017764
-                        },
-                        "Scale": {
-                            "X": 1.0,
-                            "Y": 1.0,
-                            "Z": 0.5
-                        }
-                    },
-                    "PrefabName": "TPVCamera",
-                    "UUID": "2579b696-f9f9-41b1-a0a8-b4ff29885835"
-                }
-            ],
+            "ChildList": [],
             "ComponentList": [
                 {
-                    "TypeName": "MRI::Component::RenderModelAnimationComponent"
+                    "FieldOfView": 45.0,
+                    "TypeName": "MRI::Component::CameraComponent"
                 },
                 {
-                    "TypeName": "MRI::Component::RotationComponent",
-                    "UUID": "00000000-0000-0000-0000-000000000000"
-                },
-                {
-                    "TypeName": "MRI::Component::InputComponent"
+                    "TypeName": "MRI::Component::RotationComponent"
                 },
                 {
                     "TypeName": "MRI::Component::MoveComponent"
+                },
+                {
+                    "TypeName": "MRI::Component::InputComponent"
                 }
             ],
             "MRI::Component::TransformComponent": {
                 "Pos": {
-                    "X": 1.9865058660507202,
-                    "Y": 2.0,
-                    "Z": 2.7844979763031006
+                    "X": -2.406508445739746,
+                    "Y": 8.61270809173584,
+                    "Z": -14.237163543701172
                 },
                 "Rotation": {
-                    "W": 0.999901533126831,
-                    "X": 0.0,
-                    "Y": 0.014025489799678326,
-                    "Z": 0.0
+                    "W": 0.9999982714653015,
+                    "X": -0.0011401621159166098,
+                    "Y": -0.0014833230525255203,
+                    "Z": -1.6912316596062738e-06
                 },
                 "Scale": {
                     "X": 1.0,
@@ -1632,8 +1599,8 @@
                     "Z": 1.0
                 }
             },
-            "PrefabName": "Antike",
-            "UUID": "3e96a6c6-ece2-4cdf-840a-82fa6ee81585"
+            "PrefabName": "FreeCamera",
+            "UUID": "359df7ce-54fb-4312-9be3-dcc777d02113"
         }
     ],
     "PrefabMap": [

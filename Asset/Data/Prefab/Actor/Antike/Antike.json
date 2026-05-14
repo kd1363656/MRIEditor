@@ -43,10 +43,10 @@
             "MRI::Component::TransformComponent": {
                 "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSTRParentT",
                 "Rotation": {
-                    "W": -0.9975335597991943,
-                    "X": -0.06272592395544052,
-                    "Y": -0.03143297880887985,
-                    "Z": 0.001976539148017764
+                    "W": -0.9999301433563232,
+                    "X": 0.005218125879764557,
+                    "Y": -0.010608946904540062,
+                    "Z": -5.536268508876674e-05
                 },
                 "Scale": {
                     "X": 1.0,
@@ -148,9 +148,9 @@
     "MRI::Component::TransformComponent": {
         "MatrixStrategyName": "MRI::Strategy::MatrixStrategyCreateSRT",
         "Rotation": {
-            "W": 0.999901533126831,
+            "W": -0.9997699856758118,
             "X": 0.0,
-            "Y": 0.014025489799678326,
+            "Y": 0.021442610770463943,
             "Z": 0.0
         },
         "Scale": {
