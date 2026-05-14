@@ -89,6 +89,10 @@ void MRI::Component::CameraComponent::SetDebugCameraTag()
 {
 	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraDebugTag>().k_id;
 }
+void MRI::Component::CameraComponent::SetMainCameraTag()
+{
+	m_cameraTag = MRI::GetTypeInfo<MRI::Tag::CameraMainTag>().k_id;
+}
 
 void MRI::Component::CameraComponent::EditEnableMainCamera()
 {

@@ -64,6 +64,27 @@ void MRI::Editor::EditorHierarchyView::SaveFile()
 	MRI::FileIOUtility::SaveJsonFile(l_rootJson , k_fileIOPath);
 }
 
+void MRI::Editor::EditorHierarchyView::SetupMainCamera(const std::shared_ptr<GameObject>& a_gameObject)
+{
+	if (!a_gameObject) { return; }
+
+	// 自身か子にカメラコンポーネントをセット
+	if (auto l_cameraComponent = a_gameObject->GetComponentCache<Component::CameraComponent>().lock())
+	{
+		l_cameraComponent->SetMainCameraTag();
+		RenderManager::GetInstance().SetMainCameraComponentCache(l_cameraComponent);
+		return;
+	}
+
+	for (auto& l_childCache : a_gameObject->GetChildCacheList())
+	{
+		auto l_child = l_childCache.lock();
+		if (!l_child) { continue; }
+
+		SetupMainCamera(l_child);
+	}
+}
+
 void MRI::Editor::EditorHierarchyView::RunOnceSetPrevGameObjectCache()
 {
 	auto l_sceneCache = MRI::SceneManager::GetInstance().GetSceneCache().lock();
@@ -265,10 +286,7 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 		SetSelectedGameObjectCache(a_gameObject);
 
 		// 選択したオブジェクトがカメラならカメラの主導権を渡す
-		if(auto l_cameraComponentCache = a_gameObject->GetComponentCache<MRI::Component::CameraComponent>().lock())
-		{
-			MRI::RenderManager::GetInstance().SetMainCameraComponentCache(l_cameraComponentCache);
-		}
+		SetupMainCamera(a_gameObject);
 	}
 
 	// ドラッグアンドドロップで親子関係を結ぶ処理

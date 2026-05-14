@@ -2,7 +2,8 @@
 
 namespace MRI::Component
 {
-	class CameraComponent final : public MRI::Component::ComponentBase
+	class CameraComponent final : public MRI::Component::ComponentBase,
+								  public std::enable_shared_from_this<CameraComponent>
 	{
 	public:
 
@@ -30,6 +31,7 @@ namespace MRI::Component
 		std::uint32_t GetCameraTag() const { return m_cameraTag; }
 
 		void SetDebugCameraTag();
+		void SetMainCameraTag ();
 
 	private:
 

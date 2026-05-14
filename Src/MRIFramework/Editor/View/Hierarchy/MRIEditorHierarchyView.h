@@ -17,6 +17,8 @@ namespace MRI::Editor
 		void LoadFile() override;
 		void SaveFile() override;
 
+		void SetupMainCamera(const std::shared_ptr<GameObject>& a_gameObject);
+
 		std::weak_ptr<MRI::GameObject> GetSelectedGameObjectCache() const { return m_selectedGameObjectCache; }
 
 	private:
