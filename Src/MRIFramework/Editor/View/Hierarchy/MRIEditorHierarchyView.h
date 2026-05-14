@@ -33,6 +33,9 @@ namespace MRI::Editor
 		void DrawGameObjectHierarchy         ();
 		void RecursiveDrawGameObjectHierarchy(const std::shared_ptr<MRI::GameObject>& a_gameObject);
 
+		void DrawUnparentDropArea(const char* a_id);
+		void UnparentGameObject  (const std::shared_ptr<MRI::GameObject>& a_gameObject) const;
+
 		void HandleHierarchyDragAndDrop(const std::weak_ptr<MRI::GameObject> a_gameObjectCache);
 		void HandleContextMenu         (const std::weak_ptr<MRI::GameObject> a_gameObjectCache) const;
 
@@ -55,6 +58,7 @@ namespace MRI::Editor
 
 		std::string m_createGameObjectName = MRI::CommonConstant::k_stringUnknown.data();
 
-		bool m_isFirstTime = false;
+		bool m_isDroppedOnGameObject = false;
+		bool m_isFirstTime           = false;
 	};
 }

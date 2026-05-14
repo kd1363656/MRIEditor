@@ -8,8 +8,9 @@ void MRI::Editor::EditorHierarchyView::Init()
 	m_selectedGameObjectUUID = GUID_NULL;
 
 	m_createGameObjectName = MRI::CommonConstant::k_stringUnknown.data();
-}
 
+	m_isDroppedOnGameObject = false;
+}
 void MRI::Editor::EditorHierarchyView::DrawEditor()
 {
 	RunOnceSetPrevGameObjectCache();
@@ -20,25 +21,24 @@ void MRI::Editor::EditorHierarchyView::DrawEditor()
 		return;
 	}
 
+	m_isDroppedOnGameObject = false;
+
 	// ゲームオブジェクトをセレクターから選び生成
 	DrawAddGameObjectSelector();
-	DrawAddGameObjectButton  ();
+	DrawAddGameObjectButton();
 
 	// 見やすいように線を引く
 	ImGui::Separator();
 
 	DrawGameObjectHierarchy();
 
-	// 空白位置にドロップしたら親子関係を解除する
-	UnparentIfDroppedInEmptyHierarchyArea();
-
-	// もしマウスの左クリックが離されたかヒエラルキービュー外で
-	// ドラッグ情報をリセット
-	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left) || !MRI::EditorUtility::IsMouseInWindowRect())
+	// もしマウスの左クリックが離されたら
+	// ドラッグしているゲームオブジェクトのキャッシュをリセット
+	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left))
 	{
 		m_draggingGameObjectCache.reset();
 	}
-	
+
 	ImGui::End();
 }
 
@@ -255,14 +255,25 @@ void MRI::Editor::EditorHierarchyView::DrawGameObjectHierarchy()
 	auto l_sceneCache = MRI::SceneManager::GetInstance().GetSceneCache().lock();
 	if (!l_sceneCache) { return; }
 
+	static constexpr std::uint32_t k_initialDropAreaIndex = 0U;
+
+	std::uint32_t l_dropAreaIndex = k_initialDropAreaIndex;
+
 	for (const auto& l_gameObject : l_sceneCache->GetGameObjectList())
 	{
-		// ヌルポインタか親が存在しなければ"continue"
-		if (!l_gameObject)             { continue; }
+		// ヌルポインタか親が存在するなら"continue"
+		if (!l_gameObject) { continue; }
 		if (l_gameObject->HasParent()) { continue; }
 
+		const std::string l_dropAreaID = "UnparentDropArea_" + std::to_string(l_dropAreaIndex);
+		DrawUnparentDropArea(l_dropAreaID.c_str());
+
 		RecursiveDrawGameObjectHierarchy(l_gameObject);
+
+		l_dropAreaIndex++;
 	}
+
+	DrawUnparentDropArea("UnparentDropArea_Last");
 }
 void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const std::shared_ptr<MRI::GameObject>& a_gameObject)
 {
@@ -270,11 +281,10 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 
 	ImGui::PushID(a_gameObject.get());
 
-	// 子を持たなければ"Lear"フラグを設定
 	ImGuiTreeNodeFlags l_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_SpanAvailWidth;
-	
+
 	// 子を持たなければ"Leaf"フラグを設定
-	if (a_gameObject->GetChildCacheList().empty()) 
+	if (a_gameObject->GetChildCacheList().empty())
 	{
 		l_flags |= ImGuiTreeNodeFlags_Leaf;
 	}
@@ -284,21 +294,10 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 	// もしプレハブゲームオブジェクトなら色を変える
 	if (l_isPrefabGameObject)
 	{
-		ImGui::PushStyleColor(ImGuiCol_Text , k_prefabGameObjectColor);
+		ImGui::PushStyleColor(ImGuiCol_Text, k_prefabGameObjectColor);
 	}
 
-	// ノードの描画
-	// ノードが開いていなければ"return"
-	if (!ImGui::TreeNodeEx(a_gameObject->GetPrefabName().data() , l_flags))
-	{
-		if (l_isPrefabGameObject)
-		{
-			ImGui::PopStyleColor();
-		}
-
-		ImGui::PopID();
-		return; 
-	}
+	const bool l_isTreeOpen = ImGui::TreeNodeEx(a_gameObject->GetPrefabName().data(), l_flags);
 
 	if (l_isPrefabGameObject)
 	{
@@ -320,19 +319,65 @@ void MRI::Editor::EditorHierarchyView::RecursiveDrawGameObjectHierarchy(const st
 	// コンテキストメニューの表示
 	HandleContextMenu(a_gameObject);
 
-	// ノードの再帰的な描画
-	for (const auto& l_childCache : a_gameObject->GetChildCacheList())
+	if (l_isTreeOpen)
 	{
-		auto l_child = l_childCache.lock();
-		if (!l_child) { continue; }
+		// ノードの再帰的な描画
+		for (const auto& l_childCache : a_gameObject->GetChildCacheList())
+		{
+			auto l_child = l_childCache.lock();
+			if (!l_child) { continue; }
 
-		RecursiveDrawGameObjectHierarchy(l_child);
+			RecursiveDrawGameObjectHierarchy(l_child);
+		}
+
+		ImGui::TreePop();
 	}
 
-	ImGui::PopID  ();
-	ImGui::TreePop();
+	ImGui::PopID();
 }
+void MRI::Editor::EditorHierarchyView::DrawUnparentDropArea(const char* a_id)
+{
+	if (!a_id) { return; }
 
+	static constexpr float k_unparentDropAreaHeight = 6.0F;
+	static constexpr float k_minDropAreaWidth = 1.0F;
+
+	float l_dropAreaWidth = ImGui::GetContentRegionAvail().x;
+
+	// "InvisibleButton"は幅か高さが"0.0F"になると"assert"が発生するため、
+	// 最低限の幅を保証する
+	if (l_dropAreaWidth <= MRI::CommonConstant::k_epsilon)
+	{
+		l_dropAreaWidth = k_minDropAreaWidth;
+	}
+
+	ImGui::PushID(a_id);
+
+	// ゲームオブジェクト同士の間に、親子関係解除用の見えないドロップ領域を作る
+	ImGui::InvisibleButton("UnparentDropArea", ImVec2(l_dropAreaWidth, k_unparentDropAreaHeight));
+
+	std::shared_ptr<MRI::GameObject> l_dropped = nullptr;
+	MRI::EditorUtility::DragDropTarget("GameObject", l_dropped);
+
+	if (l_dropped)
+	{
+		UnparentGameObject(l_dropped);
+	}
+
+	ImGui::PopID();
+}
+void MRI::Editor::EditorHierarchyView::UnparentGameObject(const std::shared_ptr<MRI::GameObject>& a_gameObject) const
+{
+	if (!a_gameObject) { return; }
+
+	auto l_oldParent = a_gameObject->GetParentCache().lock();
+	if (!l_oldParent) { return; }
+
+	l_oldParent->RemoveChildCache(a_gameObject);
+	a_gameObject->ResetParentCache();
+
+	MRI_ADD_LOG("親子関係が解除されました\n親 : %s , 子 : %s", l_oldParent->GetPrefabName().data(), a_gameObject->GetPrefabName().data());
+}
 void MRI::Editor::EditorHierarchyView::HandleHierarchyDragAndDrop(const std::weak_ptr<MRI::GameObject> a_gameObjectCache)
 {
 	auto l_gameObjectCache = a_gameObjectCache.lock();
@@ -351,6 +396,9 @@ void MRI::Editor::EditorHierarchyView::HandleHierarchyDragAndDrop(const std::wea
 
 	// "DragDropTarget"でポインタを受け取れなかったら"nullptr"なので"return"
 	if (!l_dropped) { return; }
+
+	// GameObject上にドロップできたので、空白ドロップ扱いにしない
+	m_isDroppedOnGameObject = true;
 
 	// ドロップしたゲームオブジェクトを格納
 	m_draggingGameObjectCache = l_dropped;
@@ -396,6 +444,9 @@ void MRI::Editor::EditorHierarchyView::UnparentIfDroppedInEmptyHierarchyArea() c
 	// ドロップ対h層がなければ処理しない
 	auto l_droppedCache = m_draggingGameObjectCache.lock();
 	if (!l_droppedCache) { return; }
+
+	// GameObject上にドロップできた場合は、親子関係の構築処理を優先する
+	if (m_isDroppedOnGameObject) { return; }
 
 	// マウスがこの領域内にある時のみ実行
 	if (!ImGui::IsMouseReleased(ImGuiMouseButton_Left)) { return; }

@@ -45,12 +45,6 @@ void MRI::Component::TransformComponent::EditSpawnInspector()
 }
 void MRI::Component::TransformComponent::EditPrefabInspector()
 {
-	// 行列が生成されれば一回だけ行列を確定する
-	if (MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase>>("MatrixStrategy" , m_fixMatrixStrategy))
-	{
-		FixMatrixStrategy();
-	}
-
 	const bool l_hasParamChanged = EditCommonInspector();
 
 	// もし"Transform"が編集されたらその変更を視覚的に反映するために行列を計算
@@ -110,6 +104,13 @@ void MRI::Component::TransformComponent::FixMatrix()
 bool MRI::Component::TransformComponent::EditCommonInspector()
 {
 	bool l_hasParamChanged = false;
+
+	// 行列が生成されれば一回だけ行列を確定する
+	if (MRI::EditorUtility::FactoryRadioButtonSelector<MRI::UniqueFactory::Strategy<MRI::Strategy::MatrixStrategyBase>>("MatrixStrategy", m_fixMatrixStrategy))
+	{
+		FixMatrixStrategy();
+		l_hasParamChanged = true;
+	}
 
 	Math::Vector3 l_euler = MRI::MathUtility::QuaternionToEuler(m_transform.rotation);
 
